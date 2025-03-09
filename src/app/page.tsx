@@ -18,7 +18,7 @@ export default function HomePage() {
           <p>
             This dashboard provides insights into Blockworks team holdings across various 
             assets including cryptocurrencies, NFTs, and equities. Data is sourced directly 
-            from Blockworks' financial disclosures page.
+            from Blockworks&apos; financial disclosures page.
           </p>
         </div>
         

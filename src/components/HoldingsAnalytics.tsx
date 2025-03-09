@@ -3,6 +3,27 @@
 import React, { useState, useEffect } from 'react';
 import styles from '../styles/analytics.module.css';
 
+
+type AssetMetric = {
+  asset: string;
+  holderCount: number;
+  earliestAdded: string;
+  avgMonthsHeld: string;
+  monthlyPriceChange: number | null;
+  totalPriceChange: number | null;
+  currentPrice: number | null;
+};
+
+type TeamMetric = {
+  team: string;
+  memberCount: number;
+  assetCount: number;
+  bestMonthlyAsset: string | null;
+  bestMonthlyChange: number | null;
+  bestTotalAsset: string | null;
+  bestTotalChange: number | null;
+};
+
 type Holding = {
   name: string;
   team: string;
@@ -48,10 +69,10 @@ type AnalyticsProps = {
 
 const HoldingsAnalytics: React.FC<AnalyticsProps> = ({ holdings }) => {
   const [selectedTeam, setSelectedTeam] = useState<string>('All');
-  const [assetMetrics, setAssetMetrics] = useState<any[]>([]);
-  const [teamMetrics, setTeamMetrics] = useState<any[]>([]);
+  const [assetMetrics, setAssetMetrics] = useState<AssetMetric[]>([]);
+  const [teamMetrics, setTeamMetrics] = useState<TeamMetric[]>([]);
+  const [topAssets, setTopAssets] = useState<AssetMetric[]>([]);
   const [teamPerformance, setTeamPerformance] = useState<TeamPerformance[]>([]);
-  const [topAssets, setTopAssets] = useState<any[]>([]);
   const [priceHistories, setPriceHistories] = useState<PriceHistory[]>([]);
   const [monthlyChanges, setMonthlyChanges] = useState<MonthlyChange[]>([]);
   const [loadingPrices, setLoadingPrices] = useState<boolean>(true);
@@ -88,8 +109,8 @@ const HoldingsAnalytics: React.FC<AnalyticsProps> = ({ holdings }) => {
   // Get unique teams
   const teams = ['All', ...new Set(holdings.map(h => h.team))];
   
-  // Calculate days held
-  const calculateDaysHeld = (firstAdded: string) => {
+  // Calculate days held - possibly unused
+  const _calculateDaysHeld = (firstAdded: string) => {
     const addedDate = new Date(firstAdded);
     const today = new Date();
     const diffTime = Math.abs(today.getTime() - addedDate.getTime());
@@ -393,7 +414,7 @@ const HoldingsAnalytics: React.FC<AnalyticsProps> = ({ holdings }) => {
     if (!loadingPrices) {
       calculateMetrics();
     }
-  }, [holdings, selectedTeam, priceHistories, monthlyChanges, teams, loadingPrices]);
+  }, [holdings, selectedTeam, priceHistories, monthlyChanges, teams, loadingPrices, calculatePriceChanges]);
   
   // Check if we have any price data
   const hasPriceData = priceHistories.length > 0;
