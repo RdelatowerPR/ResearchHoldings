@@ -27,7 +27,7 @@ export async function GET() {
     // Get all distinct assets with price data
     const assets = db.prepare(`
       SELECT DISTINCT asset FROM prices
-    `).all();
+    `).all() as { asset: string }[];
     
     const priceHistories = [];
     
