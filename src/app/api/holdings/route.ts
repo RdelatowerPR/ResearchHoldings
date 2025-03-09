@@ -71,12 +71,17 @@ export async function GET() {
     
     const holdings = holdingsQuery.all() as Holding[];
     
+    // Get unique teams without using spread operator on Set
+    const teamsSet = new Set<string>();
+    holdings.forEach(h => teamsSet.add(h.team));
+    const uniqueTeams = Array.from(teamsSet);
+    
     // Get summary statistics
     const stats = {
       totalHoldings: holdings.length,
       uniqueAssets: new Set(holdings.map(h => h.asset)).size,
       uniqueMembers: new Set(holdings.map(h => h.name)).size,
-      teams: [...new Set(holdings.map(h => h.team))].map(team => {
+      teams: uniqueTeams.map(team => {
         const teamHoldings = holdings.filter(h => h.team === team);
         return {
           name: team,
