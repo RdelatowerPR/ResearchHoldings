@@ -1,7 +1,7 @@
 //This is the table for holdings page (clicking inside the homepage)
 
 'use client';
-
+import LastUpdated from '../../components/LastUpdated';
 import { useEffect, useState } from "react";
 import styles from "../../styles/table.module.css";
 import Link from "next/link";
@@ -100,11 +100,19 @@ export default function HoldingsPage() {
       (filter.name === '' || holding.name === filter.name)
     )
     .sort((a, b) => {
-      if (a[sortConfig.key] < b[sortConfig.key]) {
-        return sortConfig.direction === 'asc' ? -1 : 1;
+      // Safely access sortConfig properties with optional chaining and nullish coalescing
+      const key = sortConfig?.key || 'name';
+      const direction = sortConfig?.direction || 'asc';
+      
+      // Handle potential undefined values in the objects being compared
+      const valueA = a[key];
+      const valueB = b[key];
+      
+      if (valueA < valueB) {
+        return direction === 'asc' ? -1 : 1;
       }
-      if (a[sortConfig.key] > b[sortConfig.key]) {
-        return sortConfig.direction === 'asc' ? 1 : -1;
+      if (valueA > valueB) {
+        return direction === 'asc' ? 1 : -1;
       }
       return 0;
     });
@@ -126,6 +134,7 @@ export default function HoldingsPage() {
     <div className={styles.container}>
       <div className={styles.header}>
         <h1>Blockworks Team Holdings</h1>
+        <LastUpdated />
         <Link href="/" className={styles.backLink}>← Back to Home</Link>
       </div>
       
@@ -284,5 +293,6 @@ export default function HoldingsPage() {
         <HoldingsAnalytics holdings={holdings} />
       )}
     </div>
-  );
+  
+);
 }
