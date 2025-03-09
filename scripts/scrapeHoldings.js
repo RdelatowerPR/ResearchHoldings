@@ -273,6 +273,14 @@ function saveToDatabase(holdings) {
     console.error('Error updating database:', error);
     throw error;
   }
+  ///==/ At the end of your saveToDatabase function
+fs.writeFileSync(
+  path.resolve(process.cwd(), "data/metadata.json"), 
+  JSON.stringify({ 
+    lastUpdated: new Date().toISOString(),
+    recordCount: holdings.length
+  })
+);
 }
 
 // Run the scraper

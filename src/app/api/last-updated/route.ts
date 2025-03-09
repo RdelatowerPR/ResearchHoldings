@@ -1,19 +1,23 @@
 // app/api/last-updated/route.ts
+// In src/app/api/last-updated/route.ts
 import { NextResponse } from 'next/server';
-import path from 'path';
 import fs from 'fs';
+import path from 'path';
 
 export async function GET() {
   try {
-    // Get the modification time of the database file
-    const dbPath = path.resolve(process.cwd(), 'data/holdings.db');
+    const metadataPath = path.resolve(process.cwd(), 'data/metadata.json');
     
-    // Check if the file exists
+    if (fs.existsSync(metadataPath)) {
+      const metadata = JSON.parse(fs.readFileSync(metadataPath, 'utf-8'));
+      return NextResponse.json({ timestamp: metadata.lastUpdated });
+    }
+    
+    // Fallback to checking the database file if metadata doesn't exist
+    const dbPath = path.resolve(process.cwd(), 'data/holdings.db');
     if (fs.existsSync(dbPath)) {
       const stats = fs.statSync(dbPath);
-      return NextResponse.json({ 
-        timestamp: stats.mtime.toISOString() 
-      });
+      return NextResponse.json({ timestamp: stats.mtime.toISOString() });
     }
     
     return NextResponse.json({ timestamp: null });
