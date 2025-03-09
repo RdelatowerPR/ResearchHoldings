@@ -1,0 +1,204 @@
+.analytics {
+  margin-top: 30px;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.sectionTitle {
+  margin-bottom: 20px;
+  font-size: 1.8rem;
+  color: #333;
+  border-bottom: 2px solid #0070f3;
+  padding-bottom: 10px;
+}
+
+.teamSelector {
+  margin-bottom: 20px;
+}
+
+.teamSelector select {
+  padding: 8px 12px;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+  background-color: white;
+  font-size: 1rem;
+  margin-left: 10px;
+}
+
+.performanceDashboard {
+  margin-bottom: 30px;
+}
+
+.performanceDashboard h3 {
+  margin-bottom: 15px;
+  font-size: 1.4rem;
+  color: #333;
+}
+
+.metricsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.metricsCard {
+  background-color: white;
+  border-radius: 6px;
+  padding: 15px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+.metricsCard h3 {
+  margin-bottom: 15px;
+  font-size: 1.2rem;
+  color: #333;
+}
+
+.metricsTable {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.metricsTable th,
+.metricsTable td {
+  padding: 10px;
+  border-bottom: 1px solid #eee;
+  text-align: left;
+}
+
+.metricsTable th {
+  background-color: #f4f4f4;
+  font-weight: bold;
+  color: #555;
+}
+
+.metricsTable tr:hover {
+  background-color: #f9f9f9;
+}
+
+.positive {
+  color: #4caf50;
+  font-weight: bold;
+}
+
+.negative {
+  color: #f44336;
+  font-weight: bold;
+}
+
+.metricsSection {
+  margin-top: 30px;
+}
+
+.metricsSection h3 {
+  margin-bottom: 15px;
+  font-size: 1.4rem;
+  color: #333;
+}
+
+.noPriceData {
+  background-color: #fff3e0;
+  border-left: 4px solid #ff9800;
+  padding: 15px;
+  margin-bottom: 20px;
+  border-radius: 4px;
+}
+
+.loading {
+  text-align: center;
+  padding: 20px;
+  color: #666;
+  font-style: italic;
+}
+
+.disclaimer {
+  font-size: 0.85rem;
+  color: #777;
+  font-style: italic;
+  margin-top: 20px;
+}
+
+/* Dark mode styles */
+@media (prefers-color-scheme: dark) {
+  .analytics {
+    background-color: #222;
+  }
+  
+  .sectionTitle {
+    color: #eee;
+    border-bottom-color: #38bdf8;
+  }
+  
+  .teamSelector select {
+    background-color: #333;
+    color: #eee;
+    border-color: #555;
+  }
+  
+  .metricsCard {
+    background-color: #2a2a2a;
+  }
+  
+  .metricsCard h3, .performanceDashboard h3, .metricsSection h3 {
+    color: #eee;
+  }
+  
+  .metricsTable th {
+    background-color: #333;
+    color: #ddd;
+  }
+  
+  .metricsTable td {
+    border-bottom-color: #444;
+  }
+  
+  .metricsTable tr:hover {
+    background-color: #333;
+  }
+  
+  .positive {
+    color: #81c784;
+  }
+  
+  .negative {
+    color: #e57373;
+  }
+  
+  .noPriceData {
+    background-color: #3e2723;
+    border-left-color: #ff9800;
+    color: #eee;
+  }
+  
+  .loading {
+    color: #aaa;
+
+    .disclaimer {
+      color: #999;
+    }
+  }
+  
+  /* Responsive design */
+  @media (max-width: 768px) {
+    .metricsGrid {
+      grid-template-columns: 1fr;
+    }
+    
+    .metricsTable {
+      font-size: 0.9rem;
+    }
+    
+    .metricsTable th,
+    .metricsTable td {
+      padding: 8px 5px;
+    }
+    
+    .performanceDashboard {
+      overflow-x: auto;
+    }
+  }
+}

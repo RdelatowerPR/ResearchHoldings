@@ -1,94 +1,55 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+// THIS IS THE HOMPEPAGE FILE
+import Link from "next/link";
+import styles from "../styles/home.module.css";
 
-export default function Home() {
+export default function HomePage() {
   return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol>
-          <li>
-            Get started by editing <code>src/app/page.tsx</code>.
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
-
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+    <div className={styles.container}>
+      <header className={styles.header}>
+        <h1 className={styles.title}>Blockworks Dashboard</h1>
+        <p className={styles.subtitle}>
+          Tracking Team Holdings and Market Movements
+        </p>
+      </header>
+      
+      <div className={styles.content}>
+        <div className={styles.infoCard}>
+          <h2>About This Dashboard</h2>
+          <p>
+            This dashboard provides insights into Blockworks team holdings across various 
+            assets including cryptocurrencies, NFTs, and equities. Data is sourced directly 
+            from Blockworks' financial disclosures page.
+          </p>
+        </div>
+        
+        <div className={styles.grid}>
+          <Link href="/holdings" className={styles.card}>
+            <h2>📊 View Holdings</h2>
+            <p>
+              Browse and filter team holdings across different asset classes. See who holds what
+              and explore trends.
+            </p>
+          </Link>
+          
+          <a 
+            href="https://blockworks.co/financial-disclosures" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            className={styles.card}
           >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.secondary}
-          >
-            Read our docs
+            <h2>🔍 Blockworks Disclosures</h2>
+            <p>
+              View the original financial disclosures published by Blockworks on their website.
+            </p>
           </a>
         </div>
-      </main>
+      </div>
+      
       <footer className={styles.footer}>
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
+        <p>
+          Data is updated regularly from the official Blockworks disclosure page. 
+          This dashboard is for informational purposes only.
+        </p>
       </footer>
     </div>
   );
