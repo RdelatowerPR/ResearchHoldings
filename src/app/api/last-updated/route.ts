@@ -1,5 +1,3 @@
-// app/api/last-updated/route.ts
-// In src/app/api/last-updated/route.ts
 import { NextResponse } from 'next/server';
 import fs from 'fs';
 import path from 'path';
@@ -9,20 +7,19 @@ export async function GET() {
     const metadataPath = path.resolve(process.cwd(), 'data/metadata.json');
     
     if (fs.existsSync(metadataPath)) {
-      const metadata = JSON.parse(fs.readFileSync(metadataPath, 'utf-8'));
-      return NextResponse.json({ timestamp: metadata.lastUpdated });
+      try {
+        const metadata = JSON.parse(fs.readFileSync(metadataPath, 'utf-8'));
+        return NextResponse.json({ timestamp: metadata.lastUpdated });
+      } catch (err) {
+        console.error('Error parsing metadata:', err);
+      }
     }
     
-    // Fallback to checking the database file if metadata doesn't exist
-    const dbPath = path.resolve(process.cwd(), 'data/holdings.db');
-    if (fs.existsSync(dbPath)) {
-      const stats = fs.statSync(dbPath);
-      return NextResponse.json({ timestamp: stats.mtime.toISOString() });
-    }
-    
-    return NextResponse.json({ timestamp: null });
+    // If metadata file doesn't exist or can't be parsed, return current time
+    return NextResponse.json({ timestamp: new Date().toISOString() });
   } catch (error) {
     console.error('Error getting last updated time:', error);
-    return NextResponse.json({ error: 'Failed to get last updated time' }, { status: 500 });
+    // Fallback to current time
+    return NextResponse.json({ timestamp: new Date().toISOString() });
   }
 }

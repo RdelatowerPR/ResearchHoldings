@@ -28,6 +28,7 @@ jobs:
         env:
           ALPHA_VANTAGE_API_KEY: ${{ secrets.ALPHA_VANTAGE_API_KEY }}
           
+      # In your GitHub Actions workflow
       - name: Create metadata file
         run: |
           echo "{\"lastUpdated\":\"$(date -u +"%Y-%m-%dT%H:%M:%SZ")\"}" > data/metadata.json
