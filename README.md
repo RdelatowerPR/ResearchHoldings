@@ -63,3 +63,46 @@ blockworks-dashboard
 └─ tsconfig.json
 
 ```
+```
+blockworks-dashboard
+├─ data
+│  └─ holdings.db
+├─ eslint.config.mjs
+├─ next.config.ts
+├─ package-lock.json
+├─ package.json
+├─ public
+│  ├─ file.svg
+│  ├─ globe.svg
+│  ├─ next.svg
+│  ├─ vercel.svg
+│  └─ window.svg
+├─ README.md
+├─ scripts
+│  ├─ fetchPrices.js
+│  └─ scrapeHoldings.js
+├─ src
+│  ├─ app
+│  │  ├─ api
+│  │  │  ├─ holdings
+│  │  │  │  ├─ price-history
+│  │  │  │  │  └─ route.ts
+│  │  │  │  └─ route.ts
+│  │  │  └─ last-updated
+│  │  │     └─ route.ts
+│  │  ├─ holdings
+│  │  │  └─ page.tsx
+│  │  ├─ layout.tsx
+│  │  └─ page.tsx
+│  ├─ components
+│  │  ├─ HoldingsAnalytics.tsx
+│  │  ├─ HoldingsTable.tsx
+│  │  └─ LastUpdated.tsx
+│  └─ styles
+│     ├─ analytics.module.css
+│     ├─ globals.css
+│     ├─ home.module.css
+│     └─ table.module.css
+└─ tsconfig.json
+
+```

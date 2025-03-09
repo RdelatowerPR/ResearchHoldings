@@ -2,6 +2,18 @@ import { NextResponse } from "next/server";
 import Database from "better-sqlite3";
 import path from "path";
 
+// Define types for our database results
+type Holding = {
+  name: string;
+  team: string;
+  asset: string;
+  asset_type: string;
+  first_added: string;
+  status: string;
+  current_price?: number;
+  price_date?: string;
+};
+
 // Connect to SQLite Database
 const dbPath = path.resolve(process.cwd(), "data/holdings.db");
 
@@ -57,7 +69,7 @@ export async function GET() {
       `);
     }
     
-    const holdings = holdingsQuery.all();
+    const holdings = holdingsQuery.all() as Holding[];
     
     // Get summary statistics
     const stats = {
@@ -88,4 +100,3 @@ export async function GET() {
     if (db) db.close();
   }
 }
-
