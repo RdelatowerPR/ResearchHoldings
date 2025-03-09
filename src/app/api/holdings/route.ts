@@ -10,17 +10,23 @@ type Holding = {
   asset_type: string;
   first_added: string;
   status: string;
+  last_seen: string;
   current_price?: number;
   price_date?: string;
+  latest_price_date?: string;
 };
 
 // Connect to SQLite Database
 const dbPath = path.resolve(process.cwd(), "data/holdings.db");
 
-export async function GET() {
+export async function GET(request: Request) {
   let db;
   
   try {
+    const url = new URL(request.url);
+    const status = url.searchParams.get('status') || 'active';
+    const statusFilter = status === 'all' ? '' : `WHERE h.status = '${status}'`;
+    
     db = new Database(dbPath, { readonly: true });
     
     // Check if the prices table exists
@@ -39,17 +45,19 @@ export async function GET() {
           m.team, 
           h.asset, 
           h.asset_type, 
-          h.first_added, 
+          h.first_added,
           h.status,
+          h.last_seen,
           (SELECT p.price FROM prices p 
            WHERE p.asset = h.asset 
            ORDER BY p.date DESC LIMIT 1) as current_price,
           (SELECT p.date FROM prices p 
            WHERE p.asset = h.asset 
-           ORDER BY p.date DESC LIMIT 1) as price_date
+           ORDER BY p.date DESC LIMIT 1) as price_date,
+          (SELECT MAX(date) FROM prices WHERE asset = h.asset) as latest_price_date
         FROM holdings h
         JOIN members m ON h.member_id = m.id
-        WHERE h.status = 'active'
+        ${statusFilter !== '' ? statusFilter : ''}
         ORDER BY m.name, h.asset
       `);
     } else {
@@ -60,11 +68,12 @@ export async function GET() {
           m.team, 
           h.asset, 
           h.asset_type, 
-          h.first_added, 
-          h.status
+          h.first_added,
+          h.status,
+          h.last_seen
         FROM holdings h
         JOIN members m ON h.member_id = m.id
-        WHERE h.status = 'active'
+        ${statusFilter !== '' ? statusFilter : ''}
         ORDER BY m.name, h.asset
       `);
     }
@@ -79,6 +88,8 @@ export async function GET() {
     // Get summary statistics
     const stats = {
       totalHoldings: holdings.length,
+      activeHoldings: holdings.filter(h => h.status === 'active').length,
+      inactiveHoldings: holdings.filter(h => h.status === 'inactive').length,
       uniqueAssets: new Set(holdings.map(h => h.asset)).size,
       uniqueMembers: new Set(holdings.map(h => h.name)).size,
       teams: uniqueTeams.map(team => {
@@ -86,7 +97,8 @@ export async function GET() {
         return {
           name: team,
           members: new Set(teamHoldings.map(h => h.name)).size,
-          assets: new Set(teamHoldings.map(h => h.asset)).size
+          assets: new Set(teamHoldings.map(h => h.asset)).size,
+          activeAssets: new Set(teamHoldings.filter(h => h.status === 'active').map(h => h.asset)).size
         };
       })
     };

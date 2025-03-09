@@ -10,6 +10,8 @@
   justify-content: space-between;
   align-items: center;
   margin-bottom: 20px;
+  flex-wrap: wrap;
+  gap: 15px;
 }
 
 .backLink {
@@ -143,6 +145,32 @@
   border-bottom: none;
 }
 
+.inactiveRow {
+  background-color: #f9f9f9;
+  color: #777;
+}
+
+.inactiveRow:hover {
+  background-color: #f0f0f0 !important;
+}
+
+.verification {
+  display: flex;
+  flex-direction: column;
+}
+
+.verificationDate {
+  color: #666;
+  font-size: 0.85rem;
+}
+
+.inactiveTag {
+  color: #e53935;
+  font-size: 0.8rem;
+  font-weight: 500;
+  margin-top: 3px;
+}
+
 .resultCount {
   margin-bottom: 10px;
   color: #666;
@@ -160,8 +188,38 @@
 }
 
 .summary h2 {
-  margin-bottom: 10px;
+  margin-bottom: 16px;
   font-size: 1.4rem;
+}
+
+.statsHighlights {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.statCard {
+  background-color: #f0f8ff;
+  border-radius: 6px;
+  padding: 15px;
+  min-width: 150px;
+  flex: 1;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  text-align: center;
+}
+
+.statValue {
+  display: block;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #0070f3;
+  margin-bottom: 5px;
+}
+
+.statLabel {
+  font-size: 0.9rem;
+  color: #444;
 }
 
 .summaryGrid {
@@ -186,6 +244,21 @@
 .summaryCard p {
   color: #555;
   margin-bottom: 5px;
+}
+
+.inactiveCount {
+  color: #e53935;
+  font-size: 0.9rem;
+}
+
+.disclaimer {
+  margin-top: 30px;
+  padding: 15px;
+  background-color: #fff8e1;
+  border-left: 4px solid #ffc107;
+  border-radius: 4px;
+  color: #795548;
+  font-size: 0.9rem;
 }
 
 /* Dark mode styles */
@@ -247,8 +320,45 @@
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
   }
   
-  .summaryCard {
+  .inactiveRow {
+    background-color: #1e1e1e;
+    color: #999;
+  }
+  
+  .inactiveRow:hover {
+    background-color: #252525 !important;
+  }
+  
+  .verificationDate {
+    color: #aaa;
+  }
+  
+  .inactiveTag {
+    color: #ff6b6b;
+  }
+  
+  .summaryCard, .statCard {
     background-color: #2a2a2a;
+  }
+  
+  .summaryCard h3 {
+    color: #eee;
+  }
+  
+  .summaryCard p {
+    color: #bbb;
+  }
+  
+  .statValue {
+    color: #38bdf8;
+  }
+  
+  .statLabel {
+    color: #bbb;
+  }
+  
+  .inactiveCount {
+    color: #ff6b6b;
   }
   
   .resultCount {
@@ -258,13 +368,18 @@
   .noResults {
     color: #aaa;
   }
+  
+  .disclaimer {
+    background-color: #332600;
+    border-left-color: #ffc107;
+    color: #e0c088;
+  }
 }
 
 /* Responsive styles */
 @media (max-width: 768px) {
   .header {
     flex-direction: column;
-    gap: 10px;
     align-items: flex-start;
   }
   
@@ -281,8 +396,17 @@
     margin-top: 10px;
   }
   
+  .statsHighlights {
+    flex-direction: column;
+    gap: 10px;
+  }
+  
   .table th, .table td {
     padding: 8px 10px;
     font-size: 0.9rem;
+  }
+  
+  .verificationDate, .inactiveTag {
+    font-size: 0.75rem;
   }
 }

@@ -1,11 +1,10 @@
-//This is the table for holdings page (clicking inside the homepage)
-
 'use client';
-import LastUpdated from '../../components/LastUpdated';
+
 import { useEffect, useState } from "react";
 import styles from "../../styles/table.module.css";
 import Link from "next/link";
 import HoldingsAnalytics from "../../components/HoldingsAnalytics";
+import LastUpdated from "../../components/LastUpdated";
 
 type Holding = {
   name: string;
@@ -14,18 +13,22 @@ type Holding = {
   asset_type: string;
   first_added: string;
   status: string;
+  last_seen?: string;
   current_price?: number;
   price_date?: string;
 };
 
 type Stats = {
   totalHoldings: number;
+  activeHoldings: number;
+  inactiveHoldings: number;
   uniqueAssets: number;
   uniqueMembers: number;
   teams: {
     name: string;
     members: number;
     assets: number;
+    activeAssets: number;
   }[];
 };
 
@@ -39,6 +42,7 @@ export default function HoldingsPage() {
     asset_type: '',
     name: ''
   });
+  const [statusFilter, setStatusFilter] = useState<'active' | 'inactive' | 'all'>('active');
   const [sortConfig, setSortConfig] = useState<{
     key: keyof Holding,
     direction: 'asc' | 'desc'
@@ -50,7 +54,7 @@ export default function HoldingsPage() {
 
   useEffect(() => {
     setLoading(true);
-    fetch("/api/holdings")
+    fetch(`/api/holdings?status=${statusFilter}`)
       .then((res) => {
         if (!res.ok) {
           throw new Error("Failed to fetch holdings data");
@@ -76,7 +80,7 @@ export default function HoldingsPage() {
         setError(err.message);
         setLoading(false);
       });
-  }, []);
+  }, [statusFilter]);
 
   // Get unique values for filters
   const teams = [...new Set(holdings.map(h => h.team))];
@@ -100,19 +104,11 @@ export default function HoldingsPage() {
       (filter.name === '' || holding.name === filter.name)
     )
     .sort((a, b) => {
-      // Safely access sortConfig properties with optional chaining and nullish coalescing
-      const key = sortConfig?.key || 'name';
-      const direction = sortConfig?.direction || 'asc';
-      
-      // Handle potential undefined values in the objects being compared
-      const valueA = a[key];
-      const valueB = b[key];
-      
-      if (valueA < valueB) {
-        return direction === 'asc' ? -1 : 1;
+      if (a[sortConfig.key] < b[sortConfig.key]) {
+        return sortConfig.direction === 'asc' ? -1 : 1;
       }
-      if (valueA > valueB) {
-        return direction === 'asc' ? 1 : -1;
+      if (a[sortConfig.key] > b[sortConfig.key]) {
+        return sortConfig.direction === 'asc' ? 1 : -1;
       }
       return 0;
     });
@@ -123,7 +119,8 @@ export default function HoldingsPage() {
     return {
       name: team,
       members: [...new Set(teamHoldings.map(h => h.name))].length,
-      assets: [...new Set(teamHoldings.map(h => h.asset))].length
+      assets: [...new Set(teamHoldings.map(h => h.asset))].length,
+      activeAssets: [...new Set(teamHoldings.filter(h => h.status === 'active').map(h => h.asset))].length
     };
   });
   
@@ -198,9 +195,25 @@ export default function HoldingsPage() {
               </select>
             </div>
             
+            <div className={styles.filterGroup}>
+              <label htmlFor="statusFilter">Status:</label>
+              <select 
+                id="statusFilter"
+                value={statusFilter}
+                onChange={(e) => setStatusFilter(e.target.value as 'active' | 'inactive' | 'all')}
+              >
+                <option value="active">Currently Holding</option>
+                <option value="inactive">Previously Held</option>
+                <option value="all">All (Current & Previous)</option>
+              </select>
+            </div>
+            
             <button 
               className={styles.resetButton}
-              onClick={() => setFilter({team: '', asset_type: '', name: ''})}
+              onClick={() => {
+                setFilter({team: '', asset_type: '', name: ''});
+                setStatusFilter('active');
+              }}
             >
               Reset Filters
             </button>
@@ -208,12 +221,35 @@ export default function HoldingsPage() {
           
           <div className={styles.summary}>
             <h2>Summary</h2>
+            <div className={styles.statsHighlights}>
+              <div className={styles.statCard}>
+                <span className={styles.statValue}>{stats?.totalHoldings || holdings.length}</span>
+                <span className={styles.statLabel}>Total Holdings</span>
+              </div>
+              <div className={styles.statCard}>
+                <span className={styles.statValue}>{stats?.activeHoldings || holdings.filter(h => h.status === 'active').length}</span>
+                <span className={styles.statLabel}>Active Holdings</span>
+              </div>
+              <div className={styles.statCard}>
+                <span className={styles.statValue}>{stats?.inactiveHoldings || holdings.filter(h => h.status === 'inactive').length}</span>
+                <span className={styles.statLabel}>Previous Holdings</span>
+              </div>
+              <div className={styles.statCard}>
+                <span className={styles.statValue}>{stats?.uniqueMembers || new Set(holdings.map(h => h.name)).size}</span>
+                <span className={styles.statLabel}>Team Members</span>
+              </div>
+            </div>
             <div className={styles.summaryGrid}>
               {teamSummary.map(summary => (
                 <div key={summary.name} className={styles.summaryCard}>
                   <h3>{summary.name}</h3>
                   <p>{summary.members} Members</p>
-                  <p>{summary.assets} Assets</p>
+                  <p>{summary.activeAssets} Active Assets</p>
+                  {summary.assets > summary.activeAssets && (
+                    <p className={styles.inactiveCount}>
+                      +{summary.assets - summary.activeAssets} Previous
+                    </p>
+                  )}
                 </div>
               ))}
             </div>
@@ -252,6 +288,11 @@ export default function HoldingsPage() {
                       <span>{sortConfig.direction === 'asc' ? '↑' : '↓'}</span>
                     )}
                   </th>
+                  <th onClick={() => requestSort('status')} className={styles.sortable}>
+                    Verification {sortConfig.key === 'status' && (
+                      <span>{sortConfig.direction === 'asc' ? '↑' : '↓'}</span>
+                    )}
+                  </th>
                   {holdings.some(h => h.current_price) && (
                     <th onClick={() => requestSort('current_price')} className={styles.sortable}>
                       Current Price {sortConfig.key === 'current_price' && (
@@ -263,12 +304,27 @@ export default function HoldingsPage() {
               </thead>
               <tbody>
                 {filteredAndSortedHoldings.map((holding, index) => (
-                  <tr key={index}>
+                  <tr 
+                    key={index} 
+                    className={holding.status === 'inactive' ? styles.inactiveRow : ''}
+                  >
                     <td>{holding.name}</td>
                     <td>{holding.team}</td>
                     <td>{holding.asset}</td>
                     <td>{holding.asset_type}</td>
                     <td>{new Date(holding.first_added).toLocaleDateString()}</td>
+                    <td>
+                      <div className={styles.verification}>
+                        <span className={styles.verificationDate}>
+                          {holding.last_seen 
+                            ? `Last verified: ${new Date(holding.last_seen).toLocaleDateString()}` 
+                            : `Added: ${new Date(holding.first_added).toLocaleDateString()}`}
+                        </span>
+                        {holding.status === 'inactive' && (
+                          <span className={styles.inactiveTag}>No longer held</span>
+                        )}
+                      </div>
+                    </td>
                     {holdings.some(h => h.current_price) && (
                       <td>
                         {holding.current_price 
@@ -288,11 +344,18 @@ export default function HoldingsPage() {
           {filteredAndSortedHoldings.length === 0 && (
             <p className={styles.noResults}>No holdings match your filter criteria.</p>
           )}
+          
+          <div className={styles.disclaimer}>
+            <p>
+              <strong>Note:</strong> Holdings data is updated monthly from public disclosures.
+              "Last verified" indicates when an asset was last confirmed as held, not necessarily 
+              when it was acquired or sold.
+            </p>
+          </div>
         </>
       ) : (
-        <HoldingsAnalytics holdings={holdings} />
+        <HoldingsAnalytics holdings={holdings.filter(h => h.status === 'active')} />
       )}
     </div>
-  
-);
+  );
 }
