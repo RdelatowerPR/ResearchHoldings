@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo, useCallback } from 'react';
 import styles from '../styles/analytics.module.css';
 
 
@@ -107,16 +107,11 @@ const HoldingsAnalytics: React.FC<AnalyticsProps> = ({ holdings }) => {
   }, []);
   
   // Get unique teams
-  const teams = ['All', ...new Set(holdings.map(h => h.team))];
-  
-  // Calculate days held - possibly unused
-  const _calculateDaysHeld = (firstAdded: string) => {
-    const addedDate = new Date(firstAdded);
-    const today = new Date();
-    const diffTime = Math.abs(today.getTime() - addedDate.getTime());
-    return Math.ceil(diffTime / (1000 * 60 * 60 * 24));
-  };
-  
+  const teams = useMemo(() => 
+    ['All', ...new Set(holdings.map(h => h.team))], 
+    [holdings]
+  );
+
   // Calculate months held
   const calculateMonthsHeld = (firstAdded: string) => {
     const addedDate = new Date(firstAdded);
@@ -128,17 +123,17 @@ const HoldingsAnalytics: React.FC<AnalyticsProps> = ({ holdings }) => {
   };
   
   // Get price history for an asset
-  const getPriceHistory = (asset: string) => {
+  const getPriceHistory = useCallback((asset: string) => {
     return priceHistories.find(ph => ph.asset === asset)?.prices || [];
-  };
+  }, [priceHistories]);
   
   // Get monthly change for an asset
-  const getMonthlyChange = (asset: string) => {
+  const getMonthlyChange = useCallback((asset: string) => {
     return monthlyChanges.find(mc => mc.asset === asset)?.monthly_change || null;
-  };
+  }, [monthlyChanges]);
   
   // Calculate price change percentages
-  const calculatePriceChanges = (asset: string, firstAdded: string) => {
+  const calculatePriceChanges = useCallback((asset: string, firstAdded: string) => {
     const history = getPriceHistory(asset);
     if (history.length < 2) {
       // Return null values if we don't have real price history
@@ -216,7 +211,7 @@ const HoldingsAnalytics: React.FC<AnalyticsProps> = ({ holdings }) => {
       lastMonthPrice, 
       initialPrice
     };
-  };
+  }, [getPriceHistory, getMonthlyChange, monthlyChanges]);
   
   useEffect(() => {
     const calculateMetrics = () => {
