@@ -2,6 +2,18 @@ import { NextResponse } from "next/server";
 import Database from "better-sqlite3";
 import path from "path";
 
+// Define types for our database results
+type Holding = {
+  name: string;
+  team: string;
+  asset: string;
+  asset_type: string;
+  first_added: string;
+  status: string;
+  current_price?: number;
+  price_date?: string;
+};
+
 // Connect to SQLite Database
 const dbPath = path.resolve(process.cwd(), "data/holdings.db");
 
@@ -17,68 +29,71 @@ export async function GET() {
       WHERE type='table' AND name='prices'
     `).get();
     
-    if (!hasPricesTable) {
-      return NextResponse.json({
-        message: "No price data available",
-        priceHistories: []
-      });
+    let holdingsQuery;
+    
+    if (hasPricesTable) {
+      // Get the latest price for each asset
+      holdingsQuery = db.prepare(`
+        SELECT 
+          m.name, 
+          m.team, 
+          h.asset, 
+          h.asset_type, 
+          h.first_added, 
+          h.status,
+          (SELECT p.price FROM prices p 
+           WHERE p.asset = h.asset 
+           ORDER BY p.date DESC LIMIT 1) as current_price,
+          (SELECT p.date FROM prices p 
+           WHERE p.asset = h.asset 
+           ORDER BY p.date DESC LIMIT 1) as price_date
+        FROM holdings h
+        JOIN members m ON h.member_id = m.id
+        WHERE h.status = 'active'
+        ORDER BY m.name, h.asset
+      `);
+    } else {
+      // If prices table doesn't exist, just get holdings
+      holdingsQuery = db.prepare(`
+        SELECT 
+          m.name, 
+          m.team, 
+          h.asset, 
+          h.asset_type, 
+          h.first_added, 
+          h.status
+        FROM holdings h
+        JOIN members m ON h.member_id = m.id
+        WHERE h.status = 'active'
+        ORDER BY m.name, h.asset
+      `);
     }
     
-    // Get all distinct assets with price data
-    const assets = db.prepare(`
-      SELECT DISTINCT asset FROM prices
-    `).all() as { asset: string }[];
+    const holdings = holdingsQuery.all() as Holding[];
     
-    const priceHistories = [];
-    
-    // For each asset, get its price history
-    for (const { asset } of assets) {
-      const prices = db.prepare(`
-        SELECT date, price 
-        FROM prices 
-        WHERE asset = ? 
-        ORDER BY date DESC
-      `).all(asset);
-      
-      if (prices.length > 0) {
-        priceHistories.push({
-          asset,
-          prices
-        });
-      }
-    }
-    
-    // Get monthly change for each asset
-    const monthlyChanges = db.prepare(`
-      WITH current_prices AS (
-        SELECT asset, price, date,
-               ROW_NUMBER() OVER (PARTITION BY asset ORDER BY date DESC) as rn
-        FROM prices
-      ),
-      month_ago_prices AS (
-        SELECT p1.asset, p1.price as current_price, p2.price as month_ago_price
-        FROM current_prices p1
-        LEFT JOIN prices p2 ON p1.asset = p2.asset
-        WHERE p1.rn = 1
-        AND p2.date <= date(p1.date, '-30 days')
-        AND p2.date >= date(p1.date, '-40 days')
-      )
-      SELECT asset, 
-             current_price, 
-             month_ago_price,
-             (current_price - month_ago_price) / month_ago_price * 100 as monthly_change
-      FROM month_ago_prices
-      WHERE month_ago_price IS NOT NULL
-    `).all();
+    // Get summary statistics
+    const stats = {
+      totalHoldings: holdings.length,
+      uniqueAssets: new Set(holdings.map(h => h.asset)).size,
+      uniqueMembers: new Set(holdings.map(h => h.name)).size,
+      teams: [...new Set(holdings.map(h => h.team))].map(team => {
+        const teamHoldings = holdings.filter(h => h.team === team);
+        return {
+          name: team,
+          members: new Set(teamHoldings.map(h => h.name)).size,
+          assets: new Set(teamHoldings.map(h => h.asset)).size
+        };
+      })
+    };
     
     return NextResponse.json({
-      priceHistories,
-      monthlyChanges
+      holdings,
+      stats
     });
   } catch (error) {
-    console.error("Error fetching price history:", error);
+    console.error("Error fetching holdings:", error);
     return NextResponse.json(
-      { error: "Failed to fetch price history" },
+      { error: "Failed to fetch holdings data" },
       { status: 500 }
     );
   } finally {
