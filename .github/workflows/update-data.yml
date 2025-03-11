@@ -8,14 +8,13 @@ on:
 jobs:
   update-data:
     runs-on: ubuntu-latest
-    # Add this permission block
     permissions:
       contents: write
     steps:
       - uses: actions/checkout@v3
         with:
-          # Set fetch-depth to 0 to get all history
           fetch-depth: 0
+          ref: main  # Explicitly checkout the main branch
       
       - name: Setup Node.js
         uses: actions/setup-node@v3
@@ -44,4 +43,4 @@ jobs:
           git add data/holdings.db
           git add data/metadata.json
           git commit -m "Update database with latest data [skip ci]" || echo "No changes to commit"
-          git push
+          git push origin main  # Explicitly push to the main branch
