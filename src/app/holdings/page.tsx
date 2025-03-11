@@ -347,9 +347,9 @@ export default function HoldingsPage() {
           
           <div className={styles.disclaimer}>
             <p>
-              <strong>Note:</strong> Holdings data is updated monthly from public disclosures.
+              <strong>Important Note:</strong> Holdings data is updated monthly from public disclosures.
               "Last verified" indicates when an asset was last confirmed as held, not necessarily 
-              when it was acquired or sold.
+              when it was acquired or sold. Data collection started on MARCH 2025 (no data from before).
             </p>
           </div>
         </>
