@@ -1,4 +1,3 @@
-# .github/workflows/update-data.yml
 name: Update Database
 
 on:
@@ -9,8 +8,14 @@ on:
 jobs:
   update-data:
     runs-on: ubuntu-latest
+    # Add this permission block
+    permissions:
+      contents: write
     steps:
       - uses: actions/checkout@v3
+        with:
+          # Set fetch-depth to 0 to get all history
+          fetch-depth: 0
       
       - name: Setup Node.js
         uses: actions/setup-node@v3
@@ -32,16 +37,11 @@ jobs:
         run: |
           echo "{\"lastUpdated\":\"$(date -u +"%Y-%m-%dT%H:%M:%SZ")\"}" > data/metadata.json
           
-      - name: Commit changes
+      - name: Push changes
         run: |
-          git config --global user.name 'GitHub Action'
-          git config --global user.email 'action@github.com'
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
           git add data/holdings.db
           git add data/metadata.json
-          git diff --quiet && git diff --staged --quiet || git commit -m "Update database with latest data [skip ci]"
-          
-      - name: Push changes
-        uses: ad-m/github-push-action@master
-        with:
-          github_token: ${{ secrets.PAT }}
-          branch: ${{ github.ref }}
+          git commit -m "Update database with latest data [skip ci]" || echo "No changes to commit"
+          git push
