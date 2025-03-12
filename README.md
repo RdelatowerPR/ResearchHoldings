@@ -1,13 +1,21 @@
 # ResearchHoldings
-Dashboard tracking top researcher's holdings.
+Dashboard tracking Blockworks Research holdings. Feel free to download or modify the repo.
 
 Price data by [CoinGecko](https://www.coingecko.com/).
+Equity data by AlphaVantage.
 
-API KEYS (free)
-Alpha Vantage : 5EKEPHEMLJHCWOUN
+Holdings by Blockworks [Financial Disclosures](https://blockworks.co/financial-disclosures).
 
+
+## Description
+Visit https://research-holdings.vercel.app/ for the live dashboard.
+
+There are two views:
+Table View: Contains all entries in the database (price data refreshed daily). 
+Analytics View: Contains insights on employee holdings and their performance.
 
 ## Getting Started
+If you would like to download and run this locally follow these steps.
 
 First, run the development server:
 
@@ -23,46 +31,7 @@ bun dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
-
-```
-blockworks-dashboard
-├─ data
-│  └─ holdings.db
-├─ eslint.config.mjs
-├─ next.config.ts
-├─ package-lock.json
-├─ package.json
-├─ public
-│  ├─ file.svg
-│  ├─ globe.svg
-│  ├─ next.svg
-│  ├─ vercel.svg
-│  └─ window.svg
-├─ README.md
-├─ scripts
-│  ├─ fetchPrices.js
-│  └─ scrapeHoldings.js
-├─ src
-│  ├─ app
-│  │  ├─ api
-│  │  │  └─ holdings
-│  │  │     └─ route.ts
-│  │  ├─ holdings
-│  │  │  └─ page.tsx
-│  │  └─ page.tsx
-│  ├─ components
-│  │  └─ HoldingsTable.tsx
-│  └─ styles
-│     ├─ globals.css
-│     └─ table.module.css
-└─ tsconfig.json
-
-```
+How it should look in your directory (if you want to run it locally)
 ```
 blockworks-dashboard
 ├─ data
