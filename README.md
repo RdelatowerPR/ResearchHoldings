@@ -1,71 +1,98 @@
 # ResearchHoldings
+
 Dashboard tracking Blockworks Research holdings. Feel free to download or modify the repo.
 
 Price data by [CoinGecko](https://www.coingecko.com/).
 Equity data by AlphaVantage.
 
-Holdings by Blockworks [Financial Disclosures](https://blockworks.co/financial-disclosures).
+Holdings by Blockworks [Financial Disclosures](https://blockworks.com/financial-disclosures).
 
+Live dashboard: https://research-holdings.vercel.app/
 
 ## Description
-Visit https://research-holdings.vercel.app/ for the live dashboard.
 
-There are two views:
-Table View: Contains all entries in the database (price data refreshed daily). 
-Analytics View: Contains insights on employee holdings and their performance.
+Two views:
 
-## Getting Started
-If you would like to download and run this locally follow these steps.
+- **Table View** — every entry in the database, with prices refreshed daily.
+- **Analytics View** — insights on employee holdings and their performance.
 
-First, run the development server:
+## How the data gets there
+
+Nothing runs locally. The `Update Database` GitHub Action runs daily at 00:00 UTC and
+commits the result to `main`, which Vercel redeploys.
+
+```
+scripts/scrapeHoldings.js   blockworks.com/financial-disclosures -> data/holdings.db
+scripts/fetchPrices.js      CoinGecko + Alpha Vantage            -> prices table
+```
+
+Both write `logs/` (uploaded as a build artifact) and append a one-line record to
+`data/run-history.jsonl`, which is committed.
+
+**If the collector fails, the job fails and an issue is opened.** It used to exit 0
+and report success on an empty scrape — see [docs/RUNBOOK.md](docs/RUNBOOK.md) for
+that story and for what to do when data stops arriving.
+
+## Running it
 
 ```bash
-npm run dev
+npm install
+npm test              # parser, API client and backup tests - no network needed
+npm run collect       # scrape holdings, then fetch prices
+npm run dev           # dashboard at http://localhost:3000
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Individually: `npm run scrape`, `npm run prices`, `npm run restore`.
 
-How it should look in your directory (if you want to run it locally)
-```
-blockworks-dashboard
-├─ data
-│  └─ holdings.db
-├─ eslint.config.mjs
-├─ next.config.ts
-├─ package-lock.json
-├─ package.json
-├─ public
-│  ├─ file.svg
-│  ├─ globe.svg
-│  ├─ next.svg
-│  ├─ vercel.svg
-│  └─ window.svg
-├─ README.md
-├─ scripts
-│  ├─ fetchPrices.js
-│  └─ scrapeHoldings.js
-├─ src
-│  ├─ app
-│  │  ├─ api
-│  │  │  ├─ holdings
-│  │  │  │  ├─ price-history
-│  │  │  │  │  └─ route.ts
-│  │  │  │  └─ route.ts
-│  │  │  └─ last-updated
-│  │  │     └─ route.ts
-│  │  ├─ holdings
-│  │  │  └─ page.tsx
-│  │  ├─ layout.tsx
-│  │  └─ page.tsx
-│  ├─ components
-│  │  ├─ HoldingsAnalytics.tsx
-│  │  ├─ HoldingsTable.tsx
-│  │  └─ LastUpdated.tsx
-│  └─ styles
-│     ├─ analytics.module.css
-│     ├─ globals.css
-│     ├─ home.module.css
-│     └─ table.module.css
-└─ tsconfig.json
+### Keys
+
+Both are optional for a local run and read from the environment or a gitignored
+`.env`. Without them, crypto prices fall back to CoinGecko's keyless endpoint and
+equities are skipped.
 
 ```
+COINGECKO_API_KEY=CG-...        # Pro key: pro-api.coingecko.com
+ALPHA_VANTAGE_API_KEY=...       # equities
+```
+
+In CI both are repo secrets. If the CoinGecko key ever expires the client
+[demotes itself](docs/RUNBOOK.md#coingecko-key-failed) to the keyless endpoint and
+says so loudly rather than returning nothing.
+
+## Data files
+
+| Path | Committed | What it is |
+| --- | --- | --- |
+| `data/holdings.db` | yes | SQLite: members, holdings, prices, token mappings |
+| `data/holdings-snapshot.json` | yes | text copy of every holding — diffable, restorable |
+| `data/run-history.jsonl` | yes | one line per collector run; the audit trail |
+| `data/metadata.json` | yes | last successful scrape, strategy used, source's own note |
+| `backups/holdings-*.db` | no | last 7 pre-write database copies |
+| `logs/`, `debug/` | no | verbose logs and the page dump written on a parse failure |
+
+`data/holdings-snapshot.json` exists because git can store a binary `.db` but can't
+diff one. The daily commit shows exactly which holdings appeared or disappeared, and
+`npm run restore` rebuilds the tables from it.
+
+## Layout
+
+```
+scripts/
+  scrapeHoldings.js       fetch -> parse -> guard -> write -> snapshot
+  fetchPrices.js          token mapping and price collection
+  restoreFromSnapshot.js  rebuild holdings from the committed snapshot
+  lib/
+    parseDisclosures.js   three independent readers for the page  (docs/PARSING.md)
+    fetchPage.js          retries, URL fallback, response validation
+    coingecko.js          API client with the expired-key failsafe
+    backup.js             pre-write backups, snapshot write/restore
+    logger.js             file + console logging, run records
+test/
+  fixtures/               real and synthetic page shapes
+src/                      Next.js dashboard
+```
+
+## Documentation
+
+- [docs/RUNBOOK.md](docs/RUNBOOK.md) — diagnosing failures, restoring data, keys
+- [docs/PARSING.md](docs/PARSING.md) — how the page is read and how it degrades

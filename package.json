@@ -6,7 +6,12 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "test": "node --test",
+    "scrape": "node scripts/scrapeHoldings.js",
+    "prices": "node scripts/fetchPrices.js",
+    "collect": "npm run scrape && npm run prices",
+    "restore": "node scripts/restoreFromSnapshot.js"
   },
   "dependencies": {
     "axios": "^1.8.2",

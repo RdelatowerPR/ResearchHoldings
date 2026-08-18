@@ -1,0 +1,38 @@
+<!doctype html>
+<!-- A rebuild that breaks the heading/table relationship the DOM reader relies on:
+     each heading is sealed inside its own <header>, and the table lives in a
+     sibling <section>, so walking forward from the heading finds nothing. Only the
+     last-ditch reader - nearest heading above the table, at any nesting depth -
+     can still attribute these. No __NEXT_DATA__ either. -->
+<html>
+  <body>
+    <main>
+      <p>Blockworks financial disclosures.</p>
+
+      <article class="team">
+        <header><div><h2>Blockworks Research</h2></div></header>
+        <section>
+          <div class="scroll">
+            <table>
+              <tr><th>Name</th><th>Tokens</th><th>NFTs</th><th>Crypto Equities</th></tr>
+              <tr><td>Jane Doe</td><td>BTC, HYPE</td><td>No</td><td>HOOD</td></tr>
+              <tr><td>John Roe</td><td>ETH</td><td>No</td><td>No</td></tr>
+            </table>
+          </div>
+        </section>
+      </article>
+
+      <article class="team">
+        <header><div><h2>Blockworks Advisory</h2></div></header>
+        <section>
+          <div class="scroll">
+            <table>
+              <tr><th>Name</th><th>Tokens</th><th>NFTs</th><th>Crypto Equities</th></tr>
+              <tr><td>Sam Adviser</td><td>SOL</td><td>No</td><td>No</td></tr>
+            </table>
+          </div>
+        </section>
+      </article>
+    </main>
+  </body>
+</html>

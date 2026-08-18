@@ -1,24 +1,40 @@
+// Collect prices for everything currently held, into the prices table.
+//
+// Run: node scripts/fetchPrices.js
+// Env: COINGECKO_API_KEY    Pro key; falls back to the keyless endpoint without one,
+//                           and demotes itself automatically if the key is rejected
+//      ALPHA_VANTAGE_API_KEY  needed for equities; they are skipped without it
+//      HOLDINGS_DB          override the database path
+//
+// Price failures are per-asset and non-fatal by design - a missing quote should not
+// cost us the run. See docs/RUNBOOK.md.
+
 const axios = require("axios");
 const Database = require("better-sqlite3");
+const { loadEnv } = require("./lib/loadEnv");
+const { createLogger, appendRunRecord } = require("./lib/logger");
+const { CoinGeckoClient } = require("./lib/coingecko");
+
+loadEnv();
+
+// Overridable so a test run can point at a scratch copy of the database.
+const DB_FILE = process.env.HOLDINGS_DB || "data/holdings.db";
+
+const logger = createLogger("prices");
 
 // Initialize SQLite database
-const db = new Database("data/holdings.db");
+const db = new Database(DB_FILE);
 
 // API Configurations
-const COINGECKO_API = "https://api.coingecko.com/api/v3";
-const ALPHA_VANTAGE_API_KEY = "5EKEPHEMLJHCWOUN"; // Replace with your actual API key
+const ALPHA_VANTAGE_API_KEY = process.env.ALPHA_VANTAGE_API_KEY; // set as a repo secret, passed in by the workflow
 const ALPHA_VANTAGE_URL = "https://www.alphavantage.co/query";
 
-// Rate limit configuration
-const COINGECKO_RATE_LIMIT = {
-  maxRequests: 25,  // Maximum 25 requests
-  perMinute: 60000, // per minute (60000 ms)
-  requestDelay: 3000 // 3 seconds between requests
-};
+// Handles the Pro/keyless host split, and demotes itself if the key stops working
+const coingecko = new CoinGeckoClient({ apiKey: process.env.COINGECKO_API_KEY, logger });
 
 // Function to set up the prices table
 function initializeDatabase() {
-  console.log("Initializing database for price tracking...");
+  logger.info("Initializing database for price tracking...");
   
   // Create prices table if it doesn't exist
   db.exec(`
@@ -51,35 +67,14 @@ function sleep(ms) {
   return new Promise(resolve => setTimeout(resolve, ms));
 }
 
-// Function to make API calls with retry logic
-async function makeApiCall(url, params, maxRetries = 3) {
-  let retries = 0;
-  
-  while (retries < maxRetries) {
-    try {
-      return await axios.get(url, { params });
-    } catch (error) {
-      retries++;
-      const status = error.response?.status;
-      
-      // If we hit rate limits (429) or server errors (5xx)
-      if (status === 429 || (status >= 500 && status < 600)) {
-        const delay = COINGECKO_RATE_LIMIT.requestDelay * Math.pow(2, retries);
-        console.log(`Rate limit hit or server error. Waiting for ${delay/1000} seconds before retry ${retries}/${maxRetries}`);
-        await sleep(delay);
-      } else {
-        // For other errors, throw immediately
-        throw error;
-      }
-    }
-  }
-  
-  throw new Error(`Failed after ${maxRetries} retries`);
+// Retries, backoff and the key failsafe all live in the client now
+function makeApiCall(pathname, params, maxRetries = 3) {
+  return coingecko.get(pathname, params, { maxRetries });
 }
 
 // Function to map crypto symbols to CoinGecko IDs
 async function mapCryptoIds() {
-  console.log("Mapping crypto symbols to CoinGecko IDs...");
+  logger.info("Mapping crypto symbols to CoinGecko IDs...");
   
   // Get all active crypto assets
   const assets = db.prepare("SELECT DISTINCT asset FROM holdings WHERE asset_type = 'crypto' AND status = 'active'").all();
@@ -89,14 +84,7 @@ async function mapCryptoIds() {
   
   // Filter to only process assets that don't have mappings
   const unmappedAssets = assets.filter(asset => !existingMappings.includes(asset.asset));
-  
-  if (unmappedAssets.length === 0) {
-    console.log("All assets are already mapped. Skipping mapping step.");
-    return;
-  }
-  
-  console.log(`Need to map ${unmappedAssets.length} assets`);
-  
+
   // Create a mapping table if needed
   const upsertMapping = db.prepare(`
     INSERT INTO token_mappings (asset, coingecko_id, symbol, last_updated)
@@ -121,7 +109,7 @@ async function mapCryptoIds() {
     'SUI': 'sui',
     'APT': 'aptos',
     'RNDR': 'render-token',
-    'HYPE': 'hype',
+    'HYPE': 'hyperliquid',
     'DEGEN': 'degen-token',
     'IMX': 'immutable-x',
     'MKR': 'maker',
@@ -132,12 +120,12 @@ async function mapCryptoIds() {
     'ENA': 'ethena',
     'HOOD': 'robinhood',
     'JTO': 'jito-governance-token',
-    'KMNO': 'kemonos',
+    'KMNO': 'kamino',
     'LFNTY': 'lifinity',
     'LDO': 'lido-dao',
     'MORPHO': 'morpho',
     'MOTO': 'motoverse',
-    'PENGU': 'pengu',
+    'PENGU': 'pudgy-penguins',
     'PHNIX': 'phoenix-token',
     'PRIME': 'echelon-prime',
     'SCRAP': 'scrap',
@@ -147,11 +135,37 @@ async function mapCryptoIds() {
     'ZYN': 'zynergy'
     // Add more mappings as needed
   };
-  
+
+  // Nothing above ever revisits a stored mapping, so one bad guess is kept forever:
+  // HYPE sat on a non-existent "hype" id and never priced once. These ids were each
+  // checked against the CoinGecko API and overwrite whatever is stored. Only add an
+  // entry here after confirming /coins/<id> resolves to the right asset.
+  const verifiedOverrides = {
+    'HYPE': 'hyperliquid',
+    'KMNO': 'kamino',
+    'PENGU': 'pudgy-penguins'
+  };
+
+  const readMapping = db.prepare("SELECT coingecko_id FROM token_mappings WHERE asset = ?");
+  for (const [asset, coingeckoId] of Object.entries(verifiedOverrides)) {
+    const current = readMapping.get(asset);
+    if (current && current.coingecko_id !== coingeckoId) {
+      upsertMapping.run(asset, coingeckoId, asset.toLowerCase(), new Date().toISOString());
+      logger.info(`Corrected mapping for ${asset}: ${current.coingecko_id} -> ${coingeckoId}`);
+    }
+  }
+
+  if (unmappedAssets.length === 0) {
+    logger.info("All assets are already mapped. Skipping mapping step.");
+    return;
+  }
+
+  logger.info(`Need to map ${unmappedAssets.length} assets`);
+
   // Process each asset
   for (const { asset } of unmappedAssets) {
     // Check if we need to respect rate limits
-    await sleep(COINGECKO_RATE_LIMIT.requestDelay);
+    await sleep(coingecko.limits.requestDelay);
     
     try {
       // Check if we have a manual mapping
@@ -162,13 +176,13 @@ async function mapCryptoIds() {
           asset.toLowerCase(),
           new Date().toISOString()
         );
-        console.log(`Mapped ${asset} to ${manualMappings[asset]} (manual)`);
+        logger.info(`Mapped ${asset} to ${manualMappings[asset]} (manual)`);
         continue;
       }
       
       // Otherwise, try to search for it, with rate limit handling
       try {
-        const search = await makeApiCall(`${COINGECKO_API}/search`, { query: asset });
+        const search = await makeApiCall("/search", { query: asset });
         
         if (search.data && search.data.coins && search.data.coins.length > 0) {
           // Take the first match as the most likely
@@ -179,50 +193,50 @@ async function mapCryptoIds() {
             coin.symbol,
             new Date().toISOString()
           );
-          console.log(`Mapped ${asset} to ${coin.id} (auto)`);
+          logger.info(`Mapped ${asset} to ${coin.id} (auto)`);
         } else {
-          console.log(`No CoinGecko mapping found for ${asset}`);
+          logger.info(`No CoinGecko mapping found for ${asset}`);
         }
       } catch (error) {
-        console.error(`Error searching for ${asset}:`, error.message);
+        logger.error(`Error searching for ${asset}:`, error.message);
       }
       
     } catch (error) {
-      console.error(`Error mapping ${asset}:`, error.message);
+      logger.error(`Error mapping ${asset}:`, error.message);
     }
   }
 }
 
 // Function to fetch cryptocurrency prices
 async function fetchCryptoPrices() {
-  console.log("Fetching cryptocurrency prices...");
+  logger.info("Fetching cryptocurrency prices...");
   
   // Get all mapped assets
   const mappedTokens = db.prepare("SELECT asset, coingecko_id FROM token_mappings").all();
   
   if (mappedTokens.length === 0) {
-    console.log("No mapped crypto tokens found, run mapCryptoIds first");
+    logger.info("No mapped crypto tokens found, run mapCryptoIds first");
     return;
   }
   
-  console.log(`Found ${mappedTokens.length} tokens to fetch prices for`);
+  logger.info(`Found ${mappedTokens.length} tokens to fetch prices for`);
   
-  // Process in smaller batches (10 per call) to be more conservative with rate limits
-  const batchSize = 10;
+  // Batch size follows the tier: generous with a key, conservative without one
+  const batchSize = coingecko.limits.batchSize;
   for (let i = 0; i < mappedTokens.length; i += batchSize) {
     // Respect rate limits between batches
     if (i > 0) {
-      console.log(`Waiting for rate limit before processing next batch...`);
-      await sleep(COINGECKO_RATE_LIMIT.requestDelay);
+      logger.info(`Waiting for rate limit before processing next batch...`);
+      await sleep(coingecko.limits.requestDelay);
     }
     
     const batch = mappedTokens.slice(i, i + batchSize);
     const coinIds = batch.map(t => t.coingecko_id).join(',');
     
-    console.log(`Processing batch ${i/batchSize + 1}/${Math.ceil(mappedTokens.length/batchSize)}: ${coinIds}`);
+    logger.info(`Processing batch ${i/batchSize + 1}/${Math.ceil(mappedTokens.length/batchSize)}: ${coinIds}`);
     
     try {
-      const response = await makeApiCall(`${COINGECKO_API}/simple/price`, { 
+      const response = await makeApiCall("/simple/price", { 
         ids: coinIds, 
         vs_currencies: "usd",
         include_24hr_change: true
@@ -239,19 +253,19 @@ async function fetchCryptoPrices() {
           const now = new Date().toISOString();
           insertPrice.run(asset, price, now, 'coingecko');
           foundCount++;
-          console.log(`Stored price for ${asset} (${coingecko_id}): $${price}`);
+          logger.info(`Stored price for ${asset} (${coingecko_id}): $${price}`);
         } else {
-          console.log(`Price not found for ${asset} (${coingecko_id})`);
+          logger.info(`Price not found for ${asset} (${coingecko_id})`);
         }
       });
       
-      console.log(`Batch complete: ${foundCount}/${batch.length} prices found`);
+      logger.info(`Batch complete: ${foundCount}/${batch.length} prices found`);
       
     } catch (error) {
-      console.error("Error fetching crypto prices:", error.message);
+      logger.error("Error fetching crypto prices:", error.message);
       if (error.response) {
-        console.error("Response data:", error.response.data);
-        console.error("Status:", error.response.status);
+        logger.error("Response data:", error.response.data);
+        logger.error("Status:", error.response.status);
       }
     }
   }
@@ -260,7 +274,7 @@ async function fetchCryptoPrices() {
 // Function to fetch cryptocurrency prices using a fallback approach
 // This alternative method gets one token at a time if the batch approach fails
 async function fetchCryptoPricesFallback() {
-  console.log("Using fallback method to fetch crypto prices one by one...");
+  logger.info("Using fallback method to fetch crypto prices one by one...");
   
   const mappedTokens = db.prepare("SELECT asset, coingecko_id FROM token_mappings").all();
   
@@ -270,11 +284,11 @@ async function fetchCryptoPricesFallback() {
   
   for (const { asset, coingecko_id } of mappedTokens) {
     // Respect rate limits between requests
-    await sleep(COINGECKO_RATE_LIMIT.requestDelay);
+    await sleep(coingecko.limits.requestDelay);
     
     try {
-      console.log(`Fetching price for ${asset} (${coingecko_id})...`);
-      const response = await makeApiCall(`${COINGECKO_API}/simple/price`, { 
+      logger.info(`Fetching price for ${asset} (${coingecko_id})...`);
+      const response = await makeApiCall("/simple/price", { 
         ids: coingecko_id, 
         vs_currencies: "usd"
       });
@@ -283,30 +297,30 @@ async function fetchCryptoPricesFallback() {
       if (price !== null) {
         const now = new Date().toISOString();
         insertPrice.run(asset, price, now, 'coingecko');
-        console.log(`Stored price for ${asset}: $${price}`);
+        logger.info(`Stored price for ${asset}: $${price}`);
       } else {
-        console.log(`Price not found for ${asset}`);
+        logger.info(`Price not found for ${asset}`);
       }
       
     } catch (error) {
-      console.error(`Error fetching price for ${asset}:`, error.message);
+      logger.error(`Error fetching price for ${asset}:`, error.message);
     }
   }
 }
 
 // Function to fetch equity prices from Alpha Vantage
 async function fetchStockPrices() {
-  console.log("Fetching stock prices...");
+  logger.info("Fetching stock prices...");
   
-  if (!ALPHA_VANTAGE_API_KEY || ALPHA_VANTAGE_API_KEY === "YOUR_API_KEY_HERE") {
-    console.error("Alpha Vantage API key not found! Replace the placeholder in the script.");
+  if (!ALPHA_VANTAGE_API_KEY) {
+    logger.error("ALPHA_VANTAGE_API_KEY is not set - skipping equity prices.");
     return;
   }
   
   const stocks = db.prepare("SELECT DISTINCT asset FROM holdings WHERE asset_type = 'equity' AND status = 'active'").all();
   
   if (stocks.length === 0) {
-    console.log("No equity assets found");
+    logger.info("No equity assets found");
     return;
   }
   
@@ -316,7 +330,7 @@ async function fetchStockPrices() {
   
   for (const { asset } of stocks) {
     try {
-      console.log(`Fetching price for ${asset}...`);
+      logger.info(`Fetching price for ${asset}...`);
       const response = await axios.get(ALPHA_VANTAGE_URL, {
         params: {
           function: "GLOBAL_QUOTE",
@@ -329,22 +343,22 @@ async function fetchStockPrices() {
       if (price !== null) {
         const now = new Date().toISOString();
         insertPrice.run(asset, parseFloat(price), now, 'alphavantage');
-        console.log(`Stored stock price for ${asset}: $${price}`);
+        logger.info(`Stored stock price for ${asset}: $${price}`);
       } else {
-        console.log(`Price not found for ${asset}`);
+        logger.info(`Price not found for ${asset}`);
         if (response.data.Note) {
-          console.log("API Note:", response.data.Note);
+          logger.info("API Note:", response.data.Note);
         }
       }
       
       // Alpha Vantage free tier limit: 5 requests per minute
-      console.log("Waiting for Alpha Vantage rate limit...");
+      logger.info("Waiting for Alpha Vantage rate limit...");
       await sleep(15000);
     } catch (error) {
-      console.error(`Error fetching price for ${asset}:`, error.message);
+      logger.error(`Error fetching price for ${asset}:`, error.message);
       if (error.response) {
-        console.error("Status:", error.response.status);
-        console.error("Data:", error.response.data);
+        logger.error("Status:", error.response.status);
+        logger.error("Data:", error.response.data);
       }
       // Wait longer on error
       await sleep(30000);
@@ -354,7 +368,14 @@ async function fetchStockPrices() {
 
 // Function to run everything
 async function main() {
+  const record = { job: "prices", ok: false };
+  const pricesBefore = db.prepare("SELECT COUNT(*) as count FROM prices").get().count;
+
   try {
+    // Confirm the key before the run leans on it. A rejected key demotes the client
+    // to the keyless endpoint here rather than failing every request downstream.
+    await coingecko.verify();
+
     // Begin transaction for database setup
     db.exec('BEGIN TRANSACTION');
     initializeDatabase();
@@ -367,7 +388,7 @@ async function main() {
     try {
       await fetchCryptoPrices();
     } catch (error) {
-      console.error("Batch approach failed, trying fallback method:", error.message);
+      logger.error("Batch approach failed, trying fallback method:", error.message);
       await fetchCryptoPricesFallback();
     }
     
@@ -381,16 +402,40 @@ async function main() {
       latestDate: db.prepare("SELECT MAX(date) as latest FROM prices").get().latest
     };
     
-    console.log("\nPrice Database Statistics:");
-    console.log(`Total Price Records: ${stats.totalPrices}`);
-    console.log(`Unique Assets With Prices: ${stats.uniqueAssets}`);
-    console.log(`Latest Price Date: ${stats.latestDate}`);
-    
+    logger.info("Price Database Statistics:");
+    logger.info(`Total Price Records: ${stats.totalPrices}`);
+    logger.info(`Unique Assets With Prices: ${stats.uniqueAssets}`);
+    logger.info(`Latest Price Date: ${stats.latestDate}`);
+
+    Object.assign(record, {
+      ok: true,
+      stored: stats.totalPrices - pricesBefore,
+      pricedAssets: stats.uniqueAssets,
+    });
+
+    // A demotion means prices were collected, slowly, on a dead key - the run looks
+    // fine and the key still needs replacing. Say so in a way that survives the logs.
+    if (coingecko.status.demotionReason) {
+      logger.warn(
+        `ACTION NEEDED: the CoinGecko key is not working (${coingecko.status.demotionReason}). This run completed on the keyless endpoint.`
+      );
+    }
+
   } catch (error) {
-    console.error("Error in main function:", error);
+    logger.error("Error in main function:", error);
     db.exec('ROLLBACK');
+    record.error = error.message;
+    // Per-asset failures are handled inline; reaching here means the run itself broke
+    process.exitCode = 1;
   } finally {
     db.close();
+    Object.assign(record, {
+      coingecko: coingecko.status.mode,
+      keyDemoted: coingecko.status.demotionReason || undefined,
+      warningCount: logger.counts.warn,
+    });
+    appendRunRecord(record);
+    await logger.close();
   }
 }
 

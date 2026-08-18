@@ -8,40 +8,104 @@ on:
 jobs:
   update-data:
     runs-on: ubuntu-latest
-    # Add this permission block
     permissions:
       contents: write
+      issues: write
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
         with:
           # Set fetch-depth to 0 to get all history
           fetch-depth: 0
-      
+
       - name: Setup Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
-          node-version: '18'
-          
+          node-version: '22'
+
       - name: Install dependencies
         run: npm ci
-        
-      - name: Fetch latest data
+
+      # The parser is the part that broke silently last time. Running its tests here
+      # means a page-shape regression fails before it can touch the database.
+      - name: Test
+        run: npm test
+
+      # Fails the job if the disclosures page can't be parsed. Also writes
+      # data/metadata.json and data/holdings-snapshot.json, so the dashboard's
+      # "last updated" stamp only moves when the holdings actually did.
+      - name: Scrape holdings
         run: |
           mkdir -p data
           node scripts/scrapeHoldings.js
-          node scripts/fetchPrices.js
+
+      # Price history is worth keeping even through a scrape outage, so this runs
+      # either way - the job still reports the scrape failure.
+      - name: Fetch prices
+        if: always()
+        run: node scripts/fetchPrices.js
         env:
           ALPHA_VANTAGE_API_KEY: ${{ secrets.ALPHA_VANTAGE_API_KEY }}
+          COINGECKO_API_KEY: ${{ secrets.COINGECKO_API_KEY }}
 
-      - name: Create metadata file
-        run: |
-          echo "{\"lastUpdated\":\"$(date -u +"%Y-%m-%dT%H:%M:%SZ")\"}" > data/metadata.json
-          
+      # Full logs, plus the page we couldn't parse. Actions logs age out after 90
+      # days and these are what you need to diagnose a break after the fact.
+      - name: Upload logs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: collector-logs-${{ github.run_number }}
+          path: |
+            logs/
+            debug/
+          retention-days: 30
+          if-no-files-found: ignore
+
       - name: Push changes
+        if: always()
         run: |
           git config --global user.name 'github-actions[bot]'
           git config --global user.email 'github-actions[bot]@users.noreply.github.com'
-          git add data/holdings.db
-          git add data/metadata.json
+          git add data/holdings.db data/metadata.json data/holdings-snapshot.json data/run-history.jsonl
           git commit -m "Update database with latest data [skip ci]" || echo "No changes to commit"
           git push
+
+      # A red X in a list nobody reads is how the last outage lasted fourteen months.
+      # Open one issue and keep updating it until the run goes green again.
+      - name: Report failure
+        if: failure()
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const title = 'Collector run failed';
+            const body = [
+              `The scheduled collector failed on ${new Date().toISOString().slice(0, 10)}.`,
+              '',
+              `Run: ${context.serverUrl}/${context.repo.owner}/${context.repo.repo}/actions/runs/${context.runId}`,
+              '',
+              'Logs and the unparsed page are attached to that run as the `collector-logs` artifact.',
+              'Diagnosis steps are in docs/RUNBOOK.md.',
+            ].join('\n');
+
+            const open = await github.rest.issues.listForRepo({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              state: 'open',
+              labels: 'collector-failure',
+            });
+
+            if (open.data.length > 0) {
+              await github.rest.issues.createComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: open.data[0].number,
+                body,
+              });
+            } else {
+              await github.rest.issues.create({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                title,
+                body,
+                labels: ['collector-failure'],
+              });
+            }

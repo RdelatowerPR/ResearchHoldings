@@ -1,0 +1,14 @@
+<!doctype html>
+<!-- A real page, served with a 200, that has nothing to parse: the disclosures moved
+     behind a client-side widget. Every reader must come back empty so the guard in
+     scrapeHoldings.js refuses to write rather than voiding the database. -->
+<html>
+  <body>
+    <main>
+      <h1>Financial Disclosures</h1>
+      <h2>Blockworks Research</h2>
+      <div id="disclosure-app" data-endpoint="/api/disclosures">Loading disclosures...</div>
+      <p>Blockworks is committed to maintaining a standard of transparency.</p>
+    </main>
+  </body>
+</html>

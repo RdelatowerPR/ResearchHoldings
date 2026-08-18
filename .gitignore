@@ -24,6 +24,13 @@
 .DS_Store
 *.pem
 
+# collector output: verbose logs, pre-write database backups, and the page dump
+# written when parsing fails. The committed audit trail is data/run-history.jsonl
+# and the committed backup is data/holdings-snapshot.json - see docs/RUNBOOK.md.
+/logs
+/backups
+/debug
+
 # debug
 npm-debug.log*
 yarn-debug.log*

@@ -1,0 +1,35 @@
+name: Test
+
+# Runs on source changes only. The daily data commits are tagged [skip ci] and
+# touch nothing but data/, so they don't trigger this.
+on:
+  push:
+    paths:
+      - 'scripts/**'
+      - 'test/**'
+      - 'src/**'
+      - 'package.json'
+      - 'package-lock.json'
+      - '.github/workflows/**'
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - run: npm ci
+
+      - name: Unit tests
+        run: npm test
+
+      # The collector runs on the same Node the site is built with; a build break
+      # here would take the dashboard down even with the data collecting fine.
+      - name: Build
+        run: npm run build

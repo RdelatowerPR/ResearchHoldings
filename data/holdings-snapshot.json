@@ -1,0 +1,4179 @@
+{
+  "generatedAt": "2026-08-17T21:52:45.339Z",
+  "strategy": "dom",
+  "sourceNote": "August 2026 disclosures, updated July 31",
+  "counts": {
+    "total": 463,
+    "active": 182,
+    "members": 52
+  },
+  "holdings": [
+    {
+      "name": "Anastasiia Zbandut",
+      "team": "Blockworks Advisory",
+      "asset": "BTC",
+      "asset_type": "crypto",
+      "first_added": "2026-08-17",
+      "status": "active",
+      "last_seen": "2026-08-17"
+    },
+    {
+      "name": "Anastasiia Zbandut",
+      "team": "Blockworks Advisory",
+      "asset": "ETH",
+      "asset_type": "crypto",
+      "first_added": "2026-08-17",
+      "status": "active",
+      "last_seen": "2026-08-17"
+    },
+    {
+      "name": "Anastasiia Zbandut",
+      "team": "Blockworks Advisory",
+      "asset": "USDC",
+      "asset_type": "crypto",
+      "first_added": "2026-08-17",
+      "status": "active",
+      "last_seen": "2026-08-17"
+    },
+    {
+      "name": "Anastasiia Zbandut",
+      "team": "Blockworks Advisory",
+      "asset": "USDT",
+      "asset_type": "crypto",
+      "first_added": "2026-08-17",
+      "status": "active",
+      "last_seen": "2026-08-17"
+    },
+    {
+      "name": "Ben Caruso",
+      "team": "Research",
+      "asset": "AAVE",
+      "asset_type": "crypto",
+      "first_added": "2025-03-08",
+      "status": "inactive",
+      "last_seen": "2025-03-11"
+    },
+    {
+      "name": "Ben Caruso",
+      "team": "Research",
+      "asset": "CHART",
+      "asset_type": "crypto",
+      "first_added": "2025-03-08",
+      "status": "inactive",
+      "last_seen": "2025-03-11"
+    },
+    {
+      "name": "Ben Caruso",
+      "team": "Research",
+      "asset": "COIN",
+      "asset_type": "equity",
+      "first_added": "2025-03-08",
+      "status": "inactive",
+      "last_seen": "2025-03-11"
+    },
+    {
+      "name": "Ben Caruso",
+      "team": "Research",
+      "asset": "Digidaigaku",
+      "asset_type": "nft",
+      "first_added": "2025-03-08",
+      "status": "inactive",
+      "last_seen": "2025-03-11"
+    },
+    {
+      "name": "Ben Caruso",
+      "team": "Research",
+      "asset": "ENA",
+      "asset_type": "crypto",
+      "first_added": "2025-03-08",
+      "status": "inactive",
+      "last_seen": "2025-03-11"
+    },
+    {
+      "name": "Ben Caruso",
+      "team": "Research",
+      "asset": "ETH",
+      "asset_type": "crypto",
+      "first_added": "2025-03-08",
+      "status": "inactive",
+      "last_seen": "2025-03-11"
+    },
+    {
+      "name": "Ben Caruso",
+      "team": "Research",
+      "asset": "ETHA",
+      "asset_type": "equity",
+      "first_added": "2025-03-08",
+      "status": "inactive",
+      "last_seen": "2025-03-11"
+    },
+    {
+      "name": "Ben Caruso",
+      "team": "Research",
+      "asset": "ETHE",
+      "asset_type": "equity",
+      "first_added": "2025-03-08",
+      "status": "inactive",
+      "last_seen": "2025-03-11"
+    },
+    {
+      "name": "Ben Caruso",
+      "team": "Research",
+      "asset": "FBTC",
+      "asset_type": "equity",
+      "first_added": "2025-03-08",
+      "status": "inactive",
+      "last_seen": "2025-03-11"
+    },
+    {
+      "name": "Ben Caruso",
+      "team": "Research",
+      "asset": "HFUN",
+      "asset_type": "crypto",
+      "first_added": "2025-03-08",
+      "status": "inactive",
+      "last_seen": "2025-03-11"
+    },
+    {
+      "name": "Ben Caruso",
+      "team": "Research",
+      "asset": "HOOD",
+      "asset_type": "equity",
+      "first_added": "2025-03-08",
+      "status": "inactive",
+      "last_seen": "2025-03-11"
+    },
+    {
+      "name": "Ben Caruso",
+      "team": "Research",
+      "asset": "HYPE",
+      "asset_type": "crypto",
+      "first_added": "2025-03-08",
+      "status": "inactive",
+      "last_seen": "2025-03-11"
+    },
+    {
+      "name": "Ben Caruso",
+      "team": "Research",
+      "asset": "LDO",
+      "asset_type": "crypto",
+      "first_added": "2025-03-08",
+      "status": "inactive",
+      "last_seen": "2025-03-11"
+    },
+    {
+      "name": "Ben Caruso",
+      "team": "Research",
+      "asset": "PHNIX",
+      "asset_type": "crypto",
+      "first_added": "2025-03-08",
+      "status": "inactive",
+      "last_seen": "2025-03-11"
+    },
+    {
+      "name": "Ben Caruso",
+      "team": "Research",
+      "asset": "SCRAP",
+      "asset_type": "crypto",
+      "first_added": "2025-03-08",
+      "status": "inactive",
+      "last_seen": "2025-03-11"
+    },
+    {
+      "name": "Ben Caruso",
+      "team": "Research",
+      "asset": "TNSR",
+      "asset_type": "crypto",
+      "first_added": "2025-03-08",
+      "status": "inactive",
+      "last_seen": "2025-03-11"
+    },
+    {
+      "name": "Ben Caruso",
+      "team": "Research",
+      "asset": "Terraforms",
+      "asset_type": "nft",
+      "first_added": "2025-03-08",
+      "status": "inactive",
+      "last_seen": "2025-03-11"
+    },
+    {
+      "name": "Ben Caruso",
+      "team": "Research",
+      "asset": "UNI",
+      "asset_type": "crypto",
+      "first_added": "2025-03-08",
+      "status": "inactive",
+      "last_seen": "2025-03-11"
+    },
+    {
+      "name": "Ben Caruso",
+      "team": "Research",
+      "asset": "XRP",
+      "asset_type": "crypto",
+      "first_added": "2025-03-08",
+      "status": "inactive",
+      "last_seen": "2025-03-11"
+    },
+    {
+      "name": "Ben Caruso",
+      "team": "Research",
+      "asset": "kemonokaki",
+      "asset_type": "nft",
+      "first_added": "2025-03-08",
+      "status": "inactive",
+      "last_seen": "2025-03-11"
+    },
+    {
+      "name": "Ben Strack",
+      "team": "Blockworks Editorial",
+      "asset": "BTC",
+      "asset_type": "crypto",
+      "first_added": "2025-06-04",
+      "status": "inactive",
+      "last_seen": "2025-06-18"
+    },
+    {
+      "name": "Boccaccio",
+      "team": "Blockworks Research",
+      "asset": "BTC",
+      "asset_type": "crypto",
+      "first_added": "2025-03-15",
+      "status": "inactive",
+      "last_seen": "2025-06-18"
+    },
+    {
+      "name": "Boccaccio",
+      "team": "Blockworks Research",
+      "asset": "ETH",
+      "asset_type": "crypto",
+      "first_added": "2025-03-15",
+      "status": "inactive",
+      "last_seen": "2025-05-02"
+    },
+    {
+      "name": "Boccaccio",
+      "team": "Blockworks Research",
+      "asset": "Eggs",
+      "asset_type": "nft",
+      "first_added": "2025-03-15",
+      "status": "inactive",
+      "last_seen": "2025-06-18"
+    },
+    {
+      "name": "Boccaccio",
+      "team": "Blockworks Research",
+      "asset": "HYPE",
+      "asset_type": "crypto",
+      "first_added": "2025-03-15",
+      "status": "inactive",
+      "last_seen": "2025-06-18"
+    },
+    {
+      "name": "Boccaccio",
+      "team": "Blockworks Research",
+      "asset": "INIT",
+      "asset_type": "crypto",
+      "first_added": "2025-05-03",
+      "status": "inactive",
+      "last_seen": "2025-06-03"
+    },
+    {
+      "name": "Boccaccio",
+      "team": "Blockworks Research",
+      "asset": "Lasogettes",
+      "asset_type": "nft",
+      "first_added": "2025-03-15",
+      "status": "inactive",
+      "last_seen": "2025-06-18"
+    },
+    {
+      "name": "Boccaccio",
+      "team": "Blockworks Research",
+      "asset": "Milady",
+      "asset_type": "nft",
+      "first_added": "2025-03-15",
+      "status": "inactive",
+      "last_seen": "2025-06-18"
+    },
+    {
+      "name": "Boccaccio",
+      "team": "Blockworks Research",
+      "asset": "Puppets",
+      "asset_type": "nft",
+      "first_added": "2025-03-15",
+      "status": "inactive",
+      "last_seen": "2025-06-18"
+    },
+    {
+      "name": "Boccaccio",
+      "team": "Blockworks Research",
+      "asset": "RSIC",
+      "asset_type": "crypto",
+      "first_added": "2025-03-15",
+      "status": "inactive",
+      "last_seen": "2025-05-02"
+    },
+    {
+      "name": "Boccaccio",
+      "team": "Blockworks Research",
+      "asset": "SOL",
+      "asset_type": "crypto",
+      "first_added": "2025-03-15",
+      "status": "inactive",
+      "last_seen": "2025-06-03"
+    },
+    {
+      "name": "Boccaccio",
+      "team": "Blockworks Research",
+      "asset": "SUI",
+      "asset_type": "crypto",
+      "first_added": "2025-03-15",
+      "status": "inactive",
+      "last_seen": "2025-06-18"
+    },
+    {
+      "name": "Boccaccio",
+      "team": "Blockworks Research",
+      "asset": "VDO",
+      "asset_type": "crypto",
+      "first_added": "2025-03-15",
+      "status": "inactive",
+      "last_seen": "2025-06-18"
+    },
+    {
+      "name": "Boccaccio*",
+      "team": "Research",
+      "asset": "BTC",
+      "asset_type": "crypto",
+      "first_added": "2025-03-12",
+      "status": "inactive",
+      "last_seen": "2025-03-14"
+    },
+    {
+      "name": "Boccaccio*",
+      "team": "Research",
+      "asset": "ETH",
+      "asset_type": "crypto",
+      "first_added": "2025-03-12",
+      "status": "inactive",
+      "last_seen": "2025-03-14"
+    },
+    {
+      "name": "Boccaccio*",
+      "team": "Research",
+      "asset": "Eggs",
+      "asset_type": "nft",
+      "first_added": "2025-03-12",
+      "status": "inactive",
+      "last_seen": "2025-03-14"
+    },
+    {
+      "name": "Boccaccio*",
+      "team": "Research",
+      "asset": "HYPE",
+      "asset_type": "crypto",
+      "first_added": "2025-03-12",
+      "status": "inactive",
+      "last_seen": "2025-03-14"
+    },
+    {
+      "name": "Boccaccio*",
+      "team": "Research",
+      "asset": "Lasogettes",
+      "asset_type": "nft",
+      "first_added": "2025-03-12",
+      "status": "inactive",
+      "last_seen": "2025-03-14"
+    },
+    {
+      "name": "Boccaccio*",
+      "team": "Research",
+      "asset": "Milady",
+      "asset_type": "nft",
+      "first_added": "2025-03-12",
+      "status": "inactive",
+      "last_seen": "2025-03-14"
+    },
+    {
+      "name": "Boccaccio*",
+      "team": "Research",
+      "asset": "Puppets",
+      "asset_type": "nft",
+      "first_added": "2025-03-12",
+      "status": "inactive",
+      "last_seen": "2025-03-14"
+    },
+    {
+      "name": "Boccaccio*",
+      "team": "Research",
+      "asset": "RSIC",
+      "asset_type": "crypto",
+      "first_added": "2025-03-12",
+      "status": "inactive",
+      "last_seen": "2025-03-14"
+    },
+    {
+      "name": "Boccaccio*",
+      "team": "Research",
+      "asset": "SOL",
+      "asset_type": "crypto",
+      "first_added": "2025-03-12",
+      "status": "inactive",
+      "last_seen": "2025-03-14"
+    },
+    {
+      "name": "Boccaccio*",
+      "team": "Research",
+      "asset": "SUI",
+      "asset_type": "crypto",
+      "first_added": "2025-03-12",
+      "status": "inactive",
+      "last_seen": "2025-03-14"
+    },
+    {
+      "name": "Boccaccio*",
+      "team": "Research",
+      "asset": "VDO",
+      "asset_type": "crypto",
+      "first_added": "2025-03-12",
+      "status": "inactive",
+      "last_seen": "2025-03-14"
+    },
+    {
+      "name": "Byron Gilliam",
+      "team": "Blockworks Editorial",
+      "asset": "BTC",
+      "asset_type": "crypto",
+      "first_added": "2025-05-03",
+      "status": "inactive",
+      "last_seen": "2025-06-18"
+    },
+    {
+      "name": "Byron Gilliam",
+      "team": "Blockworks Editorial",
+      "asset": "GRASS",
+      "asset_type": "crypto",
+      "first_added": "2025-03-08",
+      "status": "inactive",
+      "last_seen": "2025-06-18"
+    },
+    {
+      "name": "Byron Gilliam",
+      "team": "Blockworks Editorial",
+      "asset": "JTO",
+      "asset_type": "crypto",
+      "first_added": "2025-06-04",
+      "status": "inactive",
+      "last_seen": "2025-06-18"
+    },
+    {
+      "name": "Carlos Gonzalez Campo",
+      "team": "Blockworks Research",
+      "asset": "BTC",
+      "asset_type": "crypto",
+      "first_added": "2025-03-08",
+      "status": "inactive",
+      "last_seen": "2025-06-18"
+    },
+    {
+      "name": "Carlos Gonzalez Campo",
+      "team": "Blockworks Research",
+      "asset": "BadKids",
+      "asset_type": "nft",
+      "first_added": "2025-03-08",
+      "status": "inactive",
+      "last_seen": "2025-06-18"
+    },
+    {
+      "name": "Carlos Gonzalez Campo",
+      "team": "Blockworks Research",
+      "asset": "COIN",
+      "asset_type": "equity",
+      "first_added": "2025-03-08",
+      "status": "inactive",
+      "last_seen": "2025-05-02"
+    },
+    {
+      "name": "Carlos Gonzalez Campo",
+      "team": "Blockworks Research",
+      "asset": "Claynos",
+      "asset_type": "nft",
+      "first_added": "2025-03-08",
+      "status": "inactive",
+      "last_seen": "2025-06-18"
+    },
+    {
+      "name": "Carlos Gonzalez Campo",
+      "team": "Blockworks Research",
+      "asset": "ENA",
+      "asset_type": "crypto",
+      "first_added": "2025-03-08",
+      "status": "inactive",
+      "last_seen": "2025-05-02"
+    },
+    {
+      "name": "Carlos Gonzalez Campo",
+      "team": "Blockworks Research",
+      "asset": "HYPE",
+      "asset_type": "crypto",
+      "first_added": "2025-03-08",
+      "status": "active",
+      "last_seen": "2026-08-17"
+    },
+    {
+      "name": "Carlos Gonzalez Campo",
+      "team": "Blockworks Research",
+      "asset": "JTO",
+      "asset_type": "crypto",
+      "first_added": "2025-04-02",
+      "status": "inactive",
+      "last_seen": "2025-06-18"
+    },
+    {
+      "name": "Carlos Gonzalez Campo",
+      "team": "Blockworks Research",
+      "asset": "KMNO",
+      "asset_type": "crypto",
+      "first_added": "2025-03-08",
+      "status": "inactive",
+      "last_seen": "2025-06-18"
+    },
+    {
+      "name": "Carlos Gonzalez Campo",
+      "team": "Blockworks Research",
+      "asset": "LAUNCHCOIN",
+      "asset_type": "crypto",
+      "first_added": "2025-06-04",
+      "status": "inactive",
+      "last_seen": "2025-06-18"
+    },
+    {
+      "name": "Carlos Gonzalez Campo",
+      "team": "Blockworks Research",
+      "asset": "META",
+      "asset_type": "crypto",
+      "first_added": "2026-08-17",
+      "status": "active",
+      "last_seen": "2026-08-17"
+    },
+    {
+      "name": "Carlos Gonzalez Campo",
+      "team": "Blockworks Research",
+      "asset": "MadLads",
+      "asset_type": "nft",
+      "first_added": "2025-03-08",
+      "status": "inactive",
+      "last_seen": "2025-06-18"
+    },
+    {
+      "name": "Carlos Gonzalez Campo",
+      "team": "Blockworks Research",
+      "asset": "PONS",
+      "asset_type": "crypto",
+      "first_added": "2026-08-17",
+      "status": "active",
+      "last_seen": "2026-08-17"
+    },
+    {
+      "name": "Carlos Gonzalez Campo",
+      "team": "Blockworks Research",
+      "asset": "SMB",
+      "asset_type": "nft",
+      "first_added": "2025-03-08",
+      "status": "inactive",
+      "last_seen": "2025-06-18"
+    },
+    {
+      "name": "Carlos Gonzalez Campo",
+      "team": "Blockworks Research",
+      "asset": "SOL",
+      "asset_type": "crypto",
+      "first_added": "2025-03-08",
+      "status": "inactive",
+      "last_seen": "2025-06-18"
+    },
+    {
+      "name": "Carolina Goldstein",
+      "team": "Blockworks Advisory",
+      "asset": "BTC",
+      "asset_type": "crypto",
+      "first_added": "2025-03-08",
+      "status": "inactive",
+      "last_seen": "2025-06-18"
+    },
+    {
+      "name": "Carolina Goldstein",
+      "team": "Blockworks Advisory",
+      "asset": "HYPE",
+      "asset_type": "crypto",
+      "first_added": "2025-03-08",
+      "status": "inactive",
+      "last_seen": "2025-06-18"
+    },
+    {
+      "name": "Daniel Shapiro",
+      "team": "Blockworks Research",
+      "asset": "AERO",
+      "asset_type": "crypto",
+      "first_added": "2025-03-08",
+      "status": "inactive",
+      "last_seen": "2025-05-02"
+    },
+    {
+      "name": "Daniel Shapiro",
+      "team": "Blockworks Research",
+      "asset": "BTC",
+      "asset_type": "crypto",
+      "first_added": "2025-03-08",
+      "status": "active",
+      "last_seen": "2026-08-17"
+    },
+    {
+      "name": "Daniel Shapiro",
+      "team": "Blockworks Research",
+      "asset": "ETH",
+      "asset_type": "crypto",
+      "first_added": "2025-03-08",
+      "status": "inactive",
+      "last_seen": "2025-04-01"
+    },
+    {
+      "name": "Daniel Shapiro",
+      "team": "Blockworks Research",
+      "asset": "LINK",
+      "asset_type": "crypto",
+      "first_added": "2025-03-08",
+      "status": "inactive",
+      "last_seen": "2025-06-03"
+    },
+    {
+      "name": "Daniel Smith",
+      "team": "Blockworks Data",
+      "asset": "BONK",
+      "asset_type": "crypto",
+      "first_added": "2025-05-03",
+      "status": "inactive",
+      "last_seen": "2025-06-03"
+    },
+    {
+      "name": "Daniel Smith",
+      "team": "Blockworks Data",
+      "asset": "BTC",
+      "asset_type": "crypto",
+      "first_added": "2025-03-08",
+      "status": "inactive",
+      "last_seen": "2025-06-18"
+    },
+    {
+      "name": "Daniel Smith",
+      "team": "Blockworks Data",
+      "asset": "COIN",
+      "asset_type": "equity",
+      "first_added": "2025-03-08",
+      "status": "inactive",
+      "last_seen": "2025-06-18"
+    },
+    {
+      "name": "Daniel Smith",
+      "team": "Blockworks Data",
+      "asset": "HYPE",
+      "asset_type": "crypto",
+      "first_added": "2025-06-04",
+      "status": "inactive",
+      "last_seen": "2025-06-18"
+    },
+    {
+      "name": "Daniel Smith",
+      "team": "Blockworks Data",
+      "asset": "KMNO",
+      "asset_type": "crypto",
+      "first_added": "2025-06-04",
+      "status": "inactive",
+      "last_seen": "2025-06-18"
+    },
+    {
+      "name": "Daniel Smith",
+      "team": "Blockworks Data",
+      "asset": "MORPHO",
+      "asset_type": "crypto",
+      "first_added": "2025-03-08",
+      "status": "inactive",
+      "last_seen": "2025-05-02"
+    },
+    {
+      "name": "Daniel Smith",
+      "team": "Blockworks Data",
+      "asset": "PENDLE",
+      "asset_type": "crypto",
+      "first_added": "2025-05-03",
+      "status": "inactive",
+      "last_seen": "2025-06-18"
+    },
+    {
+      "name": "Daniel Smith",
+      "team": "Blockworks Data",
+      "asset": "SOL",
+      "asset_type": "crypto",
+      "first_added": "2025-03-08",
+      "status": "inactive",
+      "last_seen": "2025-06-18"
+    },
+    {
+      "name": "Daniel Smith",
+      "team": "Blockworks Data",
+      "asset": "SUI",
+      "asset_type": "crypto",
+      "first_added": "2025-03-08",
+      "status": "inactive",
+      "last_seen": "2025-06-03"
+    },
+    {
+      "name": "Danny K.",
+      "team": "Blockworks Research",
+      "asset": "BITB",
+      "asset_type": "equity",
+      "first_added": "2025-03-15",
+      "status": "inactive",
+      "last_seen": "2025-05-02"
+    },
+    {
+      "name": "Danny K.",
+      "team": "Blockworks Research",
+      "asset": "BTC",
+      "asset_type": "crypto",
+      "first_added": "2025-03-15",
+      "status": "inactive",
+      "last_seen": "2025-06-18"
+    },
+    {
+      "name": "Danny K.",
+      "team": "Blockworks Research",
+      "asset": "COIN",
+      "asset_type": "equity",
+      "first_added": "2025-03-15",
+      "status": "inactive",
+      "last_seen": "2025-04-01"
+    },
+    {
+      "name": "Danny K.",
+      "team": "Blockworks Research",
+      "asset": "FARTCOIN",
+      "asset_type": "crypto",
+      "first_added": "2025-04-02",
+      "status": "inactive",
+      "last_seen": "2025-06-03"
+    },
+    {
+      "name": "Danny K.",
+      "team": "Blockworks Research",
+      "asset": "HOOD",
+      "asset_type": "equity",
+      "first_added": "2025-03-15",
+      "status": "inactive",
+      "last_seen": "2025-06-18"
+    },
+    {
+      "name": "Danny K.",
+      "team": "Blockworks Research",
+      "asset": "IBIT",
+      "asset_type": "equity",
+      "first_added": "2025-05-03",
+      "status": "inactive",
+      "last_seen": "2025-06-18"
+    },
+    {
+      "name": "Danny K.",
+      "team": "Blockworks Research",
+      "asset": "JLP",
+      "asset_type": "crypto",
+      "first_added": "2025-03-15",
+      "status": "inactive",
+      "last_seen": "2025-04-01"
+    },
+    {
+      "name": "Danny K.",
+      "team": "Blockworks Research",
+      "asset": "PYPL",
+      "asset_type": "equity",
+      "first_added": "2025-03-15",
+      "status": "inactive",
+      "last_seen": "2025-04-01"
+    },
+    {
+      "name": "Danny K.",
+      "team": "Blockworks Research",
+      "asset": "SOL",
+      "asset_type": "crypto",
+      "first_added": "2025-03-15",
+      "status": "inactive",
+      "last_seen": "2025-04-01"
+    },
+    {
+      "name": "Danny Knettel",
+      "team": "Research",
+      "asset": "BITB",
+      "asset_type": "equity",
+      "first_added": "2025-03-08",
+      "status": "inactive",
+      "last_seen": "2025-03-14"
+    },
+    {
+      "name": "Danny Knettel",
+      "team": "Research",
+      "asset": "BTC",
+      "asset_type": "crypto",
+      "first_added": "2025-03-08",
+      "status": "inactive",
+      "last_seen": "2025-03-14"
+    },
+    {
+      "name": "Danny Knettel",
+      "team": "Research",
+      "asset": "COIN",
+      "asset_type": "equity",
+      "first_added": "2025-03-08",
+      "status": "inactive",
+      "last_seen": "2025-03-14"
+    },
+    {
+      "name": "Danny Knettel",
+      "team": "Research",
+      "asset": "HOOD",
+      "asset_type": "equity",
+      "first_added": "2025-03-08",
+      "status": "inactive",
+      "last_seen": "2025-03-14"
+    },
+    {
+      "name": "Danny Knettel",
+      "team": "Research",
+      "asset": "JLP",
+      "asset_type": "crypto",
+      "first_added": "2025-03-08",
+      "status": "inactive",
+      "last_seen": "2025-03-14"
+    },
+    {
+      "name": "Danny Knettel",
+      "team": "Research",
+      "asset": "PYPL",
+      "asset_type": "equity",
+      "first_added": "2025-03-08",
+      "status": "inactive",
+      "last_seen": "2025-03-14"
+    },
+    {
+      "name": "Danny Knettel",
+      "team": "Research",
+      "asset": "SOL",
+      "asset_type": "crypto",
+      "first_added": "2025-03-08",
+      "status": "inactive",
+      "last_seen": "2025-03-14"
+    },
+    {
+      "name": "Darren Mims",
+      "team": "Blockworks Advisory",
+      "asset": "COIN",
+      "asset_type": "equity",
+      "first_added": "2025-03-08",
+      "status": "inactive",
+      "last_seen": "2025-06-18"
+    },
+    {
+      "name": "Darren Mims",
+      "team": "Blockworks Advisory",
+      "asset": "ETH",
+      "asset_type": "crypto",
+      "first_added": "2025-03-08",
+      "status": "inactive",
+      "last_seen": "2025-05-02"
+    },
+    {
+      "name": "Darren Mims",
+      "team": "Blockworks Advisory",
+      "asset": "JTO",
+      "asset_type": "crypto",
+      "first_added": "2025-03-08",
+      "status": "inactive",
+      "last_seen": "2025-06-18"
+    },
+    {
+      "name": "Darren Mims",
+      "team": "Blockworks Advisory",
+      "asset": "KMNO",
+      "asset_type": "crypto",
+      "first_added": "2025-03-08",
+      "status": "inactive",
+      "last_seen": "2025-06-18"
+    },
+    {
+      "name": "Darren Mims",
+      "team": "Blockworks Advisory",
+      "asset": "SOL",
+      "asset_type": "crypto",
+      "first_added": "2025-03-08",
+      "status": "inactive",
+      "last_seen": "2025-06-18"
+    },
+    {
+      "name": "David Rodriguez",
+      "team": "Blockworks Advisory",
+      "asset": "AKT",
+      "asset_type": "crypto",
+      "first_added": "2025-03-08",
+      "status": "inactive",
+      "last_seen": "2025-06-03"
+    },
+    {
+      "name": "David Rodriguez",
+      "team": "Blockworks Advisory",
+      "asset": "Bad Kids",
+      "asset_type": "nft",
+      "first_added": "2025-04-02",
+      "status": "inactive",
+      "last_seen": "2025-06-03"
+    },
+    {
+      "name": "David Rodriguez",
+      "team": "Blockworks Advisory",
+      "asset": "BadKids",
+      "asset_type": "nft",
+      "first_added": "2025-03-08",
+      "status": "inactive",
+      "last_seen": "2025-04-01"
+    },
+    {
+      "name": "David Rodriguez",
+      "team": "Blockworks Advisory",
+      "asset": "CLANKER",
+      "asset_type": "crypto",
+      "first_added": "2025-04-02",
+      "status": "inactive",
+      "last_seen": "2025-06-03"
+    },
+    {
+      "name": "David Rodriguez",
+      "team": "Blockworks Advisory",
+      "asset": "COIN",
+      "asset_type": "equity",
+      "first_added": "2025-03-08",
+      "status": "inactive",
+      "last_seen": "2025-06-03"
+    },
+    {
+      "name": "David Rodriguez",
+      "team": "Blockworks Advisory",
+      "asset": "Fluffle",
+      "asset_type": "nft",
+      "first_added": "2025-03-08",
+      "status": "inactive",
+      "last_seen": "2025-05-02"
+    },
+    {
+      "name": "David Rodriguez",
+      "team": "Blockworks Advisory",
+      "asset": "SOL",
+      "asset_type": "crypto",
+      "first_added": "2025-04-02",
+      "status": "inactive",
+      "last_seen": "2025-06-03"
+    },
+    {
+      "name": "David Rodriguez",
+      "team": "Blockworks Advisory",
+      "asset": "TNSR",
+      "asset_type": "crypto",
+      "first_added": "2025-03-08",
+      "status": "inactive",
+      "last_seen": "2025-04-01"
+    },
+    {
+      "name": "Donovan Choy",
+      "team": "Blockworks Editorial",
+      "asset": "BTC",
+      "asset_type": "crypto",
+      "first_added": "2025-03-08",
+      "status": "inactive",
+      "last_seen": "2025-06-18"
+    },
+    {
+      "name": "Donovan Choy",
+      "team": "Blockworks Editorial",
+      "asset": "ETH",
+      "asset_type": "crypto",
+      "first_added": "2025-03-08",
+      "status": "inactive",
+      "last_seen": "2025-06-18"
+    },
+    {
+      "name": "Eric Diaz",
+      "team": "Blockworks Advisory",
+      "asset": "ANSEM",
+      "asset_type": "crypto",
+      "first_added": "2026-08-17",
+      "status": "active",
+      "last_seen": "2026-08-17"
+    },
+    {
+      "name": "Eric Diaz",
+      "team": "Blockworks Advisory",
+      "asset": "BTC",
+      "asset_type": "crypto",
+      "first_added": "2025-03-08",
+      "status": "active",
+      "last_seen": "2026-08-17"
+    },
+    {
+      "name": "Eric Diaz",
+      "team": "Blockworks Advisory",
+      "asset": "Fluffle",
+      "asset_type": "nft",
+      "first_added": "2025-03-08",
+      "status": "inactive",
+      "last_seen": "2025-06-18"
+    },
+    {
+      "name": "Eric Diaz",
+      "team": "Blockworks Advisory",
+      "asset": "HOOD",
+      "asset_type": "equity",
+      "first_added": "2025-03-08",
+      "status": "inactive",
+      "last_seen": "2025-06-18"
+    },
+    {
+      "name": "Eric Diaz",
+      "team": "Blockworks Advisory",
+      "asset": "HYPE",
+      "asset_type": "crypto",
+      "first_added": "2025-03-08",
+      "status": "active",
+      "last_seen": "2026-08-17"
+    },
+    {
+      "name": "Eric Diaz",
+      "team": "Blockworks Advisory",
+      "asset": "MOTO",
+      "asset_type": "crypto",
+      "first_added": "2025-03-08",
+      "status": "inactive",
+      "last_seen": "2025-06-18"
+    },
+    {
+      "name": "Eric Diaz",
+      "team": "Blockworks Advisory",
+      "asset": "PRIME",
+      "asset_type": "crypto",
+      "first_added": "2025-03-08",
+      "status": "inactive",
+      "last_seen": "2025-04-01"
+    },
+    {
+      "name": "Eric Diaz",
+      "team": "Blockworks Advisory",
+      "asset": "PROMPT",
+      "asset_type": "crypto",
+      "first_added": "2025-05-03",
+      "status": "inactive",
+      "last_seen": "2025-06-18"
+    },
+    {
+      "name": "Eric Diaz",
+      "team": "Blockworks Advisory",
+      "asset": "Parrallel Avatars",
+      "asset_type": "nft",
+      "first_added": "2025-03-08",
+      "status": "inactive",
+      "last_seen": "2025-06-18"
+    },
+    {
+      "name": "Eric Diaz",
+      "team": "Blockworks Advisory",
+      "asset": "Quantum Cats",
+      "asset_type": "nft",
+      "first_added": "2025-03-08",
+      "status": "inactive",
+      "last_seen": "2025-06-18"
+    },
+    {
+      "name": "Eric Diaz",
+      "team": "Blockworks Advisory",
+      "asset": "XAI",
+      "asset_type": "crypto",
+      "first_added": "2025-03-08",
+      "status": "inactive",
+      "last_seen": "2025-04-01"
+    },
+    {
+      "name": "Felix Jauvin",
+      "team": "Blockworks Media",
+      "asset": "AAVE",
+      "asset_type": "crypto",
+      "first_added": "2025-04-02",
+      "status": "inactive",
+      "last_seen": "2025-05-02"
+    },
+    {
+      "name": "Felix Jauvin",
+      "team": "Blockworks Media",
+      "asset": "BTC",
+      "asset_type": "crypto",
+      "first_added": "2025-04-02",
+      "status": "active",
+      "last_seen": "2026-08-17"
+    },
+    {
+      "name": "Felix Jauvin",
+      "team": "Blockworks Media",
+      "asset": "ENA",
+      "asset_type": "crypto",
+      "first_added": "2025-03-08",
+      "status": "inactive",
+      "last_seen": "2025-06-18"
+    },
+    {
+      "name": "Felix Jauvin",
+      "team": "Blockworks Media",
+      "asset": "HOOD",
+      "asset_type": "equity",
+      "first_added": "2025-06-04",
+      "status": "inactive",
+      "last_seen": "2025-06-18"
+    },
+    {
+      "name": "Felix Jauvin",
+      "team": "Blockworks Media",
+      "asset": "HYPE",
+      "asset_type": "crypto",
+      "first_added": "2025-06-04",
+      "status": "inactive",
+      "last_seen": "2025-06-18"
+    },
+    {
+      "name": "Felix Jauvin",
+      "team": "Blockworks Media",
+      "asset": "MKR",
+      "asset_type": "crypto",
+      "first_added": "2025-04-02",
+      "status": "inactive",
+      "last_seen": "2025-05-02"
+    },
+    {
+      "name": "Felix Jauvin",
+      "team": "Blockworks Media",
+      "asset": "PONS",
+      "asset_type": "crypto",
+      "first_added": "2026-08-17",
+      "status": "active",
+      "last_seen": "2026-08-17"
+    },
+    {
+      "name": "Felix Jauvin",
+      "team": "Blockworks Media",
+      "asset": "XPL",
+      "asset_type": "crypto",
+      "first_added": "2026-08-17",
+      "status": "active",
+      "last_seen": "2026-08-17"
+    },
+    {
+      "name": "Jacob Sharples",
+      "team": "Blockworks Data",
+      "asset": "BTC",
+      "asset_type": "crypto",
+      "first_added": "2025-03-08",
+      "status": "inactive",
+      "last_seen": "2025-06-18"
+    },
+    {
+      "name": "Jacob Sharples",
+      "team": "Blockworks Data",
+      "asset": "ETH",
+      "asset_type": "crypto",
+      "first_added": "2025-03-08",
+      "status": "inactive",
+      "last_seen": "2025-06-18"
+    },
+    {
+      "name": "Jacob Sharples",
+      "team": "Blockworks Data",
+      "asset": "ETHA",
+      "asset_type": "equity",
+      "first_added": "2025-03-08",
+      "status": "inactive",
+      "last_seen": "2025-05-02"
+    },
+    {
+      "name": "Jacob Sharples",
+      "team": "Blockworks Data",
+      "asset": "HUT8",
+      "asset_type": "equity",
+      "first_added": "2025-03-08",
+      "status": "inactive",
+      "last_seen": "2025-06-18"
+    },
+    {
+      "name": "Jacob Sharples",
+      "team": "Blockworks Data",
+      "asset": "IBIT",
+      "asset_type": "equity",
+      "first_added": "2025-03-08",
+      "status": "inactive",
+      "last_seen": "2025-06-18"
+    },
+    {
+      "name": "Jacob Sharples",
+      "team": "Blockworks Data",
+      "asset": "KAITO",
+      "asset_type": "crypto",
+      "first_added": "2025-06-04",
+      "status": "inactive",
+      "last_seen": "2025-06-18"
+    },
+    {
+      "name": "Jacob Sharples",
+      "team": "Blockworks Data",
+      "asset": "KTA",
+      "asset_type": "crypto",
+      "first_added": "2025-06-04",
+      "status": "inactive",
+      "last_seen": "2025-06-18"
+    },
+    {
+      "name": "Jacob Sharples",
+      "team": "Blockworks Data",
+      "asset": "OP",
+      "asset_type": "crypto",
+      "first_added": "2025-03-08",
+      "status": "inactive",
+      "last_seen": "2025-05-02"
+    },
+    {
+      "name": "Jacob Sharples",
+      "team": "Blockworks Data",
+      "asset": "SOL",
+      "asset_type": "crypto",
+      "first_added": "2025-03-08",
+      "status": "inactive",
+      "last_seen": "2025-06-18"
+    },
+    {
+      "name": "Jake Koch-Gallup",
+      "team": "Blockworks Research",
+      "asset": "BTC",
+      "asset_type": "crypto",
+      "first_added": "2026-08-17",
+      "status": "active",
+      "last_seen": "2026-08-17"
+    },
+    {
+      "name": "Jake Koch-Gallup",
+      "team": "Blockworks Research",
+      "asset": "ETH",
+      "asset_type": "crypto",
+      "first_added": "2026-08-17",
+      "status": "active",
+      "last_seen": "2026-08-17"
+    },
+    {
+      "name": "Jakob Wuthrich",
+      "team": "Blockworks Research",
+      "asset": "BTC",
+      "asset_type": "crypto",
+      "first_added": "2025-06-04",
+      "status": "inactive",
+      "last_seen": "2025-06-18"
+    },
+    {
+      "name": "Jakob Wuthrich",
+      "team": "Blockworks Research",
+      "asset": "BUDDY",
+      "asset_type": "crypto",
+      "first_added": "2025-06-04",
+      "status": "inactive",
+      "last_seen": "2025-06-18"
+    },
+    {
+      "name": "Jakob Wuthrich",
+      "team": "Blockworks Research",
+      "asset": "BUIDL",
+      "asset_type": "crypto",
+      "first_added": "2025-06-04",
+      "status": "inactive",
+      "last_seen": "2025-06-18"
+    },
+    {
+      "name": "Jakob Wuthrich",
+      "team": "Blockworks Research",
+      "asset": "ETH",
+      "asset_type": "crypto",
+      "first_added": "2025-06-04",
+      "status": "inactive",
+      "last_seen": "2025-06-18"
+    },
+    {
+      "name": "Jakob Wuthrich",
+      "team": "Blockworks Research",
+      "asset": "HYPE",
+      "asset_type": "crypto",
+      "first_added": "2025-06-04",
+      "status": "inactive",
+      "last_seen": "2025-06-18"
+    },
+    {
+      "name": "Jakob Wuthrich",
+      "team": "Blockworks Research",
+      "asset": "NIL",
+      "asset_type": "crypto",
+      "first_added": "2025-06-04",
+      "status": "inactive",
+      "last_seen": "2025-06-18"
+    },
+    {
+      "name": "Jakob Wuthrich",
+      "team": "Blockworks Research",
+      "asset": "PEAR",
+      "asset_type": "crypto",
+      "first_added": "2025-06-04",
+      "status": "inactive",
+      "last_seen": "2025-06-18"
+    },
+    {
+      "name": "Jakob Wuthrich",
+      "team": "Blockworks Research",
+      "asset": "SYRUP",
+      "asset_type": "crypto",
+      "first_added": "2025-06-04",
+      "status": "inactive",
+      "last_seen": "2025-06-18"
+    },
+    {
+      "name": "Jakob Wuthrich",
+      "team": "Blockworks Research",
+      "asset": "Wealthy Hypio Babes",
+      "asset_type": "nft",
+      "first_added": "2025-06-04",
+      "status": "inactive",
+      "last_seen": "2025-06-18"
+    },
+    {
+      "name": "Jason Yanowitz",
+      "team": "Blockworks Media",
+      "asset": "3F",
+      "asset_type": "angel",
+      "first_added": "2026-08-17",
+      "status": "active",
+      "last_seen": "2026-08-17"
+    },
+    {
+      "name": "Jason Yanowitz",
+      "team": "Blockworks Media",
+      "asset": "AKT",
+      "asset_type": "crypto",
+      "first_added": "2025-03-08",
+      "status": "inactive",
+      "last_seen": "2025-06-03"
+    },
+    {
+      "name": "Jason Yanowitz",
+      "team": "Blockworks Media",
+      "asset": "APT",
+      "asset_type": "crypto",
+      "first_added": "2025-03-08",
+      "status": "inactive",
+      "last_seen": "2025-06-03"
+    },
+    {
+      "name": "Jason Yanowitz",
+      "team": "Blockworks Media",
+      "asset": "ARMY",
+      "asset_type": "crypto",
+      "first_added": "2025-03-08",
+      "status": "inactive",
+      "last_seen": "2025-06-03"
+    },
+    {
+      "name": "Jason Yanowitz",
+      "team": "Blockworks Media",
+      "asset": "AVAT",
+      "asset_type": "equity",
+      "first_added": "2026-08-17",
+      "status": "active",
+      "last_seen": "2026-08-17"
+    },
+    {
+      "name": "Jason Yanowitz",
+      "team": "Blockworks Media",
+      "asset": "AVAX",
+      "asset_type": "crypto",
+      "first_added": "2025-03-08",
+      "status": "inactive",
+      "last_seen": "2025-06-18"
+    },
+    {
+      "name": "Jason Yanowitz",
+      "team": "Blockworks Media",
+      "asset": "AllianceDAO",
+      "asset_type": "angel",
+      "first_added": "2026-08-17",
+      "status": "active",
+      "last_seen": "2026-08-17"
+    },
+    {
+      "name": "Jason Yanowitz",
+      "team": "Blockworks Media",
+      "asset": "Allora",
+      "asset_type": "angel",
+      "first_added": "2026-08-17",
+      "status": "active",
+      "last_seen": "2026-08-17"
+    },
+    {
+      "name": "Jason Yanowitz",
+      "team": "Blockworks Media",
+      "asset": "Andrena",
+      "asset_type": "angel",
+      "first_added": "2026-08-17",
+      "status": "active",
+      "last_seen": "2026-08-17"
+    },
+    {
+      "name": "Jason Yanowitz",
+      "team": "Blockworks Media",
+      "asset": "Arch",
+      "asset_type": "angel",
+      "first_added": "2026-08-17",
+      "status": "active",
+      "last_seen": "2026-08-17"
+    },
+    {
+      "name": "Jason Yanowitz",
+      "team": "Blockworks Media",
+      "asset": "Asset Reality",
+      "asset_type": "angel",
+      "first_added": "2026-08-17",
+      "status": "active",
+      "last_seen": "2026-08-17"
+    },
+    {
+      "name": "Jason Yanowitz",
+      "team": "Blockworks Media",
+      "asset": "Astria",
+      "asset_type": "angel",
+      "first_added": "2026-08-17",
+      "status": "active",
+      "last_seen": "2026-08-17"
+    },
+    {
+      "name": "Jason Yanowitz",
+      "team": "Blockworks Media",
+      "asset": "Axel",
+      "asset_type": "angel",
+      "first_added": "2026-08-17",
+      "status": "active",
+      "last_seen": "2026-08-17"
+    },
+    {
+      "name": "Jason Yanowitz",
+      "team": "Blockworks Media",
+      "asset": "BABA",
+      "asset_type": "equity",
+      "first_added": "2025-03-08",
+      "status": "inactive",
+      "last_seen": "2025-06-18"
+    },
+    {
+      "name": "Jason Yanowitz",
+      "team": "Blockworks Media",
+      "asset": "BTC",
+      "asset_type": "crypto",
+      "first_added": "2025-03-08",
+      "status": "active",
+      "last_seen": "2026-08-17"
+    },
+    {
+      "name": "Jason Yanowitz",
+      "team": "Blockworks Media",
+      "asset": "BadKids",
+      "asset_type": "nft",
+      "first_added": "2025-03-08",
+      "status": "active",
+      "last_seen": "2026-08-17"
+    },
+    {
+      "name": "Jason Yanowitz",
+      "team": "Blockworks Media",
+      "asset": "Beehiiv",
+      "asset_type": "angel",
+      "first_added": "2026-08-17",
+      "status": "active",
+      "last_seen": "2026-08-17"
+    },
+    {
+      "name": "Jason Yanowitz",
+      "team": "Blockworks Media",
+      "asset": "COIN",
+      "asset_type": "equity",
+      "first_added": "2025-03-08",
+      "status": "active",
+      "last_seen": "2026-08-17"
+    },
+    {
+      "name": "Jason Yanowitz",
+      "team": "Blockworks Media",
+      "asset": "Cap",
+      "asset_type": "angel",
+      "first_added": "2026-08-17",
+      "status": "active",
+      "last_seen": "2026-08-17"
+    },
+    {
+      "name": "Jason Yanowitz",
+      "team": "Blockworks Media",
+      "asset": "Concrete/Blueprint",
+      "asset_type": "angel",
+      "first_added": "2026-08-17",
+      "status": "active",
+      "last_seen": "2026-08-17"
+    },
+    {
+      "name": "Jason Yanowitz",
+      "team": "Blockworks Media",
+      "asset": "CryptoDickButts",
+      "asset_type": "nft",
+      "first_added": "2025-03-08",
+      "status": "active",
+      "last_seen": "2026-08-17"
+    },
+    {
+      "name": "Jason Yanowitz",
+      "team": "Blockworks Media",
+      "asset": "DFlow",
+      "asset_type": "angel",
+      "first_added": "2026-08-17",
+      "status": "active",
+      "last_seen": "2026-08-17"
+    },
+    {
+      "name": "Jason Yanowitz",
+      "team": "Blockworks Media",
+      "asset": "Doormat",
+      "asset_type": "angel",
+      "first_added": "2026-08-17",
+      "status": "active",
+      "last_seen": "2026-08-17"
+    },
+    {
+      "name": "Jason Yanowitz",
+      "team": "Blockworks Media",
+      "asset": "DoubleZero",
+      "asset_type": "angel",
+      "first_added": "2026-08-17",
+      "status": "active",
+      "last_seen": "2026-08-17"
+    },
+    {
+      "name": "Jason Yanowitz",
+      "team": "Blockworks Media",
+      "asset": "ENA",
+      "asset_type": "crypto",
+      "first_added": "2025-06-04",
+      "status": "inactive",
+      "last_seen": "2025-06-18"
+    },
+    {
+      "name": "Jason Yanowitz",
+      "team": "Blockworks Media",
+      "asset": "ETH",
+      "asset_type": "crypto",
+      "first_added": "2025-03-08",
+      "status": "inactive",
+      "last_seen": "2025-06-18"
+    },
+    {
+      "name": "Jason Yanowitz",
+      "team": "Blockworks Media",
+      "asset": "Eco",
+      "asset_type": "angel",
+      "first_added": "2026-08-17",
+      "status": "active",
+      "last_seen": "2026-08-17"
+    },
+    {
+      "name": "Jason Yanowitz",
+      "team": "Blockworks Media",
+      "asset": "Ejara",
+      "asset_type": "angel",
+      "first_added": "2026-08-17",
+      "status": "active",
+      "last_seen": "2026-08-17"
+    },
+    {
+      "name": "Jason Yanowitz",
+      "team": "Blockworks Media",
+      "asset": "Ellipsis/Atlas",
+      "asset_type": "angel",
+      "first_added": "2026-08-17",
+      "status": "active",
+      "last_seen": "2026-08-17"
+    },
+    {
+      "name": "Jason Yanowitz",
+      "team": "Blockworks Media",
+      "asset": "FARTCOIN",
+      "asset_type": "crypto",
+      "first_added": "2025-03-08",
+      "status": "inactive",
+      "last_seen": "2025-06-18"
+    },
+    {
+      "name": "Jason Yanowitz",
+      "team": "Blockworks Media",
+      "asset": "Fantasy",
+      "asset_type": "angel",
+      "first_added": "2026-08-17",
+      "status": "active",
+      "last_seen": "2026-08-17"
+    },
+    {
+      "name": "Jason Yanowitz",
+      "team": "Blockworks Media",
+      "asset": "Fluent",
+      "asset_type": "angel",
+      "first_added": "2026-08-17",
+      "status": "active",
+      "last_seen": "2026-08-17"
+    },
+    {
+      "name": "Jason Yanowitz",
+      "team": "Blockworks Media",
+      "asset": "Friktion",
+      "asset_type": "angel",
+      "first_added": "2026-08-17",
+      "status": "active",
+      "last_seen": "2026-08-17"
+    },
+    {
+      "name": "Jason Yanowitz",
+      "team": "Blockworks Media",
+      "asset": "GLXY",
+      "asset_type": "equity",
+      "first_added": "2026-08-17",
+      "status": "active",
+      "last_seen": "2026-08-17"
+    },
+    {
+      "name": "Jason Yanowitz",
+      "team": "Blockworks Media",
+      "asset": "Galleon",
+      "asset_type": "angel",
+      "first_added": "2026-08-17",
+      "status": "active",
+      "last_seen": "2026-08-17"
+    },
+    {
+      "name": "Jason Yanowitz",
+      "team": "Blockworks Media",
+      "asset": "GamerGains",
+      "asset_type": "angel",
+      "first_added": "2026-08-17",
+      "status": "active",
+      "last_seen": "2026-08-17"
+    },
+    {
+      "name": "Jason Yanowitz",
+      "team": "Blockworks Media",
+      "asset": "Geneva",
+      "asset_type": "angel",
+      "first_added": "2026-08-17",
+      "status": "active",
+      "last_seen": "2026-08-17"
+    },
+    {
+      "name": "Jason Yanowitz",
+      "team": "Blockworks Media",
+      "asset": "HOOD",
+      "asset_type": "equity",
+      "first_added": "2025-03-08",
+      "status": "active",
+      "last_seen": "2026-08-17"
+    },
+    {
+      "name": "Jason Yanowitz",
+      "team": "Blockworks Media",
+      "asset": "HYPE",
+      "asset_type": "crypto",
+      "first_added": "2025-03-08",
+      "status": "active",
+      "last_seen": "2026-08-17"
+    },
+    {
+      "name": "Jason Yanowitz",
+      "team": "Blockworks Media",
+      "asset": "Helius",
+      "asset_type": "angel",
+      "first_added": "2026-08-17",
+      "status": "active",
+      "last_seen": "2026-08-17"
+    },
+    {
+      "name": "Jason Yanowitz",
+      "team": "Blockworks Media",
+      "asset": "Infinex",
+      "asset_type": "angel",
+      "first_added": "2026-08-17",
+      "status": "active",
+      "last_seen": "2026-08-17"
+    },
+    {
+      "name": "Jason Yanowitz",
+      "team": "Blockworks Media",
+      "asset": "Infinex Patrons",
+      "asset_type": "nft",
+      "first_added": "2026-08-17",
+      "status": "active",
+      "last_seen": "2026-08-17"
+    },
+    {
+      "name": "Jason Yanowitz",
+      "team": "Blockworks Media",
+      "asset": "Inversion",
+      "asset_type": "angel",
+      "first_added": "2026-08-17",
+      "status": "active",
+      "last_seen": "2026-08-17"
+    },
+    {
+      "name": "Jason Yanowitz",
+      "team": "Blockworks Media",
+      "asset": "Jito",
+      "asset_type": "angel",
+      "first_added": "2026-08-17",
+      "status": "active",
+      "last_seen": "2026-08-17"
+    },
+    {
+      "name": "Jason Yanowitz",
+      "team": "Blockworks Media",
+      "asset": "Kado",
+      "asset_type": "angel",
+      "first_added": "2026-08-17",
+      "status": "active",
+      "last_seen": "2026-08-17"
+    },
+    {
+      "name": "Jason Yanowitz",
+      "team": "Blockworks Media",
+      "asset": "Kinto",
+      "asset_type": "angel",
+      "first_added": "2026-08-17",
+      "status": "active",
+      "last_seen": "2026-08-17"
+    },
+    {
+      "name": "Jason Yanowitz",
+      "team": "Blockworks Media",
+      "asset": "Kintsu",
+      "asset_type": "angel",
+      "first_added": "2026-08-17",
+      "status": "active",
+      "last_seen": "2026-08-17"
+    },
+    {
+      "name": "Jason Yanowitz",
+      "team": "Blockworks Media",
+      "asset": "Lootbase",
+      "asset_type": "angel",
+      "first_added": "2026-08-17",
+      "status": "active",
+      "last_seen": "2026-08-17"
+    },
+    {
+      "name": "Jason Yanowitz",
+      "team": "Blockworks Media",
+      "asset": "MKR",
+      "asset_type": "crypto",
+      "first_added": "2025-03-08",
+      "status": "inactive",
+      "last_seen": "2025-06-18"
+    },
+    {
+      "name": "Jason Yanowitz",
+      "team": "Blockworks Media",
+      "asset": "MORPHO",
+      "asset_type": "crypto",
+      "first_added": "2026-08-17",
+      "status": "active",
+      "last_seen": "2026-08-17"
+    },
+    {
+      "name": "Jason Yanowitz",
+      "team": "Blockworks Media",
+      "asset": "MadLads",
+      "asset_type": "nft",
+      "first_added": "2025-03-08",
+      "status": "active",
+      "last_seen": "2026-08-17"
+    },
+    {
+      "name": "Jason Yanowitz",
+      "team": "Blockworks Media",
+      "asset": "Meow",
+      "asset_type": "angel",
+      "first_added": "2026-08-17",
+      "status": "active",
+      "last_seen": "2026-08-17"
+    },
+    {
+      "name": "Jason Yanowitz",
+      "team": "Blockworks Media",
+      "asset": "Monad",
+      "asset_type": "angel",
+      "first_added": "2026-08-17",
+      "status": "active",
+      "last_seen": "2026-08-17"
+    },
+    {
+      "name": "Jason Yanowitz",
+      "team": "Blockworks Media",
+      "asset": "Movement",
+      "asset_type": "angel",
+      "first_added": "2026-08-17",
+      "status": "active",
+      "last_seen": "2026-08-17"
+    },
+    {
+      "name": "Jason Yanowitz",
+      "team": "Blockworks Media",
+      "asset": "NVDA",
+      "asset_type": "equity",
+      "first_added": "2025-03-08",
+      "status": "inactive",
+      "last_seen": "2025-06-18"
+    },
+    {
+      "name": "Jason Yanowitz",
+      "team": "Blockworks Media",
+      "asset": "NodeMonkes",
+      "asset_type": "nft",
+      "first_added": "2025-03-08",
+      "status": "active",
+      "last_seen": "2026-08-17"
+    },
+    {
+      "name": "Jason Yanowitz",
+      "team": "Blockworks Media",
+      "asset": "Olive (fmr Polysynth)",
+      "asset_type": "angel",
+      "first_added": "2026-08-17",
+      "status": "active",
+      "last_seen": "2026-08-17"
+    },
+    {
+      "name": "Jason Yanowitz",
+      "team": "Blockworks Media",
+      "asset": "Omega/Juice",
+      "asset_type": "angel",
+      "first_added": "2026-08-17",
+      "status": "active",
+      "last_seen": "2026-08-17"
+    },
+    {
+      "name": "Jason Yanowitz",
+      "team": "Blockworks Media",
+      "asset": "Opinions.fun",
+      "asset_type": "angel",
+      "first_added": "2026-08-17",
+      "status": "active",
+      "last_seen": "2026-08-17"
+    },
+    {
+      "name": "Jason Yanowitz",
+      "team": "Blockworks Media",
+      "asset": "OuterSignal",
+      "asset_type": "angel",
+      "first_added": "2026-08-17",
+      "status": "active",
+      "last_seen": "2026-08-17"
+    },
+    {
+      "name": "Jason Yanowitz",
+      "team": "Blockworks Media",
+      "asset": "PENGU",
+      "asset_type": "crypto",
+      "first_added": "2025-03-08",
+      "status": "inactive",
+      "last_seen": "2025-06-18"
+    },
+    {
+      "name": "Jason Yanowitz",
+      "team": "Blockworks Media",
+      "asset": "Pear Protocol",
+      "asset_type": "angel",
+      "first_added": "2026-08-17",
+      "status": "active",
+      "last_seen": "2026-08-17"
+    },
+    {
+      "name": "Jason Yanowitz",
+      "team": "Blockworks Media",
+      "asset": "PleasrDAO",
+      "asset_type": "angel",
+      "first_added": "2026-08-17",
+      "status": "active",
+      "last_seen": "2026-08-17"
+    },
+    {
+      "name": "Jason Yanowitz",
+      "team": "Blockworks Media",
+      "asset": "Pudgy Penguin",
+      "asset_type": "nft",
+      "first_added": "2025-03-08",
+      "status": "active",
+      "last_seen": "2026-08-17"
+    },
+    {
+      "name": "Jason Yanowitz",
+      "team": "Blockworks Media",
+      "asset": "Rio (acq Eigen)",
+      "asset_type": "angel",
+      "first_added": "2026-08-17",
+      "status": "active",
+      "last_seen": "2026-08-17"
+    },
+    {
+      "name": "Jason Yanowitz",
+      "team": "Blockworks Media",
+      "asset": "River",
+      "asset_type": "angel",
+      "first_added": "2026-08-17",
+      "status": "active",
+      "last_seen": "2026-08-17"
+    },
+    {
+      "name": "Jason Yanowitz",
+      "team": "Blockworks Media",
+      "asset": "Rome",
+      "asset_type": "angel",
+      "first_added": "2026-08-17",
+      "status": "active",
+      "last_seen": "2026-08-17"
+    },
+    {
+      "name": "Jason Yanowitz",
+      "team": "Blockworks Media",
+      "asset": "Ryze",
+      "asset_type": "angel",
+      "first_added": "2026-08-17",
+      "status": "active",
+      "last_seen": "2026-08-17"
+    },
+    {
+      "name": "Jason Yanowitz",
+      "team": "Blockworks Media",
+      "asset": "SOL",
+      "asset_type": "crypto",
+      "first_added": "2025-03-08",
+      "status": "active",
+      "last_seen": "2026-08-17"
+    },
+    {
+      "name": "Jason Yanowitz",
+      "team": "Blockworks Media",
+      "asset": "SUI",
+      "asset_type": "crypto",
+      "first_added": "2025-03-08",
+      "status": "inactive",
+      "last_seen": "2025-06-18"
+    },
+    {
+      "name": "Jason Yanowitz",
+      "team": "Blockworks Media",
+      "asset": "SkyTrade",
+      "asset_type": "angel",
+      "first_added": "2026-08-17",
+      "status": "active",
+      "last_seen": "2026-08-17"
+    },
+    {
+      "name": "Jason Yanowitz",
+      "team": "Blockworks Media",
+      "asset": "TIA",
+      "asset_type": "crypto",
+      "first_added": "2025-03-08",
+      "status": "inactive",
+      "last_seen": "2025-06-18"
+    },
+    {
+      "name": "Jason Yanowitz",
+      "team": "Blockworks Media",
+      "asset": "Tensorians",
+      "asset_type": "nft",
+      "first_added": "2025-03-08",
+      "status": "active",
+      "last_seen": "2026-08-17"
+    },
+    {
+      "name": "Jason Yanowitz",
+      "team": "Blockworks Media",
+      "asset": "The Invention Network",
+      "asset_type": "angel",
+      "first_added": "2026-08-17",
+      "status": "active",
+      "last_seen": "2026-08-17"
+    },
+    {
+      "name": "Jason Yanowitz",
+      "team": "Blockworks Media",
+      "asset": "UNI",
+      "asset_type": "crypto",
+      "first_added": "2025-03-08",
+      "status": "inactive",
+      "last_seen": "2025-06-18"
+    },
+    {
+      "name": "Jason Yanowitz",
+      "team": "Blockworks Media",
+      "asset": "Ultra",
+      "asset_type": "angel",
+      "first_added": "2026-08-17",
+      "status": "active",
+      "last_seen": "2026-08-17"
+    },
+    {
+      "name": "Jason Yanowitz",
+      "team": "Blockworks Media",
+      "asset": "Uranium Digital",
+      "asset_type": "angel",
+      "first_added": "2026-08-17",
+      "status": "active",
+      "last_seen": "2026-08-17"
+    },
+    {
+      "name": "Jason Yanowitz",
+      "team": "Blockworks Media",
+      "asset": "Valiant",
+      "asset_type": "angel",
+      "first_added": "2026-08-17",
+      "status": "active",
+      "last_seen": "2026-08-17"
+    },
+    {
+      "name": "Jason Yanowitz",
+      "team": "Blockworks Media",
+      "asset": "ZEC",
+      "asset_type": "crypto",
+      "first_added": "2026-08-17",
+      "status": "active",
+      "last_seen": "2026-08-17"
+    },
+    {
+      "name": "Jeff A.",
+      "team": "Blockworks Editorial",
+      "asset": "BTC",
+      "asset_type": "crypto",
+      "first_added": "2025-04-02",
+      "status": "inactive",
+      "last_seen": "2025-05-02"
+    },
+    {
+      "name": "Jeff A.",
+      "team": "Blockworks Editorial",
+      "asset": "ETH",
+      "asset_type": "crypto",
+      "first_added": "2025-04-02",
+      "status": "inactive",
+      "last_seen": "2025-05-02"
+    },
+    {
+      "name": "Jeffrey A.",
+      "team": "Editorial",
+      "asset": "BTC",
+      "asset_type": "crypto",
+      "first_added": "2025-03-19",
+      "status": "inactive",
+      "last_seen": "2025-04-01"
+    },
+    {
+      "name": "Jeffrey A.",
+      "team": "Editorial",
+      "asset": "ETH",
+      "asset_type": "crypto",
+      "first_added": "2025-03-19",
+      "status": "inactive",
+      "last_seen": "2025-04-01"
+    },
+    {
+      "name": "Jeffrey A.",
+      "team": "Editorial",
+      "asset": "SOL",
+      "asset_type": "crypto",
+      "first_added": "2025-03-19",
+      "status": "inactive",
+      "last_seen": "2025-04-01"
+    },
+    {
+      "name": "Jeffrey Albus",
+      "team": "Editorial",
+      "asset": "BTC",
+      "asset_type": "crypto",
+      "first_added": "2025-03-08",
+      "status": "inactive",
+      "last_seen": "2025-03-18"
+    },
+    {
+      "name": "Jeffrey Albus",
+      "team": "Editorial",
+      "asset": "ETH",
+      "asset_type": "crypto",
+      "first_added": "2025-03-08",
+      "status": "inactive",
+      "last_seen": "2025-03-18"
+    },
+    {
+      "name": "Jeffrey Albus",
+      "team": "Editorial",
+      "asset": "SOL",
+      "asset_type": "crypto",
+      "first_added": "2025-03-08",
+      "status": "inactive",
+      "last_seen": "2025-03-18"
+    },
+    {
+      "name": "Joe Cho",
+      "team": "Blockworks Advisory",
+      "asset": "BTC",
+      "asset_type": "crypto",
+      "first_added": "2026-08-17",
+      "status": "active",
+      "last_seen": "2026-08-17"
+    },
+    {
+      "name": "Joe Cho",
+      "team": "Blockworks Advisory",
+      "asset": "ORE",
+      "asset_type": "crypto",
+      "first_added": "2026-08-17",
+      "status": "active",
+      "last_seen": "2026-08-17"
+    },
+    {
+      "name": "Joe Cho",
+      "team": "Blockworks Advisory",
+      "asset": "PUMP",
+      "asset_type": "crypto",
+      "first_added": "2026-08-17",
+      "status": "active",
+      "last_seen": "2026-08-17"
+    },
+    {
+      "name": "Joe Cho",
+      "team": "Blockworks Advisory",
+      "asset": "SOL",
+      "asset_type": "crypto",
+      "first_added": "2026-08-17",
+      "status": "active",
+      "last_seen": "2026-08-17"
+    },
+    {
+      "name": "Kunal Doshi",
+      "team": "Blockworks Research",
+      "asset": "BTC",
+      "asset_type": "crypto",
+      "first_added": "2026-08-17",
+      "status": "active",
+      "last_seen": "2026-08-17"
+    },
+    {
+      "name": "Kunal Doshi",
+      "team": "Blockworks Research",
+      "asset": "HOOD",
+      "asset_type": "equity",
+      "first_added": "2026-08-17",
+      "status": "active",
+      "last_seen": "2026-08-17"
+    },
+    {
+      "name": "Kunal Doshi",
+      "team": "Blockworks Research",
+      "asset": "HYPE",
+      "asset_type": "crypto",
+      "first_added": "2026-08-17",
+      "status": "active",
+      "last_seen": "2026-08-17"
+    },
+    {
+      "name": "Kunal Doshi",
+      "team": "Blockworks Research",
+      "asset": "PUMP",
+      "asset_type": "crypto",
+      "first_added": "2026-08-17",
+      "status": "active",
+      "last_seen": "2026-08-17"
+    },
+    {
+      "name": "Kunal Doshi",
+      "team": "Blockworks Research",
+      "asset": "PUMPCADE",
+      "asset_type": "crypto",
+      "first_added": "2026-08-17",
+      "status": "active",
+      "last_seen": "2026-08-17"
+    },
+    {
+      "name": "Kunal Doshi",
+      "team": "Blockworks Research",
+      "asset": "Pudgy Penguins",
+      "asset_type": "nft",
+      "first_added": "2026-08-17",
+      "status": "active",
+      "last_seen": "2026-08-17"
+    },
+    {
+      "name": "Luke Leasure",
+      "team": "Blockworks Research",
+      "asset": "BTC",
+      "asset_type": "crypto",
+      "first_added": "2025-03-08",
+      "status": "active",
+      "last_seen": "2026-08-17"
+    },
+    {
+      "name": "Luke Leasure",
+      "team": "Blockworks Research",
+      "asset": "COIN",
+      "asset_type": "equity",
+      "first_added": "2025-03-08",
+      "status": "inactive",
+      "last_seen": "2025-06-18"
+    },
+    {
+      "name": "Luke Leasure",
+      "team": "Blockworks Research",
+      "asset": "ETH",
+      "asset_type": "crypto",
+      "first_added": "2025-03-08",
+      "status": "inactive",
+      "last_seen": "2025-06-18"
+    },
+    {
+      "name": "Luke Leasure",
+      "team": "Blockworks Research",
+      "asset": "JLP",
+      "asset_type": "crypto",
+      "first_added": "2025-03-08",
+      "status": "inactive",
+      "last_seen": "2025-06-18"
+    },
+    {
+      "name": "Luke Leasure",
+      "team": "Blockworks Research",
+      "asset": "KMNO",
+      "asset_type": "crypto",
+      "first_added": "2025-03-08",
+      "status": "inactive",
+      "last_seen": "2025-06-18"
+    },
+    {
+      "name": "Luke Leasure",
+      "team": "Blockworks Research",
+      "asset": "PENDLE",
+      "asset_type": "crypto",
+      "first_added": "2025-04-02",
+      "status": "inactive",
+      "last_seen": "2025-06-18"
+    },
+    {
+      "name": "Luke Leasure",
+      "team": "Blockworks Research",
+      "asset": "PONS",
+      "asset_type": "crypto",
+      "first_added": "2026-08-17",
+      "status": "active",
+      "last_seen": "2026-08-17"
+    },
+    {
+      "name": "Luke Leasure",
+      "team": "Blockworks Research",
+      "asset": "SBET",
+      "asset_type": "equity",
+      "first_added": "2025-06-04",
+      "status": "inactive",
+      "last_seen": "2025-06-18"
+    },
+    {
+      "name": "Luke Leasure",
+      "team": "Blockworks Research",
+      "asset": "SEND",
+      "asset_type": "crypto",
+      "first_added": "2025-05-03",
+      "status": "inactive",
+      "last_seen": "2025-06-18"
+    },
+    {
+      "name": "Luke Leasure",
+      "team": "Blockworks Research",
+      "asset": "SOL",
+      "asset_type": "crypto",
+      "first_added": "2025-03-08",
+      "status": "inactive",
+      "last_seen": "2025-05-02"
+    },
+    {
+      "name": "Luke Leasure",
+      "team": "Blockworks Research",
+      "asset": "TSLA",
+      "asset_type": "equity",
+      "first_added": "2025-03-08",
+      "status": "active",
+      "last_seen": "2026-08-17"
+    },
+    {
+      "name": "Luke Leasure",
+      "team": "Blockworks Research",
+      "asset": "WAL",
+      "asset_type": "crypto",
+      "first_added": "2025-05-03",
+      "status": "inactive",
+      "last_seen": "2025-06-03"
+    },
+    {
+      "name": "Luke Leasure",
+      "team": "Blockworks Research",
+      "asset": "ZYN",
+      "asset_type": "crypto",
+      "first_added": "2025-03-08",
+      "status": "inactive",
+      "last_seen": "2025-06-18"
+    },
+    {
+      "name": "Luke Leasure",
+      "team": "Blockworks Research",
+      "asset": "sUSDe",
+      "asset_type": "crypto",
+      "first_added": "2025-03-08",
+      "status": "inactive",
+      "last_seen": "2025-06-18"
+    },
+    {
+      "name": "Macauley Peterson",
+      "team": "Blockworks Editorial",
+      "asset": "BITB",
+      "asset_type": "equity",
+      "first_added": "2025-03-08",
+      "status": "inactive",
+      "last_seen": "2025-04-01"
+    },
+    {
+      "name": "Macauley Peterson",
+      "team": "Blockworks Editorial",
+      "asset": "ETH",
+      "asset_type": "crypto",
+      "first_added": "2025-03-08",
+      "status": "inactive",
+      "last_seen": "2025-06-18"
+    },
+    {
+      "name": "Macauley Peterson",
+      "team": "Blockworks Editorial",
+      "asset": "HODL",
+      "asset_type": "equity",
+      "first_added": "2025-03-08",
+      "status": "inactive",
+      "last_seen": "2025-06-18"
+    },
+    {
+      "name": "Macauley Peterson",
+      "team": "Blockworks Editorial",
+      "asset": "SOL",
+      "asset_type": "crypto",
+      "first_added": "2025-03-08",
+      "status": "inactive",
+      "last_seen": "2025-06-18"
+    },
+    {
+      "name": "Marc Arjoon",
+      "team": "Blockworks Research",
+      "asset": "BTC",
+      "asset_type": "crypto",
+      "first_added": "2025-03-08",
+      "status": "active",
+      "last_seen": "2026-08-17"
+    },
+    {
+      "name": "Marc Arjoon",
+      "team": "Blockworks Research",
+      "asset": "ETH",
+      "asset_type": "crypto",
+      "first_added": "2025-03-08",
+      "status": "active",
+      "last_seen": "2026-08-17"
+    },
+    {
+      "name": "Marc Arjoon",
+      "team": "Blockworks Research",
+      "asset": "HOOD",
+      "asset_type": "equity",
+      "first_added": "2026-08-17",
+      "status": "active",
+      "last_seen": "2026-08-17"
+    },
+    {
+      "name": "Marc Arjoon",
+      "team": "Blockworks Research",
+      "asset": "SOL",
+      "asset_type": "crypto",
+      "first_added": "2025-03-08",
+      "status": "inactive",
+      "last_seen": "2025-06-18"
+    },
+    {
+      "name": "Marco Cupillari",
+      "team": "Blockworks Advisory",
+      "asset": "BTC",
+      "asset_type": "crypto",
+      "first_added": "2026-08-17",
+      "status": "active",
+      "last_seen": "2026-08-17"
+    },
+    {
+      "name": "Marco Cupillari",
+      "team": "Blockworks Advisory",
+      "asset": "Chromie Squigglie",
+      "asset_type": "nft",
+      "first_added": "2026-08-17",
+      "status": "active",
+      "last_seen": "2026-08-17"
+    },
+    {
+      "name": "Marco Cupillari",
+      "team": "Blockworks Advisory",
+      "asset": "ETH",
+      "asset_type": "crypto",
+      "first_added": "2026-08-17",
+      "status": "active",
+      "last_seen": "2026-08-17"
+    },
+    {
+      "name": "Marco Cupillari",
+      "team": "Blockworks Advisory",
+      "asset": "HYPE",
+      "asset_type": "crypto",
+      "first_added": "2026-08-17",
+      "status": "active",
+      "last_seen": "2026-08-17"
+    },
+    {
+      "name": "Marco Cupillari",
+      "team": "Blockworks Advisory",
+      "asset": "PONS",
+      "asset_type": "crypto",
+      "first_added": "2026-08-17",
+      "status": "active",
+      "last_seen": "2026-08-17"
+    },
+    {
+      "name": "Marco Cupillari",
+      "team": "Blockworks Advisory",
+      "asset": "PUMP",
+      "asset_type": "crypto",
+      "first_added": "2026-08-17",
+      "status": "active",
+      "last_seen": "2026-08-17"
+    },
+    {
+      "name": "Marco Cupillari",
+      "team": "Blockworks Advisory",
+      "asset": "ZEC",
+      "asset_type": "crypto",
+      "first_added": "2026-08-17",
+      "status": "active",
+      "last_seen": "2026-08-17"
+    },
+    {
+      "name": "Maryanne Olson",
+      "team": "Blockworks Research",
+      "asset": "BTC",
+      "asset_type": "crypto",
+      "first_added": "2025-03-08",
+      "status": "inactive",
+      "last_seen": "2025-06-18"
+    },
+    {
+      "name": "Maryanne Olson",
+      "team": "Blockworks Research",
+      "asset": "ETH",
+      "asset_type": "crypto",
+      "first_added": "2025-03-08",
+      "status": "inactive",
+      "last_seen": "2025-06-18"
+    },
+    {
+      "name": "Maryanne Olson",
+      "team": "Blockworks Research",
+      "asset": "JTO",
+      "asset_type": "crypto",
+      "first_added": "2025-04-02",
+      "status": "inactive",
+      "last_seen": "2025-06-18"
+    },
+    {
+      "name": "Maryanne Olson",
+      "team": "Blockworks Research",
+      "asset": "KWEEN",
+      "asset_type": "crypto",
+      "first_added": "2025-03-08",
+      "status": "inactive",
+      "last_seen": "2025-05-02"
+    },
+    {
+      "name": "Maryanne Olson",
+      "team": "Blockworks Research",
+      "asset": "Kween",
+      "asset_type": "crypto",
+      "first_added": "2025-05-03",
+      "status": "inactive",
+      "last_seen": "2025-06-03"
+    },
+    {
+      "name": "Maryanne Olson",
+      "team": "Blockworks Research",
+      "asset": "SOL",
+      "asset_type": "crypto",
+      "first_added": "2025-03-08",
+      "status": "inactive",
+      "last_seen": "2025-06-18"
+    },
+    {
+      "name": "Michael Ippolito",
+      "team": "Blockworks Media",
+      "asset": "3F",
+      "asset_type": "angel",
+      "first_added": "2026-08-17",
+      "status": "active",
+      "last_seen": "2026-08-17"
+    },
+    {
+      "name": "Michael Ippolito",
+      "team": "Blockworks Media",
+      "asset": "AVAX",
+      "asset_type": "crypto",
+      "first_added": "2025-04-04",
+      "status": "active",
+      "last_seen": "2026-08-17"
+    },
+    {
+      "name": "Michael Ippolito",
+      "team": "Blockworks Media",
+      "asset": "Astria",
+      "asset_type": "angel",
+      "first_added": "2026-08-17",
+      "status": "active",
+      "last_seen": "2026-08-17"
+    },
+    {
+      "name": "Michael Ippolito",
+      "team": "Blockworks Media",
+      "asset": "BTC",
+      "asset_type": "crypto",
+      "first_added": "2025-04-04",
+      "status": "active",
+      "last_seen": "2026-08-17"
+    },
+    {
+      "name": "Michael Ippolito",
+      "team": "Blockworks Media",
+      "asset": "Bad Kids",
+      "asset_type": "nft",
+      "first_added": "2025-04-04",
+      "status": "active",
+      "last_seen": "2026-08-17"
+    },
+    {
+      "name": "Michael Ippolito",
+      "team": "Blockworks Media",
+      "asset": "DEGEN",
+      "asset_type": "crypto",
+      "first_added": "2025-04-04",
+      "status": "active",
+      "last_seen": "2026-08-17"
+    },
+    {
+      "name": "Michael Ippolito",
+      "team": "Blockworks Media",
+      "asset": "Delta",
+      "asset_type": "angel",
+      "first_added": "2026-08-17",
+      "status": "active",
+      "last_seen": "2026-08-17"
+    },
+    {
+      "name": "Michael Ippolito",
+      "team": "Blockworks Media",
+      "asset": "ETH",
+      "asset_type": "crypto",
+      "first_added": "2025-04-04",
+      "status": "active",
+      "last_seen": "2026-08-17"
+    },
+    {
+      "name": "Michael Ippolito",
+      "team": "Blockworks Media",
+      "asset": "Ellipsis/Atlas",
+      "asset_type": "angel",
+      "first_added": "2026-08-17",
+      "status": "active",
+      "last_seen": "2026-08-17"
+    },
+    {
+      "name": "Michael Ippolito",
+      "team": "Blockworks Media",
+      "asset": "FRIEND",
+      "asset_type": "crypto",
+      "first_added": "2025-04-04",
+      "status": "inactive",
+      "last_seen": "2025-06-04"
+    },
+    {
+      "name": "Michael Ippolito",
+      "team": "Blockworks Media",
+      "asset": "Garden",
+      "asset_type": "angel",
+      "first_added": "2026-08-17",
+      "status": "active",
+      "last_seen": "2026-08-17"
+    },
+    {
+      "name": "Michael Ippolito",
+      "team": "Blockworks Media",
+      "asset": "Helius",
+      "asset_type": "angel",
+      "first_added": "2026-08-17",
+      "status": "active",
+      "last_seen": "2026-08-17"
+    },
+    {
+      "name": "Michael Ippolito",
+      "team": "Blockworks Media",
+      "asset": "IMX",
+      "asset_type": "crypto",
+      "first_added": "2025-04-04",
+      "status": "active",
+      "last_seen": "2026-08-17"
+    },
+    {
+      "name": "Michael Ippolito",
+      "team": "Blockworks Media",
+      "asset": "Jito",
+      "asset_type": "angel",
+      "first_added": "2026-08-17",
+      "status": "active",
+      "last_seen": "2026-08-17"
+    },
+    {
+      "name": "Michael Ippolito",
+      "team": "Blockworks Media",
+      "asset": "MIPPO",
+      "asset_type": "crypto",
+      "first_added": "2026-08-17",
+      "status": "active",
+      "last_seen": "2026-08-17"
+    },
+    {
+      "name": "Michael Ippolito",
+      "team": "Blockworks Media",
+      "asset": "MadLads",
+      "asset_type": "nft",
+      "first_added": "2025-04-04",
+      "status": "active",
+      "last_seen": "2026-08-17"
+    },
+    {
+      "name": "Michael Ippolito",
+      "team": "Blockworks Media",
+      "asset": "Monad",
+      "asset_type": "angel",
+      "first_added": "2026-08-17",
+      "status": "active",
+      "last_seen": "2026-08-17"
+    },
+    {
+      "name": "Michael Ippolito",
+      "team": "Blockworks Media",
+      "asset": "Pudgy Penguins",
+      "asset_type": "nft",
+      "first_added": "2025-04-04",
+      "status": "active",
+      "last_seen": "2026-08-17"
+    },
+    {
+      "name": "Michael Ippolito",
+      "team": "Blockworks Media",
+      "asset": "RNDR",
+      "asset_type": "crypto",
+      "first_added": "2025-04-04",
+      "status": "active",
+      "last_seen": "2026-08-17"
+    },
+    {
+      "name": "Michael Ippolito",
+      "team": "Blockworks Media",
+      "asset": "Rio (acq Eigen)",
+      "asset_type": "angel",
+      "first_added": "2026-08-17",
+      "status": "active",
+      "last_seen": "2026-08-17"
+    },
+    {
+      "name": "Michael Ippolito",
+      "team": "Blockworks Media",
+      "asset": "Ryze",
+      "asset_type": "angel",
+      "first_added": "2026-08-17",
+      "status": "active",
+      "last_seen": "2026-08-17"
+    },
+    {
+      "name": "Michael Ippolito",
+      "team": "Blockworks Media",
+      "asset": "SOL",
+      "asset_type": "crypto",
+      "first_added": "2025-04-04",
+      "status": "active",
+      "last_seen": "2026-08-17"
+    },
+    {
+      "name": "Michael Ippolito",
+      "team": "Blockworks Media",
+      "asset": "SUI",
+      "asset_type": "crypto",
+      "first_added": "2025-04-04",
+      "status": "active",
+      "last_seen": "2026-08-17"
+    },
+    {
+      "name": "Michael Ippolito",
+      "team": "Blockworks Media",
+      "asset": "Solayer",
+      "asset_type": "angel",
+      "first_added": "2026-08-17",
+      "status": "active",
+      "last_seen": "2026-08-17"
+    },
+    {
+      "name": "Michael Ippolito",
+      "team": "Blockworks Media",
+      "asset": "Sorella Labs",
+      "asset_type": "angel",
+      "first_added": "2026-08-17",
+      "status": "active",
+      "last_seen": "2026-08-17"
+    },
+    {
+      "name": "Michael Ippolito",
+      "team": "Blockworks Media",
+      "asset": "Stride",
+      "asset_type": "angel",
+      "first_added": "2026-08-17",
+      "status": "active",
+      "last_seen": "2026-08-17"
+    },
+    {
+      "name": "Michael Ippolito",
+      "team": "Blockworks Media",
+      "asset": "Succinct",
+      "asset_type": "angel",
+      "first_added": "2026-08-17",
+      "status": "active",
+      "last_seen": "2026-08-17"
+    },
+    {
+      "name": "Michael Ippolito",
+      "team": "Blockworks Media",
+      "asset": "TAO",
+      "asset_type": "crypto",
+      "first_added": "2025-04-04",
+      "status": "active",
+      "last_seen": "2026-08-17"
+    },
+    {
+      "name": "Michael Ippolito",
+      "team": "Blockworks Media",
+      "asset": "TIA",
+      "asset_type": "crypto",
+      "first_added": "2025-04-04",
+      "status": "active",
+      "last_seen": "2026-08-17"
+    },
+    {
+      "name": "Michael Ippolito",
+      "team": "Blockworks Media",
+      "asset": "Tensorians",
+      "asset_type": "nft",
+      "first_added": "2025-04-04",
+      "status": "active",
+      "last_seen": "2026-08-17"
+    },
+    {
+      "name": "Michael Ippolito",
+      "team": "Blockworks Media",
+      "asset": "VIRTUALS",
+      "asset_type": "crypto",
+      "first_added": "2025-04-04",
+      "status": "active",
+      "last_seen": "2026-08-17"
+    },
+    {
+      "name": "Michael Ippolito*",
+      "team": "Podcasts",
+      "asset": "AVAX",
+      "asset_type": "crypto",
+      "first_added": "2025-04-02",
+      "status": "inactive",
+      "last_seen": "2025-04-03"
+    },
+    {
+      "name": "Michael Ippolito*",
+      "team": "Podcasts",
+      "asset": "Bad Kids",
+      "asset_type": "nft",
+      "first_added": "2025-04-02",
+      "status": "inactive",
+      "last_seen": "2025-04-03"
+    },
+    {
+      "name": "Michael Ippolito*",
+      "team": "Podcasts",
+      "asset": "DEGEN",
+      "asset_type": "crypto",
+      "first_added": "2025-04-02",
+      "status": "inactive",
+      "last_seen": "2025-04-03"
+    },
+    {
+      "name": "Michael Ippolito*",
+      "team": "Podcasts",
+      "asset": "ETH",
+      "asset_type": "crypto",
+      "first_added": "2025-04-02",
+      "status": "inactive",
+      "last_seen": "2025-04-03"
+    },
+    {
+      "name": "Michael Ippolito*",
+      "team": "Podcasts",
+      "asset": "FRIEND",
+      "asset_type": "crypto",
+      "first_added": "2025-04-02",
+      "status": "inactive",
+      "last_seen": "2025-04-03"
+    },
+    {
+      "name": "Michael Ippolito*",
+      "team": "Podcasts",
+      "asset": "IMX",
+      "asset_type": "crypto",
+      "first_added": "2025-04-02",
+      "status": "inactive",
+      "last_seen": "2025-04-03"
+    },
+    {
+      "name": "Michael Ippolito*",
+      "team": "Podcasts",
+      "asset": "MadLads",
+      "asset_type": "nft",
+      "first_added": "2025-04-02",
+      "status": "inactive",
+      "last_seen": "2025-04-03"
+    },
+    {
+      "name": "Michael Ippolito*",
+      "team": "Podcasts",
+      "asset": "Pudgy Penguins",
+      "asset_type": "nft",
+      "first_added": "2025-04-02",
+      "status": "inactive",
+      "last_seen": "2025-04-03"
+    },
+    {
+      "name": "Michael Ippolito*",
+      "team": "Podcasts",
+      "asset": "RNDR",
+      "asset_type": "crypto",
+      "first_added": "2025-04-02",
+      "status": "inactive",
+      "last_seen": "2025-04-03"
+    },
+    {
+      "name": "Michael Ippolito*",
+      "team": "Podcasts",
+      "asset": "SOL",
+      "asset_type": "crypto",
+      "first_added": "2025-04-02",
+      "status": "inactive",
+      "last_seen": "2025-04-03"
+    },
+    {
+      "name": "Michael Ippolito*",
+      "team": "Podcasts",
+      "asset": "SUI",
+      "asset_type": "crypto",
+      "first_added": "2025-04-02",
+      "status": "inactive",
+      "last_seen": "2025-04-03"
+    },
+    {
+      "name": "Michael Ippolito*",
+      "team": "Podcasts",
+      "asset": "TAO",
+      "asset_type": "crypto",
+      "first_added": "2025-04-02",
+      "status": "inactive",
+      "last_seen": "2025-04-03"
+    },
+    {
+      "name": "Michael Ippolito*",
+      "team": "Podcasts",
+      "asset": "TIA",
+      "asset_type": "crypto",
+      "first_added": "2025-04-02",
+      "status": "inactive",
+      "last_seen": "2025-04-03"
+    },
+    {
+      "name": "Michael Ippolito*",
+      "team": "Podcasts",
+      "asset": "Tensorians",
+      "asset_type": "nft",
+      "first_added": "2025-04-02",
+      "status": "inactive",
+      "last_seen": "2025-04-03"
+    },
+    {
+      "name": "Michael Ippolito*",
+      "team": "Podcasts",
+      "asset": "VIRTUALS",
+      "asset_type": "crypto",
+      "first_added": "2025-04-02",
+      "status": "inactive",
+      "last_seen": "2025-04-03"
+    },
+    {
+      "name": "Mike Ippolito",
+      "team": "Podcasts",
+      "asset": "AVAX",
+      "asset_type": "crypto",
+      "first_added": "2025-03-08",
+      "status": "inactive",
+      "last_seen": "2025-04-01"
+    },
+    {
+      "name": "Mike Ippolito",
+      "team": "Podcasts",
+      "asset": "BTC",
+      "asset_type": "crypto",
+      "first_added": "2025-03-08",
+      "status": "inactive",
+      "last_seen": "2025-04-01"
+    },
+    {
+      "name": "Mike Ippolito",
+      "team": "Podcasts",
+      "asset": "Bad Kids",
+      "asset_type": "nft",
+      "first_added": "2025-03-08",
+      "status": "inactive",
+      "last_seen": "2025-04-01"
+    },
+    {
+      "name": "Mike Ippolito",
+      "team": "Podcasts",
+      "asset": "DEGEN",
+      "asset_type": "crypto",
+      "first_added": "2025-03-08",
+      "status": "inactive",
+      "last_seen": "2025-04-01"
+    },
+    {
+      "name": "Mike Ippolito",
+      "team": "Podcasts",
+      "asset": "ETH",
+      "asset_type": "crypto",
+      "first_added": "2025-03-08",
+      "status": "inactive",
+      "last_seen": "2025-04-01"
+    },
+    {
+      "name": "Mike Ippolito",
+      "team": "Podcasts",
+      "asset": "FRIEND",
+      "asset_type": "crypto",
+      "first_added": "2025-03-08",
+      "status": "inactive",
+      "last_seen": "2025-04-01"
+    },
+    {
+      "name": "Mike Ippolito",
+      "team": "Podcasts",
+      "asset": "IMX",
+      "asset_type": "crypto",
+      "first_added": "2025-03-08",
+      "status": "inactive",
+      "last_seen": "2025-04-01"
+    },
+    {
+      "name": "Mike Ippolito",
+      "team": "Podcasts",
+      "asset": "MadLads",
+      "asset_type": "nft",
+      "first_added": "2025-03-08",
+      "status": "inactive",
+      "last_seen": "2025-04-01"
+    },
+    {
+      "name": "Mike Ippolito",
+      "team": "Podcasts",
+      "asset": "Pudgy Penguins",
+      "asset_type": "nft",
+      "first_added": "2025-03-08",
+      "status": "inactive",
+      "last_seen": "2025-04-01"
+    },
+    {
+      "name": "Mike Ippolito",
+      "team": "Podcasts",
+      "asset": "RNDR",
+      "asset_type": "crypto",
+      "first_added": "2025-03-08",
+      "status": "inactive",
+      "last_seen": "2025-04-01"
+    },
+    {
+      "name": "Mike Ippolito",
+      "team": "Podcasts",
+      "asset": "SOL",
+      "asset_type": "crypto",
+      "first_added": "2025-03-08",
+      "status": "inactive",
+      "last_seen": "2025-04-01"
+    },
+    {
+      "name": "Mike Ippolito",
+      "team": "Podcasts",
+      "asset": "SUI",
+      "asset_type": "crypto",
+      "first_added": "2025-03-08",
+      "status": "inactive",
+      "last_seen": "2025-04-01"
+    },
+    {
+      "name": "Mike Ippolito",
+      "team": "Podcasts",
+      "asset": "TAO",
+      "asset_type": "crypto",
+      "first_added": "2025-03-08",
+      "status": "inactive",
+      "last_seen": "2025-04-01"
+    },
+    {
+      "name": "Mike Ippolito",
+      "team": "Podcasts",
+      "asset": "TIA",
+      "asset_type": "crypto",
+      "first_added": "2025-03-08",
+      "status": "inactive",
+      "last_seen": "2025-04-01"
+    },
+    {
+      "name": "Mike Ippolito",
+      "team": "Podcasts",
+      "asset": "Tensorians",
+      "asset_type": "nft",
+      "first_added": "2025-03-08",
+      "status": "inactive",
+      "last_seen": "2025-04-01"
+    },
+    {
+      "name": "Mike Ippolito",
+      "team": "Podcasts",
+      "asset": "VIRTUALS",
+      "asset_type": "crypto",
+      "first_added": "2025-03-08",
+      "status": "inactive",
+      "last_seen": "2025-04-01"
+    },
+    {
+      "name": "Nathaniel Whittemore",
+      "team": "Podcasts",
+      "asset": "BTC",
+      "asset_type": "crypto",
+      "first_added": "2025-03-08",
+      "status": "inactive",
+      "last_seen": "2025-06-18"
+    },
+    {
+      "name": "Nathaniel Whittemore",
+      "team": "Podcasts",
+      "asset": "COIN",
+      "asset_type": "equity",
+      "first_added": "2025-03-08",
+      "status": "inactive",
+      "last_seen": "2025-06-18"
+    },
+    {
+      "name": "Nathaniel Whittemore",
+      "team": "Podcasts",
+      "asset": "ETH",
+      "asset_type": "crypto",
+      "first_added": "2025-03-08",
+      "status": "inactive",
+      "last_seen": "2025-06-18"
+    },
+    {
+      "name": "Nathaniel Whittemore",
+      "team": "Podcasts",
+      "asset": "SOL",
+      "asset_type": "crypto",
+      "first_added": "2025-03-08",
+      "status": "inactive",
+      "last_seen": "2025-06-18"
+    },
+    {
+      "name": "Nick Carpinito",
+      "team": "Blockworks Research",
+      "asset": "FuseSOL",
+      "asset_type": "crypto",
+      "first_added": "2025-05-03",
+      "status": "inactive",
+      "last_seen": "2025-06-03"
+    },
+    {
+      "name": "Nick Carpinito",
+      "team": "Blockworks Research",
+      "asset": "HNT",
+      "asset_type": "crypto",
+      "first_added": "2025-04-02",
+      "status": "inactive",
+      "last_seen": "2025-06-18"
+    },
+    {
+      "name": "Nick Carpinito",
+      "team": "Blockworks Research",
+      "asset": "SOL",
+      "asset_type": "crypto",
+      "first_added": "2025-06-04",
+      "status": "inactive",
+      "last_seen": "2025-06-18"
+    },
+    {
+      "name": "Nick Carpinito",
+      "team": "Blockworks Research",
+      "asset": "fuseSOL",
+      "asset_type": "crypto",
+      "first_added": "2025-04-02",
+      "status": "inactive",
+      "last_seen": "2025-06-18"
+    },
+    {
+      "name": "Nikhil Chaturvedi",
+      "team": "Blockworks Advisory",
+      "asset": "AVAX",
+      "asset_type": "crypto",
+      "first_added": "2025-03-08",
+      "status": "inactive",
+      "last_seen": "2025-06-18"
+    },
+    {
+      "name": "Pete Rizzo",
+      "team": "Podcasts",
+      "asset": "BTC",
+      "asset_type": "crypto",
+      "first_added": "2025-03-08",
+      "status": "inactive",
+      "last_seen": "2025-06-18"
+    },
+    {
+      "name": "Pete Rizzo",
+      "team": "Podcasts",
+      "asset": "CEP",
+      "asset_type": "equity",
+      "first_added": "2025-05-03",
+      "status": "inactive",
+      "last_seen": "2025-06-18"
+    },
+    {
+      "name": "Pete Rizzo",
+      "team": "Podcasts",
+      "asset": "ETH",
+      "asset_type": "crypto",
+      "first_added": "2025-03-08",
+      "status": "inactive",
+      "last_seen": "2025-06-03"
+    },
+    {
+      "name": "Pete Rizzo",
+      "team": "Podcasts",
+      "asset": "MSTR",
+      "asset_type": "equity",
+      "first_added": "2025-03-08",
+      "status": "inactive",
+      "last_seen": "2025-06-18"
+    },
+    {
+      "name": "Pete Rizzo",
+      "team": "Podcasts",
+      "asset": "Ordinals",
+      "asset_type": "nft",
+      "first_added": "2025-03-08",
+      "status": "inactive",
+      "last_seen": "2025-06-18"
+    },
+    {
+      "name": "Robert Burkhart",
+      "team": "Blockworks Advisory",
+      "asset": "AAVE",
+      "asset_type": "crypto",
+      "first_added": "2025-04-02",
+      "status": "inactive",
+      "last_seen": "2025-05-02"
+    },
+    {
+      "name": "Robert Burkhart",
+      "team": "Blockworks Advisory",
+      "asset": "LFNTY",
+      "asset_type": "crypto",
+      "first_added": "2025-03-08",
+      "status": "inactive",
+      "last_seen": "2025-04-01"
+    },
+    {
+      "name": "Robert Burkhart",
+      "team": "Blockworks Advisory",
+      "asset": "NA",
+      "asset_type": "crypto",
+      "first_added": "2025-05-03",
+      "status": "inactive",
+      "last_seen": "2025-06-03"
+    },
+    {
+      "name": "Rod",
+      "team": "Blockworks Data",
+      "asset": "AAVE",
+      "asset_type": "crypto",
+      "first_added": "2025-03-12",
+      "status": "inactive",
+      "last_seen": "2025-06-18"
+    },
+    {
+      "name": "Rod",
+      "team": "Blockworks Data",
+      "asset": "ASTER",
+      "asset_type": "crypto",
+      "first_added": "2026-08-17",
+      "status": "active",
+      "last_seen": "2026-08-17"
+    },
+    {
+      "name": "Rod",
+      "team": "Blockworks Data",
+      "asset": "BTC",
+      "asset_type": "crypto",
+      "first_added": "2025-06-04",
+      "status": "inactive",
+      "last_seen": "2025-06-18"
+    },
+    {
+      "name": "Rod",
+      "team": "Blockworks Data",
+      "asset": "CHART",
+      "asset_type": "crypto",
+      "first_added": "2025-03-12",
+      "status": "active",
+      "last_seen": "2026-08-17"
+    },
+    {
+      "name": "Rod",
+      "team": "Blockworks Data",
+      "asset": "COIN",
+      "asset_type": "equity",
+      "first_added": "2025-03-12",
+      "status": "inactive",
+      "last_seen": "2025-06-18"
+    },
+    {
+      "name": "Rod",
+      "team": "Blockworks Data",
+      "asset": "COW",
+      "asset_type": "crypto",
+      "first_added": "2025-06-04",
+      "status": "inactive",
+      "last_seen": "2025-06-18"
+    },
+    {
+      "name": "Rod",
+      "team": "Blockworks Data",
+      "asset": "DOLO",
+      "asset_type": "crypto",
+      "first_added": "2026-08-17",
+      "status": "active",
+      "last_seen": "2026-08-17"
+    },
+    {
+      "name": "Rod",
+      "team": "Blockworks Data",
+      "asset": "Digidaigaku",
+      "asset_type": "nft",
+      "first_added": "2025-03-12",
+      "status": "inactive",
+      "last_seen": "2025-06-18"
+    },
+    {
+      "name": "Rod",
+      "team": "Blockworks Data",
+      "asset": "ENA",
+      "asset_type": "crypto",
+      "first_added": "2025-03-12",
+      "status": "active",
+      "last_seen": "2026-08-17"
+    },
+    {
+      "name": "Rod",
+      "team": "Blockworks Data",
+      "asset": "ETH",
+      "asset_type": "crypto",
+      "first_added": "2025-03-12",
+      "status": "active",
+      "last_seen": "2026-08-17"
+    },
+    {
+      "name": "Rod",
+      "team": "Blockworks Data",
+      "asset": "ETHA",
+      "asset_type": "equity",
+      "first_added": "2025-03-12",
+      "status": "inactive",
+      "last_seen": "2025-04-01"
+    },
+    {
+      "name": "Rod",
+      "team": "Blockworks Data",
+      "asset": "ETHE",
+      "asset_type": "equity",
+      "first_added": "2025-03-12",
+      "status": "inactive",
+      "last_seen": "2025-05-02"
+    },
+    {
+      "name": "Rod",
+      "team": "Blockworks Data",
+      "asset": "FBTC",
+      "asset_type": "equity",
+      "first_added": "2025-03-12",
+      "status": "inactive",
+      "last_seen": "2025-04-01"
+    },
+    {
+      "name": "Rod",
+      "team": "Blockworks Data",
+      "asset": "FLNCHY",
+      "asset_type": "crypto",
+      "first_added": "2025-04-02",
+      "status": "inactive",
+      "last_seen": "2025-05-02"
+    },
+    {
+      "name": "Rod",
+      "team": "Blockworks Data",
+      "asset": "HFUN",
+      "asset_type": "crypto",
+      "first_added": "2025-03-12",
+      "status": "inactive",
+      "last_seen": "2025-04-01"
+    },
+    {
+      "name": "Rod",
+      "team": "Blockworks Data",
+      "asset": "HOOD",
+      "asset_type": "equity",
+      "first_added": "2025-03-12",
+      "status": "inactive",
+      "last_seen": "2025-04-01"
+    },
+    {
+      "name": "Rod",
+      "team": "Blockworks Data",
+      "asset": "HYPE",
+      "asset_type": "crypto",
+      "first_added": "2025-03-12",
+      "status": "active",
+      "last_seen": "2026-08-17"
+    },
+    {
+      "name": "Rod",
+      "team": "Blockworks Data",
+      "asset": "LDO",
+      "asset_type": "crypto",
+      "first_added": "2025-03-12",
+      "status": "inactive",
+      "last_seen": "2025-05-02"
+    },
+    {
+      "name": "Rod",
+      "team": "Blockworks Data",
+      "asset": "MOTO",
+      "asset_type": "crypto",
+      "first_added": "2025-05-03",
+      "status": "inactive",
+      "last_seen": "2025-06-18"
+    },
+    {
+      "name": "Rod",
+      "team": "Blockworks Data",
+      "asset": "PHNIX",
+      "asset_type": "crypto",
+      "first_added": "2025-03-12",
+      "status": "active",
+      "last_seen": "2026-08-17"
+    },
+    {
+      "name": "Rod",
+      "team": "Blockworks Data",
+      "asset": "PUMPCADE",
+      "asset_type": "crypto",
+      "first_added": "2026-08-17",
+      "status": "active",
+      "last_seen": "2026-08-17"
+    },
+    {
+      "name": "Rod",
+      "team": "Blockworks Data",
+      "asset": "SCRAP",
+      "asset_type": "crypto",
+      "first_added": "2025-03-12",
+      "status": "inactive",
+      "last_seen": "2025-06-18"
+    },
+    {
+      "name": "Rod",
+      "team": "Blockworks Data",
+      "asset": "TANGO",
+      "asset_type": "crypto",
+      "first_added": "2025-06-04",
+      "status": "inactive",
+      "last_seen": "2025-06-18"
+    },
+    {
+      "name": "Rod",
+      "team": "Blockworks Data",
+      "asset": "TNSR",
+      "asset_type": "crypto",
+      "first_added": "2025-03-12",
+      "status": "inactive",
+      "last_seen": "2025-04-01"
+    },
+    {
+      "name": "Rod",
+      "team": "Blockworks Data",
+      "asset": "TSLA",
+      "asset_type": "equity",
+      "first_added": "2025-05-03",
+      "status": "inactive",
+      "last_seen": "2025-06-03"
+    },
+    {
+      "name": "Rod",
+      "team": "Blockworks Data",
+      "asset": "Terraforms",
+      "asset_type": "nft",
+      "first_added": "2025-03-12",
+      "status": "inactive",
+      "last_seen": "2025-04-01"
+    },
+    {
+      "name": "Rod",
+      "team": "Blockworks Data",
+      "asset": "UNI",
+      "asset_type": "crypto",
+      "first_added": "2025-03-12",
+      "status": "inactive",
+      "last_seen": "2025-04-01"
+    },
+    {
+      "name": "Rod",
+      "team": "Blockworks Data",
+      "asset": "USDC",
+      "asset_type": "crypto",
+      "first_added": "2025-04-02",
+      "status": "active",
+      "last_seen": "2026-08-17"
+    },
+    {
+      "name": "Rod",
+      "team": "Blockworks Data",
+      "asset": "VDO",
+      "asset_type": "crypto",
+      "first_added": "2025-04-02",
+      "status": "inactive",
+      "last_seen": "2025-06-18"
+    },
+    {
+      "name": "Rod",
+      "team": "Blockworks Data",
+      "asset": "XRP",
+      "asset_type": "crypto",
+      "first_added": "2025-03-12",
+      "status": "active",
+      "last_seen": "2026-08-17"
+    },
+    {
+      "name": "Rod",
+      "team": "Blockworks Data",
+      "asset": "XRP_PERPS",
+      "asset_type": "crypto",
+      "first_added": "2026-08-17",
+      "status": "active",
+      "last_seen": "2026-08-17"
+    },
+    {
+      "name": "Rod",
+      "team": "Blockworks Data",
+      "asset": "kemonokaki",
+      "asset_type": "nft",
+      "first_added": "2025-03-12",
+      "status": "inactive",
+      "last_seen": "2025-04-01"
+    },
+    {
+      "name": "Ryan Connor",
+      "team": "Blockworks Research",
+      "asset": "COIN",
+      "asset_type": "equity",
+      "first_added": "2025-03-08",
+      "status": "inactive",
+      "last_seen": "2025-06-03"
+    },
+    {
+      "name": "Ryan Connor",
+      "team": "Blockworks Research",
+      "asset": "HOOD",
+      "asset_type": "equity",
+      "first_added": "2025-06-04",
+      "status": "inactive",
+      "last_seen": "2025-06-18"
+    },
+    {
+      "name": "Ryan Connor",
+      "team": "Blockworks Research",
+      "asset": "IBIT",
+      "asset_type": "equity",
+      "first_added": "2025-03-08",
+      "status": "inactive",
+      "last_seen": "2025-06-18"
+    },
+    {
+      "name": "Ryan Connor",
+      "team": "Blockworks Research",
+      "asset": "JTO",
+      "asset_type": "crypto",
+      "first_added": "2025-04-02",
+      "status": "inactive",
+      "last_seen": "2025-06-18"
+    },
+    {
+      "name": "Ryan Connor",
+      "team": "Blockworks Research",
+      "asset": "SOL",
+      "asset_type": "crypto",
+      "first_added": "2025-03-08",
+      "status": "inactive",
+      "last_seen": "2025-06-18"
+    },
+    {
+      "name": "Ryan Graham",
+      "team": "Blockworks Research",
+      "asset": "AI",
+      "asset_type": "crypto",
+      "first_added": "2026-08-17",
+      "status": "active",
+      "last_seen": "2026-08-17"
+    },
+    {
+      "name": "Ryan Graham",
+      "team": "Blockworks Research",
+      "asset": "BTC",
+      "asset_type": "crypto",
+      "first_added": "2026-08-17",
+      "status": "active",
+      "last_seen": "2026-08-17"
+    },
+    {
+      "name": "Ryan Graham",
+      "team": "Blockworks Research",
+      "asset": "Bitcoin Puppets",
+      "asset_type": "nft",
+      "first_added": "2026-08-17",
+      "status": "active",
+      "last_seen": "2026-08-17"
+    },
+    {
+      "name": "Ryan Graham",
+      "team": "Blockworks Research",
+      "asset": "FWA",
+      "asset_type": "crypto",
+      "first_added": "2026-08-17",
+      "status": "active",
+      "last_seen": "2026-08-17"
+    },
+    {
+      "name": "Ryan Graham",
+      "team": "Blockworks Research",
+      "asset": "Milady",
+      "asset_type": "nft",
+      "first_added": "2026-08-17",
+      "status": "active",
+      "last_seen": "2026-08-17"
+    },
+    {
+      "name": "Ryan Graham",
+      "team": "Blockworks Research",
+      "asset": "PONS",
+      "asset_type": "crypto",
+      "first_added": "2026-08-17",
+      "status": "active",
+      "last_seen": "2026-08-17"
+    },
+    {
+      "name": "Ryan Graham",
+      "team": "Blockworks Research",
+      "asset": "PUMPCADE",
+      "asset_type": "crypto",
+      "first_added": "2026-08-17",
+      "status": "active",
+      "last_seen": "2026-08-17"
+    },
+    {
+      "name": "Ryan Graham",
+      "team": "Blockworks Research",
+      "asset": "RAIL",
+      "asset_type": "crypto",
+      "first_added": "2026-08-17",
+      "status": "active",
+      "last_seen": "2026-08-17"
+    },
+    {
+      "name": "Ryan Graham",
+      "team": "Blockworks Research",
+      "asset": "TCG",
+      "asset_type": "crypto",
+      "first_added": "2026-08-17",
+      "status": "active",
+      "last_seen": "2026-08-17"
+    },
+    {
+      "name": "Ryan Graham",
+      "team": "Blockworks Research",
+      "asset": "TYGR",
+      "asset_type": "crypto",
+      "first_added": "2026-08-17",
+      "status": "active",
+      "last_seen": "2026-08-17"
+    },
+    {
+      "name": "Ryan Graham",
+      "team": "Blockworks Research",
+      "asset": "WALLET",
+      "asset_type": "crypto",
+      "first_added": "2026-08-17",
+      "status": "active",
+      "last_seen": "2026-08-17"
+    },
+    {
+      "name": "Ryan Graham",
+      "team": "Blockworks Research",
+      "asset": "gSPEED",
+      "asset_type": "crypto",
+      "first_added": "2026-08-17",
+      "status": "active",
+      "last_seen": "2026-08-17"
+    },
+    {
+      "name": "Ryan Herlihy",
+      "team": "Blockworks Data",
+      "asset": "AERO",
+      "asset_type": "crypto",
+      "first_added": "2025-03-08",
+      "status": "inactive",
+      "last_seen": "2025-06-18"
+    },
+    {
+      "name": "Ryan Herlihy",
+      "team": "Blockworks Data",
+      "asset": "COIN",
+      "asset_type": "equity",
+      "first_added": "2025-03-08",
+      "status": "inactive",
+      "last_seen": "2025-04-01"
+    },
+    {
+      "name": "Ryan Herlihy",
+      "team": "Blockworks Data",
+      "asset": "ETH",
+      "asset_type": "crypto",
+      "first_added": "2025-03-08",
+      "status": "inactive",
+      "last_seen": "2025-06-18"
+    },
+    {
+      "name": "Ryan Herlihy",
+      "team": "Blockworks Data",
+      "asset": "HOOD",
+      "asset_type": "equity",
+      "first_added": "2025-03-08",
+      "status": "inactive",
+      "last_seen": "2025-06-18"
+    },
+    {
+      "name": "Ryan Herlihy",
+      "team": "Blockworks Data",
+      "asset": "LINK",
+      "asset_type": "crypto",
+      "first_added": "2025-03-08",
+      "status": "inactive",
+      "last_seen": "2025-06-18"
+    },
+    {
+      "name": "Ryan Herlihy",
+      "team": "Blockworks Data",
+      "asset": "ODOS",
+      "asset_type": "crypto",
+      "first_added": "2025-03-08",
+      "status": "inactive",
+      "last_seen": "2025-06-18"
+    },
+    {
+      "name": "Ryan Herlihy",
+      "team": "Blockworks Data",
+      "asset": "OP",
+      "asset_type": "crypto",
+      "first_added": "2025-03-08",
+      "status": "inactive",
+      "last_seen": "2025-06-18"
+    },
+    {
+      "name": "Ryan Herlihy",
+      "team": "Blockworks Data",
+      "asset": "VELO",
+      "asset_type": "crypto",
+      "first_added": "2025-03-08",
+      "status": "inactive",
+      "last_seen": "2025-06-18"
+    },
+    {
+      "name": "Ryan West",
+      "team": "Research",
+      "asset": "BTC",
+      "asset_type": "crypto",
+      "first_added": "2025-03-08",
+      "status": "inactive",
+      "last_seen": "2025-03-14"
+    },
+    {
+      "name": "Ryan West",
+      "team": "Research",
+      "asset": "Fluffle",
+      "asset_type": "nft",
+      "first_added": "2025-03-08",
+      "status": "inactive",
+      "last_seen": "2025-03-14"
+    },
+    {
+      "name": "Ryan West",
+      "team": "Research",
+      "asset": "SOL",
+      "asset_type": "crypto",
+      "first_added": "2025-03-08",
+      "status": "inactive",
+      "last_seen": "2025-03-14"
+    },
+    {
+      "name": "Sam Schubert",
+      "team": "Blockworks Research",
+      "asset": "BP",
+      "asset_type": "crypto",
+      "first_added": "2026-08-17",
+      "status": "active",
+      "last_seen": "2026-08-17"
+    },
+    {
+      "name": "Sam Schubert",
+      "team": "Blockworks Research",
+      "asset": "GLXY",
+      "asset_type": "equity",
+      "first_added": "2026-08-17",
+      "status": "active",
+      "last_seen": "2026-08-17"
+    },
+    {
+      "name": "Sam Schubert",
+      "team": "Blockworks Research",
+      "asset": "HYPE",
+      "asset_type": "crypto",
+      "first_added": "2026-08-17",
+      "status": "active",
+      "last_seen": "2026-08-17"
+    },
+    {
+      "name": "Sam Schubert",
+      "team": "Blockworks Research",
+      "asset": "IREN",
+      "asset_type": "equity",
+      "first_added": "2026-08-17",
+      "status": "active",
+      "last_seen": "2026-08-17"
+    },
+    {
+      "name": "Sam Schubert",
+      "team": "Blockworks Research",
+      "asset": "JTO",
+      "asset_type": "crypto",
+      "first_added": "2026-08-17",
+      "status": "active",
+      "last_seen": "2026-08-17"
+    },
+    {
+      "name": "Sam Schubert",
+      "team": "Blockworks Research",
+      "asset": "Mad Lads",
+      "asset_type": "nft",
+      "first_added": "2026-08-17",
+      "status": "active",
+      "last_seen": "2026-08-17"
+    },
+    {
+      "name": "Sam Schubert",
+      "team": "Blockworks Research",
+      "asset": "SOL",
+      "asset_type": "crypto",
+      "first_added": "2026-08-17",
+      "status": "active",
+      "last_seen": "2026-08-17"
+    },
+    {
+      "name": "Sam Schubert",
+      "team": "Blockworks Research",
+      "asset": "SUI",
+      "asset_type": "crypto",
+      "first_added": "2026-08-17",
+      "status": "active",
+      "last_seen": "2026-08-17"
+    },
+    {
+      "name": "Sam Schubert",
+      "team": "Blockworks Research",
+      "asset": "ZEC",
+      "asset_type": "crypto",
+      "first_added": "2026-08-17",
+      "status": "active",
+      "last_seen": "2026-08-17"
+    },
+    {
+      "name": "San Yong Seah",
+      "team": "Blockworks Data",
+      "asset": "BTC",
+      "asset_type": "crypto",
+      "first_added": "2026-08-17",
+      "status": "active",
+      "last_seen": "2026-08-17"
+    },
+    {
+      "name": "San Yong Seah",
+      "team": "Blockworks Data",
+      "asset": "HYPE",
+      "asset_type": "crypto",
+      "first_added": "2026-08-17",
+      "status": "active",
+      "last_seen": "2026-08-17"
+    },
+    {
+      "name": "San Yong Seah",
+      "team": "Blockworks Data",
+      "asset": "Hypurr",
+      "asset_type": "nft",
+      "first_added": "2026-08-17",
+      "status": "active",
+      "last_seen": "2026-08-17"
+    },
+    {
+      "name": "Shaunda Devens",
+      "team": "Blockworks Research",
+      "asset": "BTC",
+      "asset_type": "crypto",
+      "first_added": "2026-08-17",
+      "status": "active",
+      "last_seen": "2026-08-17"
+    },
+    {
+      "name": "Shaunda Devens",
+      "team": "Blockworks Research",
+      "asset": "HYPE",
+      "asset_type": "crypto",
+      "first_added": "2026-08-17",
+      "status": "active",
+      "last_seen": "2026-08-17"
+    },
+    {
+      "name": "Shaunda Devens",
+      "team": "Blockworks Research",
+      "asset": "KNTQ",
+      "asset_type": "crypto",
+      "first_added": "2026-08-17",
+      "status": "active",
+      "last_seen": "2026-08-17"
+    },
+    {
+      "name": "Shaunda Devens",
+      "team": "Blockworks Research",
+      "asset": "USDT",
+      "asset_type": "crypto",
+      "first_added": "2026-08-17",
+      "status": "active",
+      "last_seen": "2026-08-17"
+    },
+    {
+      "name": "Shaunda Devens",
+      "team": "Blockworks Research",
+      "asset": "USDai",
+      "asset_type": "crypto",
+      "first_added": "2026-08-17",
+      "status": "active",
+      "last_seen": "2026-08-17"
+    },
+    {
+      "name": "Silvio Busonero",
+      "team": "Blockworks Advisory",
+      "asset": "ETH",
+      "asset_type": "crypto",
+      "first_added": "2026-08-17",
+      "status": "active",
+      "last_seen": "2026-08-17"
+    },
+    {
+      "name": "Toma",
+      "team": "Blockworks Advisory",
+      "asset": "HYPE",
+      "asset_type": "crypto",
+      "first_added": "2026-08-17",
+      "status": "active",
+      "last_seen": "2026-08-17"
+    },
+    {
+      "name": "Troy Harris",
+      "team": "Blockworks Data",
+      "asset": "FLUID",
+      "asset_type": "crypto",
+      "first_added": "2026-08-17",
+      "status": "active",
+      "last_seen": "2026-08-17"
+    },
+    {
+      "name": "Victor Pham",
+      "team": "Blockworks Data",
+      "asset": "BONK",
+      "asset_type": "crypto",
+      "first_added": "2025-03-08",
+      "status": "inactive",
+      "last_seen": "2025-06-18"
+    },
+    {
+      "name": "Victor Pham",
+      "team": "Blockworks Data",
+      "asset": "BSOL",
+      "asset_type": "equity",
+      "first_added": "2026-08-17",
+      "status": "active",
+      "last_seen": "2026-08-17"
+    },
+    {
+      "name": "Victor Pham",
+      "team": "Blockworks Data",
+      "asset": "BTC",
+      "asset_type": "crypto",
+      "first_added": "2025-03-08",
+      "status": "active",
+      "last_seen": "2026-08-17"
+    },
+    {
+      "name": "Victor Pham",
+      "team": "Blockworks Data",
+      "asset": "HOOD",
+      "asset_type": "equity",
+      "first_added": "2025-04-02",
+      "status": "inactive",
+      "last_seen": "2025-06-18"
+    },
+    {
+      "name": "Victor Pham",
+      "team": "Blockworks Data",
+      "asset": "HYPE",
+      "asset_type": "crypto",
+      "first_added": "2025-03-08",
+      "status": "inactive",
+      "last_seen": "2025-06-18"
+    },
+    {
+      "name": "Victor Pham",
+      "team": "Blockworks Data",
+      "asset": "IBIT",
+      "asset_type": "equity",
+      "first_added": "2025-03-08",
+      "status": "active",
+      "last_seen": "2026-08-17"
+    },
+    {
+      "name": "Victor Pham",
+      "team": "Blockworks Data",
+      "asset": "JTO",
+      "asset_type": "crypto",
+      "first_added": "2025-03-08",
+      "status": "active",
+      "last_seen": "2026-08-17"
+    },
+    {
+      "name": "Victor Pham",
+      "team": "Blockworks Data",
+      "asset": "JUP",
+      "asset_type": "crypto",
+      "first_added": "2025-06-04",
+      "status": "inactive",
+      "last_seen": "2025-06-18"
+    },
+    {
+      "name": "Victor Pham",
+      "team": "Blockworks Data",
+      "asset": "KMNO",
+      "asset_type": "crypto",
+      "first_added": "2025-03-08",
+      "status": "inactive",
+      "last_seen": "2025-06-18"
+    },
+    {
+      "name": "Victor Pham",
+      "team": "Blockworks Data",
+      "asset": "SMB",
+      "asset_type": "nft",
+      "first_added": "2025-03-08",
+      "status": "inactive",
+      "last_seen": "2025-06-18"
+    },
+    {
+      "name": "Victor Pham",
+      "team": "Blockworks Data",
+      "asset": "SOL",
+      "asset_type": "crypto",
+      "first_added": "2025-03-08",
+      "status": "active",
+      "last_seen": "2026-08-17"
+    },
+    {
+      "name": "Victor Pham",
+      "team": "Blockworks Data",
+      "asset": "SOLL",
+      "asset_type": "equity",
+      "first_added": "2025-06-04",
+      "status": "inactive",
+      "last_seen": "2025-06-18"
+    },
+    {
+      "name": "Victor Pham",
+      "team": "Blockworks Data",
+      "asset": "SUI",
+      "asset_type": "crypto",
+      "first_added": "2025-06-04",
+      "status": "inactive",
+      "last_seen": "2025-06-18"
+    },
+    {
+      "name": "Victor Pham",
+      "team": "Blockworks Data",
+      "asset": "ZEUS",
+      "asset_type": "crypto",
+      "first_added": "2025-04-02",
+      "status": "inactive",
+      "last_seen": "2025-06-18"
+    },
+    {
+      "name": "Westie",
+      "team": "Blockworks Data",
+      "asset": "BTC",
+      "asset_type": "crypto",
+      "first_added": "2025-03-15",
+      "status": "inactive",
+      "last_seen": "2025-06-18"
+    },
+    {
+      "name": "Westie",
+      "team": "Blockworks Data",
+      "asset": "FARTCOIN",
+      "asset_type": "crypto",
+      "first_added": "2025-05-03",
+      "status": "inactive",
+      "last_seen": "2025-06-03"
+    },
+    {
+      "name": "Westie",
+      "team": "Blockworks Data",
+      "asset": "Fluffle",
+      "asset_type": "nft",
+      "first_added": "2025-03-15",
+      "status": "inactive",
+      "last_seen": "2025-06-18"
+    },
+    {
+      "name": "Westie",
+      "team": "Blockworks Data",
+      "asset": "HOOD",
+      "asset_type": "equity",
+      "first_added": "2025-05-03",
+      "status": "inactive",
+      "last_seen": "2025-06-18"
+    },
+    {
+      "name": "Westie",
+      "team": "Blockworks Data",
+      "asset": "IBIT",
+      "asset_type": "equity",
+      "first_added": "2025-05-03",
+      "status": "inactive",
+      "last_seen": "2025-06-18"
+    },
+    {
+      "name": "Westie",
+      "team": "Blockworks Data",
+      "asset": "Infinex Patron",
+      "asset_type": "nft",
+      "first_added": "2025-06-04",
+      "status": "inactive",
+      "last_seen": "2025-06-18"
+    },
+    {
+      "name": "Westie",
+      "team": "Blockworks Data",
+      "asset": "LAUNCHCOIN",
+      "asset_type": "crypto",
+      "first_added": "2025-06-04",
+      "status": "inactive",
+      "last_seen": "2025-06-18"
+    },
+    {
+      "name": "Westie",
+      "team": "Blockworks Data",
+      "asset": "SOL",
+      "asset_type": "crypto",
+      "first_added": "2025-03-15",
+      "status": "inactive",
+      "last_seen": "2025-06-18"
+    }
+  ]
+}
