@@ -63,12 +63,17 @@ says so loudly rather than returning nothing.
 
 | Path | Committed | What it is |
 | --- | --- | --- |
-| `data/holdings.db` | yes | SQLite: members, holdings, prices, token mappings |
+| `data/holdings.db` | yes | SQLite: members, holdings, prices, token mappings, holdings_history |
 | `data/holdings-snapshot.json` | yes | text copy of every holding — diffable, restorable |
 | `data/run-history.jsonl` | yes | one line per collector run; the audit trail |
 | `data/metadata.json` | yes | last successful scrape, strategy used, source's own note |
 | `backups/holdings-*.db` | no | last 7 pre-write database copies |
 | `logs/`, `debug/` | no | verbose logs and the page dump written on a parse failure |
+
+The `holdings_history` table inside the database is separate from `holdings`: it is
+point-in-time (one row per capture date, member and asset) rather than current-state,
+and holds the disclosures recovered from the Wayback Machine for the fourteen months
+the collector was dark. See [docs/RUNBOOK.md](docs/RUNBOOK.md#recovering-missed-history).
 
 `data/holdings-snapshot.json` exists because git can store a binary `.db` but can't
 diff one. The daily commit shows exactly which holdings appeared or disappeared, and
@@ -81,11 +86,13 @@ scripts/
   scrapeHoldings.js       fetch -> parse -> guard -> write -> snapshot
   fetchPrices.js          token mapping and price collection
   restoreFromSnapshot.js  rebuild holdings from the committed snapshot
+  backfillFromArchive.js  recover missed dates from the Wayback Machine
   lib/
     parseDisclosures.js   three independent readers for the page  (docs/PARSING.md)
     fetchPage.js          retries, URL fallback, response validation
     coingecko.js          API client with the expired-key failsafe
     backup.js             pre-write backups, snapshot write/restore
+    history.js            point-in-time observations (holdings_history)
     logger.js             file + console logging, run records
 test/
   fixtures/               real and synthetic page shapes

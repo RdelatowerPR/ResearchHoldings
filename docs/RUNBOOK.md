@@ -137,3 +137,63 @@ Both are read from the environment only. The Alpha Vantage key was previously
 hardcoded in `fetchPrices.js` and is still in git history — worth rotating.
 Without `ALPHA_VANTAGE_API_KEY` equities are skipped with a warning rather than
 silently priced at nothing.
+
+## Recovering missed history
+
+### Establishing when collection stopped
+
+Every daily commit of `data/holdings.db` is a full snapshot, so the database's own
+history is the record of when it stopped working. Walk it and read the state out of
+each version — active count and `MAX(last_seen)` are enough:
+
+```bash
+git log --format="%H %ad" --date=short -- data/holdings.db
+git show <sha>:data/holdings.db > /tmp/x.db   # then query it
+```
+
+Done for the 2025 outage, that gives an exact answer rather than an estimate:
+
+```
+2025-06-18  49e2dcbd    184 active   143 inactive   last_seen 2025-06-18
+2025-06-19  cecfc8ca      0 active   327 inactive   last_seen 2025-06-18   <-- went dark
+```
+
+One run flipped 184 active holdings to zero, and the register sat frozen for 425 days.
+Note what is *not* usable for this: Actions run history (90 days), job status (green
+throughout), and `metadata.json` (stamped fresh every day). Only the data was honest.
+
+### Backfilling the gap
+
+The holdings for those months were never collected, but the pages were archived, and
+the readers in `lib/parseDisclosures.js` handle the older layouts — so the Wayback
+Machine can fill part of it in:
+
+```bash
+npm run backfill                                    # the 2025-06-19 .. 2026-08-17 gap
+node scripts/backfillFromArchive.js --dry-run       # see what would be imported
+node scripts/backfillFromArchive.js --from 20211001 --to 20250618
+```
+
+Observations land in `holdings_history`, keyed by capture date, member and asset. The
+table is additive — `holdings` and the dashboard are untouched — and re-running skips
+dates already imported, so it is safe to repeat as new captures appear.
+
+Coverage is only as good as the crawl: seven captures across five distinct months
+(2025-06, 2025-07, 2025-08, 2025-11, 2026-04) for a fourteen-month gap. The page
+updates monthly, so that is five of roughly fourteen possible states — partial, and
+worth saying so rather than presenting the table as continuous.
+
+Useful once it is populated:
+
+```sql
+-- what someone held on a date the collector missed
+SELECT asset, asset_type FROM holdings_history
+WHERE name = 'Shaunda Devens' AND observed_date = '2025-11-09';
+
+-- positions that opened and closed entirely inside the blackout
+SELECT h.name, h.asset, MIN(h.observed_date), MAX(h.observed_date)
+FROM holdings_history h
+WHERE NOT EXISTS (SELECT 1 FROM holdings o JOIN members m ON o.member_id = m.id
+                  WHERE m.name = h.name AND o.asset = h.asset)
+GROUP BY h.name, h.asset;
+```
