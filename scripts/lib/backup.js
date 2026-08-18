@@ -28,8 +28,14 @@ function backupDatabase(dbFile, { dir = BACKUP_DIR, keep = KEEP_BACKUPS, logger 
     const target = path.resolve(process.cwd(), dir);
     fs.mkdirSync(target, { recursive: true });
 
+    // Millisecond stamps collide when two backups land in the same tick - on a fast
+    // filesystem that silently overwrites the previous copy, so rotation quietly keeps
+    // fewer than it promises. Disambiguate rather than lose a backup.
     const stamp = new Date().toISOString().replace(/[:.]/g, "-");
-    const backup = path.join(target, `holdings-${stamp}.db`);
+    let backup = path.join(target, `holdings-${stamp}.db`);
+    for (let n = 1; fs.existsSync(backup); n++) {
+      backup = path.join(target, `holdings-${stamp}-${n}.db`);
+    }
     fs.copyFileSync(source, backup);
 
     // Rotate: keep the newest `keep` copies
