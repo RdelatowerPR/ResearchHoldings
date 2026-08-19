@@ -178,10 +178,32 @@ Observations land in `holdings_history`, keyed by capture date, member and asset
 table is additive — `holdings` and the dashboard are untouched — and re-running skips
 dates already imported, so it is safe to repeat as new captures appear.
 
-Coverage is only as good as the crawl: seven captures across five distinct months
-(2025-06, 2025-07, 2025-08, 2025-11, 2026-04) for a fourteen-month gap. The page
-updates monthly, so that is five of roughly fourteen possible states — partial, and
-worth saying so rather than presenting the table as continuous.
+Coverage is only as good as the crawl. As of 2026-08-19 the table holds 2,840
+observations across 12 capture dates: five inside the outage (2025-06, 07, 08, 11 and
+2026-04, from seven captures) and five before it (2024-09 through 2025-06), which
+predate the collector itself. The page updates monthly, so the outage window is five
+of roughly fourteen possible states — partial, and worth saying so rather than
+presenting the table as continuous.
+
+### Two things that make archive coverage look worse than it is
+
+**Captures often arrive still compressed.** The `id_` endpoint returns the bytes as
+they were stored, which is frequently gzip with *no* `Content-Encoding` header to
+announce it. Nothing downstream decompresses them, the parser sees binary, and the
+capture reports as "nothing parsed" — indistinguishable from a page that genuinely
+had no data. `decodeBody()` in `lib/fetchPage.js` sniffs the magic bytes instead of
+trusting the header. If a whole era suddenly looks empty, check this first:
+
+```bash
+curl -sL "https://web.archive.org/web/<timestamp>id_/<url>" | head -c 2 | xxd   # 1f8b = gzip
+```
+
+**Some eras genuinely hold nothing.** Before roughly mid-2024 the disclosures page
+rendered its body client-side, so the archived HTML is only page chrome — nav, the
+price ticker, the newsletter box. Decompressed, a January 2023 capture is 129 KB
+containing the words "Financial Disclosures" and a `/price/btc` link, and no
+disclosure table at all. Those captures are unrecoverable, and the backfill correctly
+skips them rather than recording the date as "held nothing".
 
 Useful once it is populated:
 

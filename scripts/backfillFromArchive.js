@@ -15,6 +15,7 @@ const axios = require("axios");
 const Database = require("better-sqlite3");
 
 const { parseDisclosures } = require("./lib/parseDisclosures");
+const { decodeBody } = require("./lib/fetchPage");
 const { createLogger, appendRunRecord } = require("./lib/logger");
 const { backupDatabase } = require("./lib/backup");
 const { createHistoryTable, recordObservations, importedDates } = require("./lib/history");
@@ -64,12 +65,24 @@ async function listCaptures(url, from, to) {
 }
 
 /** Fetch the raw archived page. The id_ suffix asks for it without Wayback's banner. */
-async function fetchCapture({ timestamp, url }) {
-  const { data } = await axios.get(`https://web.archive.org/web/${timestamp}id_/https://${url}`, {
-    timeout: 60000,
-    headers: { "User-Agent": "ResearchHoldings-backfill/1.0 (+https://github.com/RdelatowerPR/ResearchHoldings)" },
-  });
-  return String(data);
+async function fetchCapture({ timestamp, url }, attempts = 3) {
+  let lastError = null;
+
+  for (let attempt = 1; attempt <= attempts; attempt++) {
+    try {
+      const response = await axios.get(`https://web.archive.org/web/${timestamp}id_/https://${url}`, {
+        timeout: 60000,
+        responseType: "arraybuffer", // so we can sniff and decompress ourselves
+        headers: { "User-Agent": "ResearchHoldings-backfill/1.0 (+https://github.com/RdelatowerPR/ResearchHoldings)" },
+      });
+      return decodeBody(response.data, response.headers["content-encoding"]);
+    } catch (error) {
+      lastError = error;
+      if (attempt < attempts) await sleep(WAYBACK_DELAY * attempt);
+    }
+  }
+
+  throw lastError;
 }
 
 const asDate = timestamp =>

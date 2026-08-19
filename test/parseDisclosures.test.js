@@ -226,3 +226,26 @@ test("rejectionReason refuses pages that are not the disclosures page", () => {
   );
   assert.match(rejectionReason("<html>" + "x".repeat(3000) + "</html>"), /never mentions disclosures/);
 });
+
+// --- archived response bodies ---------------------------------------------------
+
+test("decodeBody decompresses archive bodies that arrive still gzipped", () => {
+  const zlib = require("zlib");
+  const { decodeBody } = require("../scripts/lib/fetchPage");
+
+  const html = "<html><body><h2>Blockworks Research</h2><table></table></body></html>";
+
+  // Wayback's id_ endpoint returns stored bytes with no Content-Encoding header, so
+  // this has to be caught by signature. Undecompressed, it parses to zero holdings -
+  // which would look exactly like "the page had no data that day".
+  assert.equal(decodeBody(zlib.gzipSync(html)), html);
+  assert.equal(decodeBody(zlib.deflateSync(html)), html);
+  assert.equal(decodeBody(zlib.brotliCompressSync(html), "br"), html);
+
+  // Uncompressed input passes through untouched, as a string or a buffer
+  assert.equal(decodeBody(html), html);
+  assert.equal(decodeBody(Buffer.from(html)), html);
+
+  // Something that only looks compressed must not throw
+  assert.equal(decodeBody(Buffer.from([0x1f, 0x8b, 0x00, 0x01])).length, 4);
+});

@@ -1,4 +1,5 @@
 const axios = require("axios");
+const zlib = require("zlib");
 
 // blockworks.co redirects to blockworks.com today, but the .co host was the address
 // for years and may outlive the redirect - try both before giving up.
@@ -26,6 +27,34 @@ function rejectionReason(html) {
     return "response never mentions disclosures";
   }
   return null;
+}
+
+/**
+ * Turn a response body into HTML, decompressing if it is still compressed.
+ *
+ * The Wayback id_ endpoint hands back the bytes as originally stored, which are often
+ * gzip with no Content-Encoding header to announce it - so nothing downstream
+ * decompresses them and the "page" parses to zero holdings. Sniff the magic bytes
+ * rather than trusting the header.
+ */
+function decodeBody(data, contentEncoding) {
+  if (typeof data === "string") return data;
+
+  let buf = Buffer.isBuffer(data) ? data : Buffer.from(data);
+
+  try {
+    if (buf.length > 2 && buf[0] === 0x1f && buf[1] === 0x8b) {
+      buf = zlib.gunzipSync(buf);
+    } else if (contentEncoding === "br") {
+      buf = zlib.brotliDecompressSync(buf);
+    } else if (buf.length > 2 && buf[0] === 0x78 && [0x01, 0x9c, 0xda].includes(buf[1])) {
+      buf = zlib.inflateSync(buf);
+    }
+  } catch {
+    // Not actually compressed, or compressed in a way we can't read - use it raw
+  }
+
+  return buf.toString("utf8");
 }
 
 function sleep(ms) {
@@ -73,4 +102,4 @@ async function fetchDisclosuresPage({
   throw new Error(`Could not fetch a usable disclosures page.\n  ${failures.join("\n  ")}`);
 }
 
-module.exports = { fetchDisclosuresPage, rejectionReason, DEFAULT_URLS };
+module.exports = { fetchDisclosuresPage, rejectionReason, decodeBody, DEFAULT_URLS };
