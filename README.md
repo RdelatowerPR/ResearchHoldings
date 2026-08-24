@@ -9,6 +9,9 @@ Holdings by Blockworks [Financial Disclosures](https://blockworks.com/financial-
 
 Live dashboard: https://research-holdings.vercel.app/
 
+**Operators and coding agents:** read `AGENTS.md` before changing collection, CI, deployment, or
+the Windows runtime. `CLAUDE.md` imports that same authority for Claude Code.
+
 ## Description
 
 Two views:
@@ -18,8 +21,10 @@ Two views:
 
 ## How the data gets there
 
-Nothing runs locally. The `Update Database` GitHub Action runs daily at 00:00 UTC and
-commits the result to `main`, which Vercel redeploys.
+The public data pipeline does not depend on an always-on local collector. The `Update Database`
+GitHub Action runs daily at 00:00 UTC and commits the result to `main`, which Vercel redeploys.
+Separately, the Windows `dashboards-control` supervisor maintains a loopback-only preview on
+`127.0.0.1:3000`; it is not published through Cloudflare Tunnel.
 
 ```
 scripts/scrapeHoldings.js   blockworks.com/financial-disclosures -> data/holdings.db
@@ -43,6 +48,11 @@ npm run dev           # dashboard at http://localhost:3000
 ```
 
 Individually: `npm run scrape`, `npm run prices`, `npm run restore`.
+
+CI uses Node 22 with `actions/checkout@v5` and `actions/setup-node@v5`, runs both `npm test` and
+`npm run build`, and deliberately sets `package-manager-cache: false`. The daily workflow runs the
+same tests before writing data, retains diagnostics as an artifact, and reports failures through a
+`collector-failure` issue.
 
 ### Keys
 

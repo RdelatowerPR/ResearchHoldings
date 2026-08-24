@@ -18,4 +18,10 @@ Read this file before changing collection, data, deployment, or the local Window
 - Never treat a successful workflow/process alone as data health; verify the last successful source
   capture and expected row counts.
 - Run `npm test` and `npm run build` before release. Follow `docs/RUNBOOK.md` for collector failures.
+- CI and the daily collector use Node 22 through `actions/checkout@v5` and `actions/setup-node@v5`.
+  Keep `package-manager-cache: false`: this repository intentionally avoids setup-node's automatic
+  npm cache and must not regress to deprecated Node 20-based action releases.
+- `.github/workflows/test.yml` validates source changes. `.github/workflows/update-data.yml` runs
+  daily at 00:00 UTC, tests before scraping, uploads failure artifacts, commits only the durable
+  data files, and opens or updates a `collector-failure` issue when collection fails.
 - Never commit `.env`, logs, debug pages, local backups, `.next`, or `node_modules`.
