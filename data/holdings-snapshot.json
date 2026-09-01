@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-08-31T03:19:00.045Z",
+  "generatedAt": "2026-09-01T03:21:05.310Z",
   "strategy": "dom",
-  "sourceNote": "August 2026 disclosures, updated July 31",
+  "sourceNote": "September 2026 disclosures, updated August 31",
   "counts": {
-    "total": 463,
-    "active": 182,
-    "members": 52
+    "total": 501,
+    "active": 195,
+    "members": 53
   },
   "holdings": [
     {
@@ -14,7 +14,7 @@
       "asset": "BTC",
       "asset_type": "crypto",
       "first_added": "2026-08-17",
-      "status": "active",
+      "status": "inactive",
       "last_seen": "2026-08-31"
     },
     {
@@ -23,7 +23,7 @@
       "asset": "ETH",
       "asset_type": "crypto",
       "first_added": "2026-08-17",
-      "status": "active",
+      "status": "inactive",
       "last_seen": "2026-08-31"
     },
     {
@@ -32,7 +32,7 @@
       "asset": "USDC",
       "asset_type": "crypto",
       "first_added": "2026-08-17",
-      "status": "active",
+      "status": "inactive",
       "last_seen": "2026-08-31"
     },
     {
@@ -41,7 +41,7 @@
       "asset": "USDT",
       "asset_type": "crypto",
       "first_added": "2026-08-17",
-      "status": "active",
+      "status": "inactive",
       "last_seen": "2026-08-31"
     },
     {
@@ -473,8 +473,8 @@
       "asset": "BTC",
       "asset_type": "crypto",
       "first_added": "2025-03-08",
-      "status": "inactive",
-      "last_seen": "2025-06-18"
+      "status": "active",
+      "last_seen": "2026-09-01"
     },
     {
       "name": "Carlos Gonzalez Campo",
@@ -519,7 +519,7 @@
       "asset_type": "crypto",
       "first_added": "2025-03-08",
       "status": "active",
-      "last_seen": "2026-08-31"
+      "last_seen": "2026-09-01"
     },
     {
       "name": "Carlos Gonzalez Campo",
@@ -555,7 +555,7 @@
       "asset_type": "crypto",
       "first_added": "2026-08-17",
       "status": "active",
-      "last_seen": "2026-08-31"
+      "last_seen": "2026-09-01"
     },
     {
       "name": "Carlos Gonzalez Campo",
@@ -572,8 +572,17 @@
       "asset": "PONS",
       "asset_type": "crypto",
       "first_added": "2026-08-17",
-      "status": "active",
+      "status": "inactive",
       "last_seen": "2026-08-31"
+    },
+    {
+      "name": "Carlos Gonzalez Campo",
+      "team": "Blockworks Research",
+      "asset": "PUMP",
+      "asset_type": "crypto",
+      "first_added": "2026-09-01",
+      "status": "active",
+      "last_seen": "2026-09-01"
     },
     {
       "name": "Carlos Gonzalez Campo",
@@ -612,6 +621,24 @@
       "last_seen": "2025-06-18"
     },
     {
+      "name": "Chiang Yue Jun",
+      "team": "Blockworks Data",
+      "asset": "CARDS",
+      "asset_type": "crypto",
+      "first_added": "2026-09-01",
+      "status": "active",
+      "last_seen": "2026-09-01"
+    },
+    {
+      "name": "Chiang Yue Jun",
+      "team": "Blockworks Data",
+      "asset": "SUI",
+      "asset_type": "crypto",
+      "first_added": "2026-09-01",
+      "status": "active",
+      "last_seen": "2026-09-01"
+    },
+    {
       "name": "Daniel Shapiro",
       "team": "Blockworks Research",
       "asset": "AERO",
@@ -627,7 +654,7 @@
       "asset_type": "crypto",
       "first_added": "2025-03-08",
       "status": "active",
-      "last_seen": "2026-08-31"
+      "last_seen": "2026-09-01"
     },
     {
       "name": "Daniel Shapiro",
@@ -1014,7 +1041,7 @@
       "asset_type": "crypto",
       "first_added": "2026-08-17",
       "status": "active",
-      "last_seen": "2026-08-31"
+      "last_seen": "2026-09-01"
     },
     {
       "name": "Eric Diaz",
@@ -1023,7 +1050,7 @@
       "asset_type": "crypto",
       "first_added": "2025-03-08",
       "status": "active",
-      "last_seen": "2026-08-31"
+      "last_seen": "2026-09-01"
     },
     {
       "name": "Eric Diaz",
@@ -1050,7 +1077,7 @@
       "asset_type": "crypto",
       "first_added": "2025-03-08",
       "status": "active",
-      "last_seen": "2026-08-31"
+      "last_seen": "2026-09-01"
     },
     {
       "name": "Eric Diaz",
@@ -1078,6 +1105,15 @@
       "first_added": "2025-05-03",
       "status": "inactive",
       "last_seen": "2025-06-18"
+    },
+    {
+      "name": "Eric Diaz",
+      "team": "Blockworks Advisory",
+      "asset": "PUMP",
+      "asset_type": "crypto",
+      "first_added": "2026-09-01",
+      "status": "active",
+      "last_seen": "2026-09-01"
     },
     {
       "name": "Eric Diaz",
@@ -1118,10 +1154,19 @@
     {
       "name": "Felix Jauvin",
       "team": "Blockworks Media",
+      "asset": "BHYP",
+      "asset_type": "equity",
+      "first_added": "2026-09-01",
+      "status": "active",
+      "last_seen": "2026-09-01"
+    },
+    {
+      "name": "Felix Jauvin",
+      "team": "Blockworks Media",
       "asset": "BTC",
       "asset_type": "crypto",
       "first_added": "2025-04-02",
-      "status": "active",
+      "status": "inactive",
       "last_seen": "2026-08-31"
     },
     {
@@ -1130,8 +1175,8 @@
       "asset": "ENA",
       "asset_type": "crypto",
       "first_added": "2025-03-08",
-      "status": "inactive",
-      "last_seen": "2025-06-18"
+      "status": "active",
+      "last_seen": "2026-09-01"
     },
     {
       "name": "Felix Jauvin",
@@ -1148,8 +1193,17 @@
       "asset": "HYPE",
       "asset_type": "crypto",
       "first_added": "2025-06-04",
-      "status": "inactive",
-      "last_seen": "2025-06-18"
+      "status": "active",
+      "last_seen": "2026-09-01"
+    },
+    {
+      "name": "Felix Jauvin",
+      "team": "Blockworks Media",
+      "asset": "IBIT",
+      "asset_type": "equity",
+      "first_added": "2026-09-01",
+      "status": "active",
+      "last_seen": "2026-09-01"
     },
     {
       "name": "Felix Jauvin",
@@ -1166,8 +1220,17 @@
       "asset": "PONS",
       "asset_type": "crypto",
       "first_added": "2026-08-17",
-      "status": "active",
+      "status": "inactive",
       "last_seen": "2026-08-31"
+    },
+    {
+      "name": "Felix Jauvin",
+      "team": "Blockworks Media",
+      "asset": "PUMP",
+      "asset_type": "crypto",
+      "first_added": "2026-09-01",
+      "status": "active",
+      "last_seen": "2026-09-01"
     },
     {
       "name": "Felix Jauvin",
@@ -1176,7 +1239,16 @@
       "asset_type": "crypto",
       "first_added": "2026-08-17",
       "status": "active",
-      "last_seen": "2026-08-31"
+      "last_seen": "2026-09-01"
+    },
+    {
+      "name": "Felix Jauvin",
+      "team": "Blockworks Media",
+      "asset": "ZEC",
+      "asset_type": "crypto",
+      "first_added": "2026-09-01",
+      "status": "active",
+      "last_seen": "2026-09-01"
     },
     {
       "name": "Jacob Sharples",
@@ -1266,7 +1338,7 @@
       "asset_type": "crypto",
       "first_added": "2026-08-17",
       "status": "active",
-      "last_seen": "2026-08-31"
+      "last_seen": "2026-09-01"
     },
     {
       "name": "Jake Koch-Gallup",
@@ -1275,7 +1347,16 @@
       "asset_type": "crypto",
       "first_added": "2026-08-17",
       "status": "active",
-      "last_seen": "2026-08-31"
+      "last_seen": "2026-09-01"
+    },
+    {
+      "name": "Jake Koch-Gallup",
+      "team": "Blockworks Research",
+      "asset": "RAIL",
+      "asset_type": "crypto",
+      "first_added": "2026-09-01",
+      "status": "active",
+      "last_seen": "2026-09-01"
     },
     {
       "name": "Jakob Wuthrich",
@@ -1365,7 +1446,7 @@
       "asset_type": "angel",
       "first_added": "2026-08-17",
       "status": "active",
-      "last_seen": "2026-08-31"
+      "last_seen": "2026-09-01"
     },
     {
       "name": "Jason Yanowitz",
@@ -1401,7 +1482,7 @@
       "asset_type": "equity",
       "first_added": "2026-08-17",
       "status": "active",
-      "last_seen": "2026-08-31"
+      "last_seen": "2026-09-01"
     },
     {
       "name": "Jason Yanowitz",
@@ -1419,7 +1500,7 @@
       "asset_type": "angel",
       "first_added": "2026-08-17",
       "status": "active",
-      "last_seen": "2026-08-31"
+      "last_seen": "2026-09-01"
     },
     {
       "name": "Jason Yanowitz",
@@ -1428,7 +1509,7 @@
       "asset_type": "angel",
       "first_added": "2026-08-17",
       "status": "active",
-      "last_seen": "2026-08-31"
+      "last_seen": "2026-09-01"
     },
     {
       "name": "Jason Yanowitz",
@@ -1437,7 +1518,7 @@
       "asset_type": "angel",
       "first_added": "2026-08-17",
       "status": "active",
-      "last_seen": "2026-08-31"
+      "last_seen": "2026-09-01"
     },
     {
       "name": "Jason Yanowitz",
@@ -1446,7 +1527,7 @@
       "asset_type": "angel",
       "first_added": "2026-08-17",
       "status": "active",
-      "last_seen": "2026-08-31"
+      "last_seen": "2026-09-01"
     },
     {
       "name": "Jason Yanowitz",
@@ -1455,7 +1536,7 @@
       "asset_type": "angel",
       "first_added": "2026-08-17",
       "status": "active",
-      "last_seen": "2026-08-31"
+      "last_seen": "2026-09-01"
     },
     {
       "name": "Jason Yanowitz",
@@ -1464,7 +1545,7 @@
       "asset_type": "angel",
       "first_added": "2026-08-17",
       "status": "active",
-      "last_seen": "2026-08-31"
+      "last_seen": "2026-09-01"
     },
     {
       "name": "Jason Yanowitz",
@@ -1473,7 +1554,7 @@
       "asset_type": "angel",
       "first_added": "2026-08-17",
       "status": "active",
-      "last_seen": "2026-08-31"
+      "last_seen": "2026-09-01"
     },
     {
       "name": "Jason Yanowitz",
@@ -1491,7 +1572,7 @@
       "asset_type": "crypto",
       "first_added": "2025-03-08",
       "status": "active",
-      "last_seen": "2026-08-31"
+      "last_seen": "2026-09-01"
     },
     {
       "name": "Jason Yanowitz",
@@ -1500,7 +1581,7 @@
       "asset_type": "nft",
       "first_added": "2025-03-08",
       "status": "active",
-      "last_seen": "2026-08-31"
+      "last_seen": "2026-09-01"
     },
     {
       "name": "Jason Yanowitz",
@@ -1509,7 +1590,7 @@
       "asset_type": "angel",
       "first_added": "2026-08-17",
       "status": "active",
-      "last_seen": "2026-08-31"
+      "last_seen": "2026-09-01"
     },
     {
       "name": "Jason Yanowitz",
@@ -1518,7 +1599,7 @@
       "asset_type": "equity",
       "first_added": "2025-03-08",
       "status": "active",
-      "last_seen": "2026-08-31"
+      "last_seen": "2026-09-01"
     },
     {
       "name": "Jason Yanowitz",
@@ -1527,7 +1608,7 @@
       "asset_type": "angel",
       "first_added": "2026-08-17",
       "status": "active",
-      "last_seen": "2026-08-31"
+      "last_seen": "2026-09-01"
     },
     {
       "name": "Jason Yanowitz",
@@ -1536,7 +1617,7 @@
       "asset_type": "angel",
       "first_added": "2026-08-17",
       "status": "active",
-      "last_seen": "2026-08-31"
+      "last_seen": "2026-09-01"
     },
     {
       "name": "Jason Yanowitz",
@@ -1545,7 +1626,7 @@
       "asset_type": "nft",
       "first_added": "2025-03-08",
       "status": "active",
-      "last_seen": "2026-08-31"
+      "last_seen": "2026-09-01"
     },
     {
       "name": "Jason Yanowitz",
@@ -1554,7 +1635,7 @@
       "asset_type": "angel",
       "first_added": "2026-08-17",
       "status": "active",
-      "last_seen": "2026-08-31"
+      "last_seen": "2026-09-01"
     },
     {
       "name": "Jason Yanowitz",
@@ -1563,7 +1644,7 @@
       "asset_type": "angel",
       "first_added": "2026-08-17",
       "status": "active",
-      "last_seen": "2026-08-31"
+      "last_seen": "2026-09-01"
     },
     {
       "name": "Jason Yanowitz",
@@ -1572,7 +1653,7 @@
       "asset_type": "angel",
       "first_added": "2026-08-17",
       "status": "active",
-      "last_seen": "2026-08-31"
+      "last_seen": "2026-09-01"
     },
     {
       "name": "Jason Yanowitz",
@@ -1599,7 +1680,7 @@
       "asset_type": "angel",
       "first_added": "2026-08-17",
       "status": "active",
-      "last_seen": "2026-08-31"
+      "last_seen": "2026-09-01"
     },
     {
       "name": "Jason Yanowitz",
@@ -1608,7 +1689,7 @@
       "asset_type": "angel",
       "first_added": "2026-08-17",
       "status": "active",
-      "last_seen": "2026-08-31"
+      "last_seen": "2026-09-01"
     },
     {
       "name": "Jason Yanowitz",
@@ -1617,7 +1698,7 @@
       "asset_type": "angel",
       "first_added": "2026-08-17",
       "status": "active",
-      "last_seen": "2026-08-31"
+      "last_seen": "2026-09-01"
     },
     {
       "name": "Jason Yanowitz",
@@ -1635,7 +1716,7 @@
       "asset_type": "angel",
       "first_added": "2026-08-17",
       "status": "active",
-      "last_seen": "2026-08-31"
+      "last_seen": "2026-09-01"
     },
     {
       "name": "Jason Yanowitz",
@@ -1644,7 +1725,7 @@
       "asset_type": "angel",
       "first_added": "2026-08-17",
       "status": "active",
-      "last_seen": "2026-08-31"
+      "last_seen": "2026-09-01"
     },
     {
       "name": "Jason Yanowitz",
@@ -1653,7 +1734,7 @@
       "asset_type": "angel",
       "first_added": "2026-08-17",
       "status": "active",
-      "last_seen": "2026-08-31"
+      "last_seen": "2026-09-01"
     },
     {
       "name": "Jason Yanowitz",
@@ -1662,7 +1743,7 @@
       "asset_type": "equity",
       "first_added": "2026-08-17",
       "status": "active",
-      "last_seen": "2026-08-31"
+      "last_seen": "2026-09-01"
     },
     {
       "name": "Jason Yanowitz",
@@ -1671,7 +1752,7 @@
       "asset_type": "angel",
       "first_added": "2026-08-17",
       "status": "active",
-      "last_seen": "2026-08-31"
+      "last_seen": "2026-09-01"
     },
     {
       "name": "Jason Yanowitz",
@@ -1680,7 +1761,7 @@
       "asset_type": "angel",
       "first_added": "2026-08-17",
       "status": "active",
-      "last_seen": "2026-08-31"
+      "last_seen": "2026-09-01"
     },
     {
       "name": "Jason Yanowitz",
@@ -1689,7 +1770,7 @@
       "asset_type": "angel",
       "first_added": "2026-08-17",
       "status": "active",
-      "last_seen": "2026-08-31"
+      "last_seen": "2026-09-01"
     },
     {
       "name": "Jason Yanowitz",
@@ -1698,7 +1779,7 @@
       "asset_type": "equity",
       "first_added": "2025-03-08",
       "status": "active",
-      "last_seen": "2026-08-31"
+      "last_seen": "2026-09-01"
     },
     {
       "name": "Jason Yanowitz",
@@ -1707,7 +1788,7 @@
       "asset_type": "crypto",
       "first_added": "2025-03-08",
       "status": "active",
-      "last_seen": "2026-08-31"
+      "last_seen": "2026-09-01"
     },
     {
       "name": "Jason Yanowitz",
@@ -1716,7 +1797,7 @@
       "asset_type": "angel",
       "first_added": "2026-08-17",
       "status": "active",
-      "last_seen": "2026-08-31"
+      "last_seen": "2026-09-01"
     },
     {
       "name": "Jason Yanowitz",
@@ -1725,7 +1806,7 @@
       "asset_type": "angel",
       "first_added": "2026-08-17",
       "status": "active",
-      "last_seen": "2026-08-31"
+      "last_seen": "2026-09-01"
     },
     {
       "name": "Jason Yanowitz",
@@ -1734,7 +1815,7 @@
       "asset_type": "nft",
       "first_added": "2026-08-17",
       "status": "active",
-      "last_seen": "2026-08-31"
+      "last_seen": "2026-09-01"
     },
     {
       "name": "Jason Yanowitz",
@@ -1743,7 +1824,7 @@
       "asset_type": "angel",
       "first_added": "2026-08-17",
       "status": "active",
-      "last_seen": "2026-08-31"
+      "last_seen": "2026-09-01"
     },
     {
       "name": "Jason Yanowitz",
@@ -1752,7 +1833,7 @@
       "asset_type": "angel",
       "first_added": "2026-08-17",
       "status": "active",
-      "last_seen": "2026-08-31"
+      "last_seen": "2026-09-01"
     },
     {
       "name": "Jason Yanowitz",
@@ -1761,7 +1842,7 @@
       "asset_type": "angel",
       "first_added": "2026-08-17",
       "status": "active",
-      "last_seen": "2026-08-31"
+      "last_seen": "2026-09-01"
     },
     {
       "name": "Jason Yanowitz",
@@ -1770,7 +1851,7 @@
       "asset_type": "angel",
       "first_added": "2026-08-17",
       "status": "active",
-      "last_seen": "2026-08-31"
+      "last_seen": "2026-09-01"
     },
     {
       "name": "Jason Yanowitz",
@@ -1779,7 +1860,7 @@
       "asset_type": "angel",
       "first_added": "2026-08-17",
       "status": "active",
-      "last_seen": "2026-08-31"
+      "last_seen": "2026-09-01"
     },
     {
       "name": "Jason Yanowitz",
@@ -1788,7 +1869,7 @@
       "asset_type": "angel",
       "first_added": "2026-08-17",
       "status": "active",
-      "last_seen": "2026-08-31"
+      "last_seen": "2026-09-01"
     },
     {
       "name": "Jason Yanowitz",
@@ -1806,7 +1887,7 @@
       "asset_type": "crypto",
       "first_added": "2026-08-17",
       "status": "active",
-      "last_seen": "2026-08-31"
+      "last_seen": "2026-09-01"
     },
     {
       "name": "Jason Yanowitz",
@@ -1815,7 +1896,7 @@
       "asset_type": "nft",
       "first_added": "2025-03-08",
       "status": "active",
-      "last_seen": "2026-08-31"
+      "last_seen": "2026-09-01"
     },
     {
       "name": "Jason Yanowitz",
@@ -1824,7 +1905,7 @@
       "asset_type": "angel",
       "first_added": "2026-08-17",
       "status": "active",
-      "last_seen": "2026-08-31"
+      "last_seen": "2026-09-01"
     },
     {
       "name": "Jason Yanowitz",
@@ -1833,7 +1914,7 @@
       "asset_type": "angel",
       "first_added": "2026-08-17",
       "status": "active",
-      "last_seen": "2026-08-31"
+      "last_seen": "2026-09-01"
     },
     {
       "name": "Jason Yanowitz",
@@ -1842,7 +1923,7 @@
       "asset_type": "angel",
       "first_added": "2026-08-17",
       "status": "active",
-      "last_seen": "2026-08-31"
+      "last_seen": "2026-09-01"
     },
     {
       "name": "Jason Yanowitz",
@@ -1860,7 +1941,7 @@
       "asset_type": "nft",
       "first_added": "2025-03-08",
       "status": "active",
-      "last_seen": "2026-08-31"
+      "last_seen": "2026-09-01"
     },
     {
       "name": "Jason Yanowitz",
@@ -1869,7 +1950,7 @@
       "asset_type": "angel",
       "first_added": "2026-08-17",
       "status": "active",
-      "last_seen": "2026-08-31"
+      "last_seen": "2026-09-01"
     },
     {
       "name": "Jason Yanowitz",
@@ -1878,7 +1959,7 @@
       "asset_type": "angel",
       "first_added": "2026-08-17",
       "status": "active",
-      "last_seen": "2026-08-31"
+      "last_seen": "2026-09-01"
     },
     {
       "name": "Jason Yanowitz",
@@ -1887,7 +1968,7 @@
       "asset_type": "angel",
       "first_added": "2026-08-17",
       "status": "active",
-      "last_seen": "2026-08-31"
+      "last_seen": "2026-09-01"
     },
     {
       "name": "Jason Yanowitz",
@@ -1896,7 +1977,7 @@
       "asset_type": "angel",
       "first_added": "2026-08-17",
       "status": "active",
-      "last_seen": "2026-08-31"
+      "last_seen": "2026-09-01"
     },
     {
       "name": "Jason Yanowitz",
@@ -1914,7 +1995,7 @@
       "asset_type": "angel",
       "first_added": "2026-08-17",
       "status": "active",
-      "last_seen": "2026-08-31"
+      "last_seen": "2026-09-01"
     },
     {
       "name": "Jason Yanowitz",
@@ -1923,7 +2004,7 @@
       "asset_type": "angel",
       "first_added": "2026-08-17",
       "status": "active",
-      "last_seen": "2026-08-31"
+      "last_seen": "2026-09-01"
     },
     {
       "name": "Jason Yanowitz",
@@ -1932,7 +2013,7 @@
       "asset_type": "nft",
       "first_added": "2025-03-08",
       "status": "active",
-      "last_seen": "2026-08-31"
+      "last_seen": "2026-09-01"
     },
     {
       "name": "Jason Yanowitz",
@@ -1941,7 +2022,7 @@
       "asset_type": "angel",
       "first_added": "2026-08-17",
       "status": "active",
-      "last_seen": "2026-08-31"
+      "last_seen": "2026-09-01"
     },
     {
       "name": "Jason Yanowitz",
@@ -1950,7 +2031,7 @@
       "asset_type": "angel",
       "first_added": "2026-08-17",
       "status": "active",
-      "last_seen": "2026-08-31"
+      "last_seen": "2026-09-01"
     },
     {
       "name": "Jason Yanowitz",
@@ -1959,7 +2040,7 @@
       "asset_type": "angel",
       "first_added": "2026-08-17",
       "status": "active",
-      "last_seen": "2026-08-31"
+      "last_seen": "2026-09-01"
     },
     {
       "name": "Jason Yanowitz",
@@ -1968,7 +2049,7 @@
       "asset_type": "angel",
       "first_added": "2026-08-17",
       "status": "active",
-      "last_seen": "2026-08-31"
+      "last_seen": "2026-09-01"
     },
     {
       "name": "Jason Yanowitz",
@@ -1977,7 +2058,7 @@
       "asset_type": "crypto",
       "first_added": "2025-03-08",
       "status": "active",
-      "last_seen": "2026-08-31"
+      "last_seen": "2026-09-01"
     },
     {
       "name": "Jason Yanowitz",
@@ -1995,7 +2076,7 @@
       "asset_type": "angel",
       "first_added": "2026-08-17",
       "status": "active",
-      "last_seen": "2026-08-31"
+      "last_seen": "2026-09-01"
     },
     {
       "name": "Jason Yanowitz",
@@ -2013,7 +2094,7 @@
       "asset_type": "nft",
       "first_added": "2025-03-08",
       "status": "active",
-      "last_seen": "2026-08-31"
+      "last_seen": "2026-09-01"
     },
     {
       "name": "Jason Yanowitz",
@@ -2022,7 +2103,7 @@
       "asset_type": "angel",
       "first_added": "2026-08-17",
       "status": "active",
-      "last_seen": "2026-08-31"
+      "last_seen": "2026-09-01"
     },
     {
       "name": "Jason Yanowitz",
@@ -2040,7 +2121,7 @@
       "asset_type": "angel",
       "first_added": "2026-08-17",
       "status": "active",
-      "last_seen": "2026-08-31"
+      "last_seen": "2026-09-01"
     },
     {
       "name": "Jason Yanowitz",
@@ -2049,7 +2130,7 @@
       "asset_type": "angel",
       "first_added": "2026-08-17",
       "status": "active",
-      "last_seen": "2026-08-31"
+      "last_seen": "2026-09-01"
     },
     {
       "name": "Jason Yanowitz",
@@ -2058,7 +2139,7 @@
       "asset_type": "angel",
       "first_added": "2026-08-17",
       "status": "active",
-      "last_seen": "2026-08-31"
+      "last_seen": "2026-09-01"
     },
     {
       "name": "Jason Yanowitz",
@@ -2067,7 +2148,7 @@
       "asset_type": "crypto",
       "first_added": "2026-08-17",
       "status": "active",
-      "last_seen": "2026-08-31"
+      "last_seen": "2026-09-01"
     },
     {
       "name": "Jeff A.",
@@ -2148,7 +2229,7 @@
       "asset_type": "crypto",
       "first_added": "2026-08-17",
       "status": "active",
-      "last_seen": "2026-08-31"
+      "last_seen": "2026-09-01"
     },
     {
       "name": "Joe Cho",
@@ -2157,7 +2238,7 @@
       "asset_type": "crypto",
       "first_added": "2026-08-17",
       "status": "active",
-      "last_seen": "2026-08-31"
+      "last_seen": "2026-09-01"
     },
     {
       "name": "Joe Cho",
@@ -2166,7 +2247,7 @@
       "asset_type": "crypto",
       "first_added": "2026-08-17",
       "status": "active",
-      "last_seen": "2026-08-31"
+      "last_seen": "2026-09-01"
     },
     {
       "name": "Joe Cho",
@@ -2175,7 +2256,7 @@
       "asset_type": "crypto",
       "first_added": "2026-08-17",
       "status": "active",
-      "last_seen": "2026-08-31"
+      "last_seen": "2026-09-01"
     },
     {
       "name": "Kunal Doshi",
@@ -2184,7 +2265,7 @@
       "asset_type": "crypto",
       "first_added": "2026-08-17",
       "status": "active",
-      "last_seen": "2026-08-31"
+      "last_seen": "2026-09-01"
     },
     {
       "name": "Kunal Doshi",
@@ -2193,7 +2274,7 @@
       "asset_type": "equity",
       "first_added": "2026-08-17",
       "status": "active",
-      "last_seen": "2026-08-31"
+      "last_seen": "2026-09-01"
     },
     {
       "name": "Kunal Doshi",
@@ -2202,7 +2283,7 @@
       "asset_type": "crypto",
       "first_added": "2026-08-17",
       "status": "active",
-      "last_seen": "2026-08-31"
+      "last_seen": "2026-09-01"
     },
     {
       "name": "Kunal Doshi",
@@ -2210,7 +2291,7 @@
       "asset": "PUMP",
       "asset_type": "crypto",
       "first_added": "2026-08-17",
-      "status": "active",
+      "status": "inactive",
       "last_seen": "2026-08-31"
     },
     {
@@ -2219,8 +2300,17 @@
       "asset": "PUMPCADE",
       "asset_type": "crypto",
       "first_added": "2026-08-17",
-      "status": "active",
+      "status": "inactive",
       "last_seen": "2026-08-31"
+    },
+    {
+      "name": "Kunal Doshi",
+      "team": "Blockworks Research",
+      "asset": "Pudgy",
+      "asset_type": "nft",
+      "first_added": "2026-09-01",
+      "status": "active",
+      "last_seen": "2026-09-01"
     },
     {
       "name": "Kunal Doshi",
@@ -2228,7 +2318,7 @@
       "asset": "Pudgy Penguins",
       "asset_type": "nft",
       "first_added": "2026-08-17",
-      "status": "active",
+      "status": "inactive",
       "last_seen": "2026-08-31"
     },
     {
@@ -2238,7 +2328,7 @@
       "asset_type": "crypto",
       "first_added": "2025-03-08",
       "status": "active",
-      "last_seen": "2026-08-31"
+      "last_seen": "2026-09-01"
     },
     {
       "name": "Luke Leasure",
@@ -2279,6 +2369,15 @@
     {
       "name": "Luke Leasure",
       "team": "Blockworks Research",
+      "asset": "ORE",
+      "asset_type": "crypto",
+      "first_added": "2026-09-01",
+      "status": "active",
+      "last_seen": "2026-09-01"
+    },
+    {
+      "name": "Luke Leasure",
+      "team": "Blockworks Research",
       "asset": "PENDLE",
       "asset_type": "crypto",
       "first_added": "2025-04-02",
@@ -2292,7 +2391,7 @@
       "asset_type": "crypto",
       "first_added": "2026-08-17",
       "status": "active",
-      "last_seen": "2026-08-31"
+      "last_seen": "2026-09-01"
     },
     {
       "name": "Luke Leasure",
@@ -2328,7 +2427,7 @@
       "asset_type": "equity",
       "first_added": "2025-03-08",
       "status": "active",
-      "last_seen": "2026-08-31"
+      "last_seen": "2026-09-01"
     },
     {
       "name": "Luke Leasure",
@@ -2400,7 +2499,7 @@
       "asset_type": "crypto",
       "first_added": "2025-03-08",
       "status": "active",
-      "last_seen": "2026-08-31"
+      "last_seen": "2026-09-01"
     },
     {
       "name": "Marc Arjoon",
@@ -2409,7 +2508,7 @@
       "asset_type": "crypto",
       "first_added": "2025-03-08",
       "status": "active",
-      "last_seen": "2026-08-31"
+      "last_seen": "2026-09-01"
     },
     {
       "name": "Marc Arjoon",
@@ -2418,7 +2517,16 @@
       "asset_type": "equity",
       "first_added": "2026-08-17",
       "status": "active",
-      "last_seen": "2026-08-31"
+      "last_seen": "2026-09-01"
+    },
+    {
+      "name": "Marc Arjoon",
+      "team": "Blockworks Research",
+      "asset": "HYPE",
+      "asset_type": "crypto",
+      "first_added": "2026-09-01",
+      "status": "active",
+      "last_seen": "2026-09-01"
     },
     {
       "name": "Marc Arjoon",
@@ -2426,8 +2534,17 @@
       "asset": "SOL",
       "asset_type": "crypto",
       "first_added": "2025-03-08",
-      "status": "inactive",
-      "last_seen": "2025-06-18"
+      "status": "active",
+      "last_seen": "2026-09-01"
+    },
+    {
+      "name": "Marco Cupillari",
+      "team": "Blockworks Advisory",
+      "asset": "ANSEM",
+      "asset_type": "crypto",
+      "first_added": "2026-09-01",
+      "status": "active",
+      "last_seen": "2026-09-01"
     },
     {
       "name": "Marco Cupillari",
@@ -2436,7 +2553,25 @@
       "asset_type": "crypto",
       "first_added": "2026-08-17",
       "status": "active",
-      "last_seen": "2026-08-31"
+      "last_seen": "2026-09-01"
+    },
+    {
+      "name": "Marco Cupillari",
+      "team": "Blockworks Advisory",
+      "asset": "CARDS",
+      "asset_type": "crypto",
+      "first_added": "2026-09-01",
+      "status": "active",
+      "last_seen": "2026-09-01"
+    },
+    {
+      "name": "Marco Cupillari",
+      "team": "Blockworks Advisory",
+      "asset": "CHIP",
+      "asset_type": "crypto",
+      "first_added": "2026-09-01",
+      "status": "active",
+      "last_seen": "2026-09-01"
     },
     {
       "name": "Marco Cupillari",
@@ -2445,7 +2580,7 @@
       "asset_type": "nft",
       "first_added": "2026-08-17",
       "status": "active",
-      "last_seen": "2026-08-31"
+      "last_seen": "2026-09-01"
     },
     {
       "name": "Marco Cupillari",
@@ -2454,7 +2589,7 @@
       "asset_type": "crypto",
       "first_added": "2026-08-17",
       "status": "active",
-      "last_seen": "2026-08-31"
+      "last_seen": "2026-09-01"
     },
     {
       "name": "Marco Cupillari",
@@ -2463,7 +2598,7 @@
       "asset_type": "crypto",
       "first_added": "2026-08-17",
       "status": "active",
-      "last_seen": "2026-08-31"
+      "last_seen": "2026-09-01"
     },
     {
       "name": "Marco Cupillari",
@@ -2472,7 +2607,7 @@
       "asset_type": "crypto",
       "first_added": "2026-08-17",
       "status": "active",
-      "last_seen": "2026-08-31"
+      "last_seen": "2026-09-01"
     },
     {
       "name": "Marco Cupillari",
@@ -2481,7 +2616,7 @@
       "asset_type": "crypto",
       "first_added": "2026-08-17",
       "status": "active",
-      "last_seen": "2026-08-31"
+      "last_seen": "2026-09-01"
     },
     {
       "name": "Marco Cupillari",
@@ -2490,7 +2625,7 @@
       "asset_type": "crypto",
       "first_added": "2026-08-17",
       "status": "active",
-      "last_seen": "2026-08-31"
+      "last_seen": "2026-09-01"
     },
     {
       "name": "Maryanne Olson",
@@ -2553,7 +2688,7 @@
       "asset_type": "angel",
       "first_added": "2026-08-17",
       "status": "active",
-      "last_seen": "2026-08-31"
+      "last_seen": "2026-09-01"
     },
     {
       "name": "Michael Ippolito",
@@ -2561,7 +2696,7 @@
       "asset": "AVAX",
       "asset_type": "crypto",
       "first_added": "2025-04-04",
-      "status": "active",
+      "status": "inactive",
       "last_seen": "2026-08-31"
     },
     {
@@ -2571,7 +2706,7 @@
       "asset_type": "angel",
       "first_added": "2026-08-17",
       "status": "active",
-      "last_seen": "2026-08-31"
+      "last_seen": "2026-09-01"
     },
     {
       "name": "Michael Ippolito",
@@ -2580,7 +2715,7 @@
       "asset_type": "crypto",
       "first_added": "2025-04-04",
       "status": "active",
-      "last_seen": "2026-08-31"
+      "last_seen": "2026-09-01"
     },
     {
       "name": "Michael Ippolito",
@@ -2589,7 +2724,7 @@
       "asset_type": "nft",
       "first_added": "2025-04-04",
       "status": "active",
-      "last_seen": "2026-08-31"
+      "last_seen": "2026-09-01"
     },
     {
       "name": "Michael Ippolito",
@@ -2597,7 +2732,7 @@
       "asset": "DEGEN",
       "asset_type": "crypto",
       "first_added": "2025-04-04",
-      "status": "active",
+      "status": "inactive",
       "last_seen": "2026-08-31"
     },
     {
@@ -2607,7 +2742,7 @@
       "asset_type": "angel",
       "first_added": "2026-08-17",
       "status": "active",
-      "last_seen": "2026-08-31"
+      "last_seen": "2026-09-01"
     },
     {
       "name": "Michael Ippolito",
@@ -2615,7 +2750,7 @@
       "asset": "ETH",
       "asset_type": "crypto",
       "first_added": "2025-04-04",
-      "status": "active",
+      "status": "inactive",
       "last_seen": "2026-08-31"
     },
     {
@@ -2625,7 +2760,7 @@
       "asset_type": "angel",
       "first_added": "2026-08-17",
       "status": "active",
-      "last_seen": "2026-08-31"
+      "last_seen": "2026-09-01"
     },
     {
       "name": "Michael Ippolito",
@@ -2643,7 +2778,7 @@
       "asset_type": "angel",
       "first_added": "2026-08-17",
       "status": "active",
-      "last_seen": "2026-08-31"
+      "last_seen": "2026-09-01"
     },
     {
       "name": "Michael Ippolito",
@@ -2652,7 +2787,7 @@
       "asset_type": "angel",
       "first_added": "2026-08-17",
       "status": "active",
-      "last_seen": "2026-08-31"
+      "last_seen": "2026-09-01"
     },
     {
       "name": "Michael Ippolito",
@@ -2660,7 +2795,7 @@
       "asset": "IMX",
       "asset_type": "crypto",
       "first_added": "2025-04-04",
-      "status": "active",
+      "status": "inactive",
       "last_seen": "2026-08-31"
     },
     {
@@ -2670,7 +2805,7 @@
       "asset_type": "angel",
       "first_added": "2026-08-17",
       "status": "active",
-      "last_seen": "2026-08-31"
+      "last_seen": "2026-09-01"
     },
     {
       "name": "Michael Ippolito",
@@ -2678,8 +2813,17 @@
       "asset": "MIPPO",
       "asset_type": "crypto",
       "first_added": "2026-08-17",
-      "status": "active",
+      "status": "inactive",
       "last_seen": "2026-08-31"
+    },
+    {
+      "name": "Michael Ippolito",
+      "team": "Blockworks Media",
+      "asset": "MORPHO",
+      "asset_type": "crypto",
+      "first_added": "2026-09-01",
+      "status": "active",
+      "last_seen": "2026-09-01"
     },
     {
       "name": "Michael Ippolito",
@@ -2687,7 +2831,7 @@
       "asset": "MadLads",
       "asset_type": "nft",
       "first_added": "2025-04-04",
-      "status": "active",
+      "status": "inactive",
       "last_seen": "2026-08-31"
     },
     {
@@ -2697,7 +2841,7 @@
       "asset_type": "angel",
       "first_added": "2026-08-17",
       "status": "active",
-      "last_seen": "2026-08-31"
+      "last_seen": "2026-09-01"
     },
     {
       "name": "Michael Ippolito",
@@ -2705,7 +2849,7 @@
       "asset": "Pudgy Penguins",
       "asset_type": "nft",
       "first_added": "2025-04-04",
-      "status": "active",
+      "status": "inactive",
       "last_seen": "2026-08-31"
     },
     {
@@ -2714,7 +2858,7 @@
       "asset": "RNDR",
       "asset_type": "crypto",
       "first_added": "2025-04-04",
-      "status": "active",
+      "status": "inactive",
       "last_seen": "2026-08-31"
     },
     {
@@ -2724,7 +2868,7 @@
       "asset_type": "angel",
       "first_added": "2026-08-17",
       "status": "active",
-      "last_seen": "2026-08-31"
+      "last_seen": "2026-09-01"
     },
     {
       "name": "Michael Ippolito",
@@ -2733,7 +2877,7 @@
       "asset_type": "angel",
       "first_added": "2026-08-17",
       "status": "active",
-      "last_seen": "2026-08-31"
+      "last_seen": "2026-09-01"
     },
     {
       "name": "Michael Ippolito",
@@ -2742,7 +2886,7 @@
       "asset_type": "crypto",
       "first_added": "2025-04-04",
       "status": "active",
-      "last_seen": "2026-08-31"
+      "last_seen": "2026-09-01"
     },
     {
       "name": "Michael Ippolito",
@@ -2750,7 +2894,7 @@
       "asset": "SUI",
       "asset_type": "crypto",
       "first_added": "2025-04-04",
-      "status": "active",
+      "status": "inactive",
       "last_seen": "2026-08-31"
     },
     {
@@ -2760,7 +2904,7 @@
       "asset_type": "angel",
       "first_added": "2026-08-17",
       "status": "active",
-      "last_seen": "2026-08-31"
+      "last_seen": "2026-09-01"
     },
     {
       "name": "Michael Ippolito",
@@ -2769,7 +2913,7 @@
       "asset_type": "angel",
       "first_added": "2026-08-17",
       "status": "active",
-      "last_seen": "2026-08-31"
+      "last_seen": "2026-09-01"
     },
     {
       "name": "Michael Ippolito",
@@ -2778,7 +2922,7 @@
       "asset_type": "angel",
       "first_added": "2026-08-17",
       "status": "active",
-      "last_seen": "2026-08-31"
+      "last_seen": "2026-09-01"
     },
     {
       "name": "Michael Ippolito",
@@ -2787,7 +2931,7 @@
       "asset_type": "angel",
       "first_added": "2026-08-17",
       "status": "active",
-      "last_seen": "2026-08-31"
+      "last_seen": "2026-09-01"
     },
     {
       "name": "Michael Ippolito",
@@ -2795,7 +2939,7 @@
       "asset": "TAO",
       "asset_type": "crypto",
       "first_added": "2025-04-04",
-      "status": "active",
+      "status": "inactive",
       "last_seen": "2026-08-31"
     },
     {
@@ -2804,7 +2948,7 @@
       "asset": "TIA",
       "asset_type": "crypto",
       "first_added": "2025-04-04",
-      "status": "active",
+      "status": "inactive",
       "last_seen": "2026-08-31"
     },
     {
@@ -2813,7 +2957,7 @@
       "asset": "Tensorians",
       "asset_type": "nft",
       "first_added": "2025-04-04",
-      "status": "active",
+      "status": "inactive",
       "last_seen": "2026-08-31"
     },
     {
@@ -2822,7 +2966,7 @@
       "asset": "VIRTUALS",
       "asset_type": "crypto",
       "first_added": "2025-04-04",
-      "status": "active",
+      "status": "inactive",
       "last_seen": "2026-08-31"
     },
     {
@@ -3139,6 +3283,15 @@
       "first_added": "2025-03-08",
       "status": "inactive",
       "last_seen": "2025-06-18"
+    },
+    {
+      "name": "Nick Carpinito",
+      "team": "Blockworks Research",
+      "asset": "BTC",
+      "asset_type": "crypto",
+      "first_added": "2026-09-01",
+      "status": "active",
+      "last_seen": "2026-09-01"
     },
     {
       "name": "Nick Carpinito",
@@ -3273,7 +3426,16 @@
       "asset_type": "crypto",
       "first_added": "2026-08-17",
       "status": "active",
-      "last_seen": "2026-08-31"
+      "last_seen": "2026-09-01"
+    },
+    {
+      "name": "Rod",
+      "team": "Blockworks Data",
+      "asset": "BNB",
+      "asset_type": "crypto",
+      "first_added": "2026-09-01",
+      "status": "active",
+      "last_seen": "2026-09-01"
     },
     {
       "name": "Rod",
@@ -3287,11 +3449,20 @@
     {
       "name": "Rod",
       "team": "Blockworks Data",
+      "asset": "CASHCAT",
+      "asset_type": "crypto",
+      "first_added": "2026-09-01",
+      "status": "active",
+      "last_seen": "2026-09-01"
+    },
+    {
+      "name": "Rod",
+      "team": "Blockworks Data",
       "asset": "CHART",
       "asset_type": "crypto",
       "first_added": "2025-03-12",
       "status": "active",
-      "last_seen": "2026-08-31"
+      "last_seen": "2026-09-01"
     },
     {
       "name": "Rod",
@@ -3318,7 +3489,7 @@
       "asset_type": "crypto",
       "first_added": "2026-08-17",
       "status": "active",
-      "last_seen": "2026-08-31"
+      "last_seen": "2026-09-01"
     },
     {
       "name": "Rod",
@@ -3336,7 +3507,7 @@
       "asset_type": "crypto",
       "first_added": "2025-03-12",
       "status": "active",
-      "last_seen": "2026-08-31"
+      "last_seen": "2026-09-01"
     },
     {
       "name": "Rod",
@@ -3345,7 +3516,7 @@
       "asset_type": "crypto",
       "first_added": "2025-03-12",
       "status": "active",
-      "last_seen": "2026-08-31"
+      "last_seen": "2026-09-01"
     },
     {
       "name": "Rod",
@@ -3408,7 +3579,7 @@
       "asset_type": "crypto",
       "first_added": "2025-03-12",
       "status": "active",
-      "last_seen": "2026-08-31"
+      "last_seen": "2026-09-01"
     },
     {
       "name": "Rod",
@@ -3431,11 +3602,20 @@
     {
       "name": "Rod",
       "team": "Blockworks Data",
+      "asset": "OAR",
+      "asset_type": "crypto",
+      "first_added": "2026-09-01",
+      "status": "active",
+      "last_seen": "2026-09-01"
+    },
+    {
+      "name": "Rod",
+      "team": "Blockworks Data",
       "asset": "PHNIX",
       "asset_type": "crypto",
       "first_added": "2025-03-12",
       "status": "active",
-      "last_seen": "2026-08-31"
+      "last_seen": "2026-09-01"
     },
     {
       "name": "Rod",
@@ -3444,7 +3624,7 @@
       "asset_type": "crypto",
       "first_added": "2026-08-17",
       "status": "active",
-      "last_seen": "2026-08-31"
+      "last_seen": "2026-09-01"
     },
     {
       "name": "Rod",
@@ -3507,7 +3687,7 @@
       "asset_type": "crypto",
       "first_added": "2025-04-02",
       "status": "active",
-      "last_seen": "2026-08-31"
+      "last_seen": "2026-09-01"
     },
     {
       "name": "Rod",
@@ -3525,7 +3705,7 @@
       "asset_type": "crypto",
       "first_added": "2025-03-12",
       "status": "active",
-      "last_seen": "2026-08-31"
+      "last_seen": "2026-09-01"
     },
     {
       "name": "Rod",
@@ -3533,8 +3713,17 @@
       "asset": "XRP_PERPS",
       "asset_type": "crypto",
       "first_added": "2026-08-17",
-      "status": "active",
+      "status": "inactive",
       "last_seen": "2026-08-31"
+    },
+    {
+      "name": "Rod",
+      "team": "Blockworks Data",
+      "asset": "ZRO",
+      "asset_type": "crypto",
+      "first_added": "2026-09-01",
+      "status": "active",
+      "last_seen": "2026-09-01"
     },
     {
       "name": "Rod",
@@ -3597,7 +3786,16 @@
       "asset_type": "crypto",
       "first_added": "2026-08-17",
       "status": "active",
-      "last_seen": "2026-08-31"
+      "last_seen": "2026-09-01"
+    },
+    {
+      "name": "Ryan Graham",
+      "team": "Blockworks Research",
+      "asset": "BOOMER",
+      "asset_type": "crypto",
+      "first_added": "2026-09-01",
+      "status": "active",
+      "last_seen": "2026-09-01"
     },
     {
       "name": "Ryan Graham",
@@ -3606,7 +3804,16 @@
       "asset_type": "crypto",
       "first_added": "2026-08-17",
       "status": "active",
-      "last_seen": "2026-08-31"
+      "last_seen": "2026-09-01"
+    },
+    {
+      "name": "Ryan Graham",
+      "team": "Blockworks Research",
+      "asset": "BULL",
+      "asset_type": "crypto",
+      "first_added": "2026-09-01",
+      "status": "active",
+      "last_seen": "2026-09-01"
     },
     {
       "name": "Ryan Graham",
@@ -3614,8 +3821,44 @@
       "asset": "Bitcoin Puppets",
       "asset_type": "nft",
       "first_added": "2026-08-17",
-      "status": "active",
+      "status": "inactive",
       "last_seen": "2026-08-31"
+    },
+    {
+      "name": "Ryan Graham",
+      "team": "Blockworks Research",
+      "asset": "CLIPPY",
+      "asset_type": "crypto",
+      "first_added": "2026-09-01",
+      "status": "active",
+      "last_seen": "2026-09-01"
+    },
+    {
+      "name": "Ryan Graham",
+      "team": "Blockworks Research",
+      "asset": "COCO",
+      "asset_type": "crypto",
+      "first_added": "2026-09-01",
+      "status": "active",
+      "last_seen": "2026-09-01"
+    },
+    {
+      "name": "Ryan Graham",
+      "team": "Blockworks Research",
+      "asset": "EARTHCOIN",
+      "asset_type": "crypto",
+      "first_added": "2026-09-01",
+      "status": "active",
+      "last_seen": "2026-09-01"
+    },
+    {
+      "name": "Ryan Graham",
+      "team": "Blockworks Research",
+      "asset": "ETH",
+      "asset_type": "crypto",
+      "first_added": "2026-09-01",
+      "status": "active",
+      "last_seen": "2026-09-01"
     },
     {
       "name": "Ryan Graham",
@@ -3624,7 +3867,34 @@
       "asset_type": "crypto",
       "first_added": "2026-08-17",
       "status": "active",
-      "last_seen": "2026-08-31"
+      "last_seen": "2026-09-01"
+    },
+    {
+      "name": "Ryan Graham",
+      "team": "Blockworks Research",
+      "asset": "INJOH",
+      "asset_type": "crypto",
+      "first_added": "2026-09-01",
+      "status": "active",
+      "last_seen": "2026-09-01"
+    },
+    {
+      "name": "Ryan Graham",
+      "team": "Blockworks Research",
+      "asset": "MOO",
+      "asset_type": "crypto",
+      "first_added": "2026-09-01",
+      "status": "active",
+      "last_seen": "2026-09-01"
+    },
+    {
+      "name": "Ryan Graham",
+      "team": "Blockworks Research",
+      "asset": "MOTION",
+      "asset_type": "crypto",
+      "first_added": "2026-09-01",
+      "status": "active",
+      "last_seen": "2026-09-01"
     },
     {
       "name": "Ryan Graham",
@@ -3632,7 +3902,7 @@
       "asset": "Milady",
       "asset_type": "nft",
       "first_added": "2026-08-17",
-      "status": "active",
+      "status": "inactive",
       "last_seen": "2026-08-31"
     },
     {
@@ -3642,7 +3912,7 @@
       "asset_type": "crypto",
       "first_added": "2026-08-17",
       "status": "active",
-      "last_seen": "2026-08-31"
+      "last_seen": "2026-09-01"
     },
     {
       "name": "Ryan Graham",
@@ -3651,7 +3921,7 @@
       "asset_type": "crypto",
       "first_added": "2026-08-17",
       "status": "active",
-      "last_seen": "2026-08-31"
+      "last_seen": "2026-09-01"
     },
     {
       "name": "Ryan Graham",
@@ -3660,7 +3930,16 @@
       "asset_type": "crypto",
       "first_added": "2026-08-17",
       "status": "active",
-      "last_seen": "2026-08-31"
+      "last_seen": "2026-09-01"
+    },
+    {
+      "name": "Ryan Graham",
+      "team": "Blockworks Research",
+      "asset": "TA",
+      "asset_type": "crypto",
+      "first_added": "2026-09-01",
+      "status": "active",
+      "last_seen": "2026-09-01"
     },
     {
       "name": "Ryan Graham",
@@ -3669,7 +3948,7 @@
       "asset_type": "crypto",
       "first_added": "2026-08-17",
       "status": "active",
-      "last_seen": "2026-08-31"
+      "last_seen": "2026-09-01"
     },
     {
       "name": "Ryan Graham",
@@ -3678,7 +3957,7 @@
       "asset_type": "crypto",
       "first_added": "2026-08-17",
       "status": "active",
-      "last_seen": "2026-08-31"
+      "last_seen": "2026-09-01"
     },
     {
       "name": "Ryan Graham",
@@ -3687,7 +3966,16 @@
       "asset_type": "crypto",
       "first_added": "2026-08-17",
       "status": "active",
-      "last_seen": "2026-08-31"
+      "last_seen": "2026-09-01"
+    },
+    {
+      "name": "Ryan Graham",
+      "team": "Blockworks Research",
+      "asset": "ZEC",
+      "asset_type": "crypto",
+      "first_added": "2026-09-01",
+      "status": "active",
+      "last_seen": "2026-09-01"
     },
     {
       "name": "Ryan Graham",
@@ -3696,7 +3984,7 @@
       "asset_type": "crypto",
       "first_added": "2026-08-17",
       "status": "active",
-      "last_seen": "2026-08-31"
+      "last_seen": "2026-09-01"
     },
     {
       "name": "Ryan Herlihy",
@@ -3804,7 +4092,7 @@
       "asset_type": "crypto",
       "first_added": "2026-08-17",
       "status": "active",
-      "last_seen": "2026-08-31"
+      "last_seen": "2026-09-01"
     },
     {
       "name": "Sam Schubert",
@@ -3813,7 +4101,7 @@
       "asset_type": "equity",
       "first_added": "2026-08-17",
       "status": "active",
-      "last_seen": "2026-08-31"
+      "last_seen": "2026-09-01"
     },
     {
       "name": "Sam Schubert",
@@ -3822,7 +4110,7 @@
       "asset_type": "crypto",
       "first_added": "2026-08-17",
       "status": "active",
-      "last_seen": "2026-08-31"
+      "last_seen": "2026-09-01"
     },
     {
       "name": "Sam Schubert",
@@ -3831,7 +4119,7 @@
       "asset_type": "equity",
       "first_added": "2026-08-17",
       "status": "active",
-      "last_seen": "2026-08-31"
+      "last_seen": "2026-09-01"
     },
     {
       "name": "Sam Schubert",
@@ -3840,7 +4128,16 @@
       "asset_type": "crypto",
       "first_added": "2026-08-17",
       "status": "active",
-      "last_seen": "2026-08-31"
+      "last_seen": "2026-09-01"
+    },
+    {
+      "name": "Sam Schubert",
+      "team": "Blockworks Research",
+      "asset": "MET",
+      "asset_type": "crypto",
+      "first_added": "2026-09-01",
+      "status": "active",
+      "last_seen": "2026-09-01"
     },
     {
       "name": "Sam Schubert",
@@ -3848,8 +4145,17 @@
       "asset": "Mad Lads",
       "asset_type": "nft",
       "first_added": "2026-08-17",
-      "status": "active",
+      "status": "inactive",
       "last_seen": "2026-08-31"
+    },
+    {
+      "name": "Sam Schubert",
+      "team": "Blockworks Research",
+      "asset": "PUMP",
+      "asset_type": "crypto",
+      "first_added": "2026-09-01",
+      "status": "active",
+      "last_seen": "2026-09-01"
     },
     {
       "name": "Sam Schubert",
@@ -3858,7 +4164,7 @@
       "asset_type": "crypto",
       "first_added": "2026-08-17",
       "status": "active",
-      "last_seen": "2026-08-31"
+      "last_seen": "2026-09-01"
     },
     {
       "name": "Sam Schubert",
@@ -3867,7 +4173,7 @@
       "asset_type": "crypto",
       "first_added": "2026-08-17",
       "status": "active",
-      "last_seen": "2026-08-31"
+      "last_seen": "2026-09-01"
     },
     {
       "name": "Sam Schubert",
@@ -3876,7 +4182,7 @@
       "asset_type": "crypto",
       "first_added": "2026-08-17",
       "status": "active",
-      "last_seen": "2026-08-31"
+      "last_seen": "2026-09-01"
     },
     {
       "name": "San Yong Seah",
@@ -3885,7 +4191,7 @@
       "asset_type": "crypto",
       "first_added": "2026-08-17",
       "status": "active",
-      "last_seen": "2026-08-31"
+      "last_seen": "2026-09-01"
     },
     {
       "name": "San Yong Seah",
@@ -3894,7 +4200,7 @@
       "asset_type": "crypto",
       "first_added": "2026-08-17",
       "status": "active",
-      "last_seen": "2026-08-31"
+      "last_seen": "2026-09-01"
     },
     {
       "name": "San Yong Seah",
@@ -3903,7 +4209,7 @@
       "asset_type": "nft",
       "first_added": "2026-08-17",
       "status": "active",
-      "last_seen": "2026-08-31"
+      "last_seen": "2026-09-01"
     },
     {
       "name": "Shaunda Devens",
@@ -3912,7 +4218,16 @@
       "asset_type": "crypto",
       "first_added": "2026-08-17",
       "status": "active",
-      "last_seen": "2026-08-31"
+      "last_seen": "2026-09-01"
+    },
+    {
+      "name": "Shaunda Devens",
+      "team": "Blockworks Research",
+      "asset": "ETH",
+      "asset_type": "crypto",
+      "first_added": "2026-09-01",
+      "status": "active",
+      "last_seen": "2026-09-01"
     },
     {
       "name": "Shaunda Devens",
@@ -3921,7 +4236,7 @@
       "asset_type": "crypto",
       "first_added": "2026-08-17",
       "status": "active",
-      "last_seen": "2026-08-31"
+      "last_seen": "2026-09-01"
     },
     {
       "name": "Shaunda Devens",
@@ -3929,8 +4244,17 @@
       "asset": "KNTQ",
       "asset_type": "crypto",
       "first_added": "2026-08-17",
-      "status": "active",
+      "status": "inactive",
       "last_seen": "2026-08-31"
+    },
+    {
+      "name": "Shaunda Devens",
+      "team": "Blockworks Research",
+      "asset": "PUMP",
+      "asset_type": "crypto",
+      "first_added": "2026-09-01",
+      "status": "active",
+      "last_seen": "2026-09-01"
     },
     {
       "name": "Shaunda Devens",
@@ -3938,7 +4262,7 @@
       "asset": "USDT",
       "asset_type": "crypto",
       "first_added": "2026-08-17",
-      "status": "active",
+      "status": "inactive",
       "last_seen": "2026-08-31"
     },
     {
@@ -3947,7 +4271,7 @@
       "asset": "USDai",
       "asset_type": "crypto",
       "first_added": "2026-08-17",
-      "status": "active",
+      "status": "inactive",
       "last_seen": "2026-08-31"
     },
     {
@@ -3957,7 +4281,7 @@
       "asset_type": "crypto",
       "first_added": "2026-08-17",
       "status": "active",
-      "last_seen": "2026-08-31"
+      "last_seen": "2026-09-01"
     },
     {
       "name": "Toma",
@@ -3966,7 +4290,16 @@
       "asset_type": "crypto",
       "first_added": "2026-08-17",
       "status": "active",
-      "last_seen": "2026-08-31"
+      "last_seen": "2026-09-01"
+    },
+    {
+      "name": "Toma",
+      "team": "Blockworks Advisory",
+      "asset": "TENDIES",
+      "asset_type": "crypto",
+      "first_added": "2026-09-01",
+      "status": "active",
+      "last_seen": "2026-09-01"
     },
     {
       "name": "Troy Harris",
@@ -3975,7 +4308,16 @@
       "asset_type": "crypto",
       "first_added": "2026-08-17",
       "status": "active",
-      "last_seen": "2026-08-31"
+      "last_seen": "2026-09-01"
+    },
+    {
+      "name": "Troy Harris",
+      "team": "Blockworks Data",
+      "asset": "HYPE",
+      "asset_type": "crypto",
+      "first_added": "2026-09-01",
+      "status": "active",
+      "last_seen": "2026-09-01"
     },
     {
       "name": "Victor Pham",
@@ -3993,7 +4335,7 @@
       "asset_type": "equity",
       "first_added": "2026-08-17",
       "status": "active",
-      "last_seen": "2026-08-31"
+      "last_seen": "2026-09-01"
     },
     {
       "name": "Victor Pham",
@@ -4002,7 +4344,7 @@
       "asset_type": "crypto",
       "first_added": "2025-03-08",
       "status": "active",
-      "last_seen": "2026-08-31"
+      "last_seen": "2026-09-01"
     },
     {
       "name": "Victor Pham",
@@ -4029,7 +4371,7 @@
       "asset_type": "equity",
       "first_added": "2025-03-08",
       "status": "active",
-      "last_seen": "2026-08-31"
+      "last_seen": "2026-09-01"
     },
     {
       "name": "Victor Pham",
@@ -4038,7 +4380,7 @@
       "asset_type": "crypto",
       "first_added": "2025-03-08",
       "status": "active",
-      "last_seen": "2026-08-31"
+      "last_seen": "2026-09-01"
     },
     {
       "name": "Victor Pham",
@@ -4055,8 +4397,8 @@
       "asset": "KMNO",
       "asset_type": "crypto",
       "first_added": "2025-03-08",
-      "status": "inactive",
-      "last_seen": "2025-06-18"
+      "status": "active",
+      "last_seen": "2026-09-01"
     },
     {
       "name": "Victor Pham",
@@ -4074,7 +4416,7 @@
       "asset_type": "crypto",
       "first_added": "2025-03-08",
       "status": "active",
-      "last_seen": "2026-08-31"
+      "last_seen": "2026-09-01"
     },
     {
       "name": "Victor Pham",
