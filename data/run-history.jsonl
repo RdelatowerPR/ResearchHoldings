@@ -38,3 +38,5 @@
 {"at":"2026-08-31T03:23:19.191Z","job":"prices","ok":true,"stored":81,"pricedAssets":112,"coingecko":"keyless","keyDemoted":"verification failed with HTTP 401 (key rejected)","warningCount":2}
 {"at":"2026-09-01T03:21:05.311Z","job":"scrape","ok":true,"url":"https://blockworks.com/financial-disclosures","strategy":"dom","scraped":195,"sourceNote":"September 2026 disclosures, updated August 31","attempts":"dom=195,nextData=195,loose=195","newEntries":38,"updatedEntries":157,"deactivated":30,"active":195,"members":53,"warningCount":0}
 {"at":"2026-09-01T03:23:31.550Z","job":"prices","ok":true,"stored":118,"pricedAssets":129,"coingecko":"pro","warningCount":0}
+{"at":"2026-09-02T02:38:59.457Z","job":"scrape","ok":true,"url":"https://blockworks.com/financial-disclosures","strategy":"dom","scraped":199,"sourceNote":"September 2026 disclosures, updated August 31","attempts":"dom=199,nextData=199,loose=199","newEntries":22,"updatedEntries":177,"deactivated":21,"active":199,"members":54,"warningCount":0}
+{"at":"2026-09-02T02:41:18.106Z","job":"prices","ok":true,"stored":118,"pricedAssets":129,"coingecko":"pro","warningCount":0}
