@@ -58,3 +58,5 @@
 {"at":"2026-09-10T02:55:24.210Z","job":"prices","ok":true,"stored":119,"pricedAssets":130,"coingecko":"pro","warningCount":0}
 {"at":"2026-09-11T02:47:08.820Z","job":"scrape","ok":true,"url":"https://blockworks.com/financial-disclosures","strategy":"dom","scraped":200,"sourceNote":"September 2026 disclosures, updated August 31","attempts":"dom=200,nextData=200,loose=200","newEntries":0,"updatedEntries":200,"deactivated":0,"active":200,"members":54,"warningCount":0}
 {"at":"2026-09-11T02:49:27.492Z","job":"prices","ok":true,"stored":112,"pricedAssets":130,"coingecko":"pro","warningCount":0}
+{"at":"2026-09-12T02:56:03.193Z","job":"scrape","ok":true,"url":"https://blockworks.com/financial-disclosures","strategy":"dom","scraped":200,"sourceNote":"September 2026 disclosures, updated August 31","attempts":"dom=200,nextData=200,loose=200","newEntries":0,"updatedEntries":200,"deactivated":0,"active":200,"members":54,"warningCount":0}
+{"at":"2026-09-12T02:58:20.204Z","job":"prices","ok":true,"stored":119,"pricedAssets":130,"coingecko":"pro","warningCount":0}
