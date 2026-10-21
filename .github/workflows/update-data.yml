@@ -48,6 +48,14 @@ jobs:
           ALPHA_VANTAGE_API_KEY: ${{ secrets.ALPHA_VANTAGE_API_KEY }}
           COINGECKO_API_KEY: ${{ secrets.COINGECKO_API_KEY }}
 
+      # Prices stored wrong are replaced from the committed files in data/price-corrections/,
+      # so the fix goes out in the commit below instead of as a binary change in a PR.
+      # Rows already corrected are skipped; a row holding anything unexpected fails the
+      # job with nothing written. See docs/RUNBOOK.md#correcting-stored-prices.
+      - name: Apply price corrections
+        if: always()
+        run: node scripts/applyPriceCorrections.js
+
       # Full logs, plus the page we couldn't parse. Actions logs age out after 90
       # days and these are what you need to diagnose a break after the fact.
       - name: Upload logs

@@ -137,9 +137,11 @@ async function mapCryptoIds() {
   };
 
   // Nothing above ever revisits a stored mapping, so one bad guess is kept forever:
-  // HYPE sat on a non-existent "hype" id and never priced once. These ids were each
-  // checked against the CoinGecko API and overwrite whatever is stored. Only add an
-  // entry here after confirming /coins/<id> resolves to the right asset.
+  // until 2026-08-17 HYPE and PENGU were priced as other tokens (a flat 0.050472 and
+  // 7.78 every day for 17 months) and KMNO not at all. Those stored rows are repaired
+  // by data/price-corrections/. These ids were each checked against the CoinGecko API
+  // and overwrite whatever is stored. Only add an entry here after confirming
+  // /coins/<id> resolves to the right asset.
   const verifiedOverrides = {
     'HYPE': 'hyperliquid',
     'KMNO': 'kamino',

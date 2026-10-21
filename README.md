@@ -77,6 +77,7 @@ says so loudly rather than returning nothing.
 | `data/holdings-snapshot.json` | yes | text copy of every holding — diffable, restorable |
 | `data/run-history.jsonl` | yes | one line per collector run; the audit trail |
 | `data/metadata.json` | yes | last successful scrape, strategy used, source's own note |
+| `data/price-corrections/*.json` | yes | stored prices known to be wrong, with their replacements; applied by the daily run |
 | `backups/holdings-*.db` | no | last 7 pre-write database copies |
 | `logs/`, `debug/` | no | verbose logs and the page dump written on a parse failure |
 
@@ -97,12 +98,15 @@ scripts/
   fetchPrices.js          token mapping and price collection
   restoreFromSnapshot.js  rebuild holdings from the committed snapshot
   backfillFromArchive.js  recover missed dates from the Wayback Machine
+  buildPriceCorrections.js  rebuild a wrongly priced stretch from the right token's history
+  applyPriceCorrections.js  apply data/price-corrections/ (daily, idempotent)
   lib/
     parseDisclosures.js   three independent readers for the page  (docs/PARSING.md)
     fetchPage.js          retries, URL fallback, response validation
     coingecko.js          API client with the expired-key failsafe
     backup.js             pre-write backups, snapshot write/restore
     history.js            point-in-time observations (holdings_history)
+    priceCorrections.js   read, check and apply price corrections
     logger.js             file + console logging, run records
 test/
   fixtures/               real and synthetic page shapes

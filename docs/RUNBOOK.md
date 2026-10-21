@@ -13,6 +13,7 @@ Nothing runs on a local machine. The `Update Database` GitHub Action runs daily 
   npm test                      parser regression tests, before anything is written
   scripts/scrapeHoldings.js     page  -> data/holdings.db + metadata + snapshot
   scripts/fetchPrices.js        APIs  -> prices table
+  scripts/applyPriceCorrections.js  data/price-corrections/ -> prices table (idempotent)
   git commit + push             data/ -> main -> Vercel
 ```
 
@@ -100,6 +101,58 @@ npm run restore                                        # rebuild members + holdi
 
 `npm run restore` backs up the current database first and leaves the prices table
 alone — prices are append-only history the snapshot deliberately doesn't carry.
+
+## Correcting stored prices
+
+Prices live only in `data/holdings.db`, so a stretch of wrong prices can't be fixed by
+editing a text file. A pull request carrying a rewritten database conflicts with the
+next morning's data commit, and nobody can review a binary diff. Corrections go in as
+text instead, and the daily run applies them.
+
+**What this was built for.** Until 2026-08-17 the token mappings sent HYPE and PENGU to
+the wrong CoinGecko ids, and every daily run stored the other token's price: HYPE at a
+flat 0.050472 (527 rows from 2025-03-08) and PENGU at a flat 7.78 (468 rows). The
+mappings were fixed that day (`verifiedOverrides` in `fetchPrices.js`), but the history
+stayed wrong, and once the Analytics view read it, HYPE showed +161,930% since first
+added. Both stretches are rebuilt in `data/price-corrections/`.
+
+**How it works.** Each file lists exact rows: the row id and timestamp, the bad price
+the row must still hold, and the replacement. `scripts/applyPriceCorrections.js` runs
+in the daily workflow after prices are fetched:
+
+- a row still holding the bad price is corrected and tagged `source = 'coingecko-backfill'`
+- a row already corrected is skipped, so the step is a no-op on every later run
+- a row holding anything else stops the whole set: nothing is written, the job fails,
+  and the `collector-failure` issue opens
+- the database is backed up first, the writes are one transaction, and a
+  `price-corrections` line goes into `data/run-history.jsonl`
+
+**Adding one.** Build it from the right token's history, review the diff, merge, and
+let the next run apply it (or start one with `gh workflow run "Update Database" --ref main`):
+
+```bash
+node scripts/buildPriceCorrections.js --asset HYPE --coingecko-id hyperliquid \
+  --bad-price 0.050472 --before 2026-08-17T21:18:00.190Z --hyperliquid-coin HYPE
+cp data/holdings.db /tmp/scratch.db
+HOLDINGS_DB=/tmp/scratch.db node scripts/applyPriceCorrections.js --dry-run
+```
+
+The builder needs the Pro key (the keyless endpoint stops at 365 days) and only reads
+the database. It refuses unless every row before `--before` holds `--bad-price`, every
+row has a CoinGecko hourly point within 90 minutes, the same method reproduces the rows
+stored since the fix (median difference under 1%), and, with `--hyperliquid-coin`, 98%
+of the prices sit inside Hyperliquid's own daily low-high range. The results of those
+checks are written into the file's header.
+
+**Checking it landed.** By the data, not the green run:
+
+```sql
+SELECT COUNT(*) FROM prices WHERE asset = 'HYPE' AND price = 0.050472;   -- 0
+SELECT asset, COUNT(*) FROM prices WHERE source = 'coingecko-backfill' GROUP BY asset;
+```
+
+The newest `price-corrections` line in `data/run-history.jsonl` says how many rows that
+run corrected (`applied`) and how many it found already corrected (`alreadyApplied`).
 
 ## Running it by hand
 
