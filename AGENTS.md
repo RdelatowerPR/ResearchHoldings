@@ -22,6 +22,11 @@ Read this file before changing collection, data, deployment, or the local Window
   Keep `package-manager-cache: false`: this repository intentionally avoids setup-node's automatic
   npm cache and must not regress to deprecated Node 20-based action releases.
 - `.github/workflows/test.yml` validates source changes. `.github/workflows/update-data.yml` runs
-  daily at 00:00 UTC, tests before scraping, uploads failure artifacts, commits only the durable
-  data files, and opens or updates a `collector-failure` issue when collection fails.
+  daily at 00:00 UTC, tests before scraping, applies the committed price corrections, uploads
+  failure artifacts, commits only the durable data files, and opens or updates a
+  `collector-failure` issue when collection fails.
+- Never rewrite stored prices in `data/holdings.db` by hand or in a PR: the daily data commit
+  conflicts with any binary change and nobody can review one. Add a file to
+  `data/price-corrections/` (built by `scripts/buildPriceCorrections.js`) and let the daily run
+  apply it; see `docs/RUNBOOK.md#correcting-stored-prices`.
 - Never commit `.env`, logs, debug pages, local backups, `.next`, or `node_modules`.
