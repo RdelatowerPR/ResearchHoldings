@@ -46,7 +46,8 @@ Every safeguard below exists because of one link in that chain.
     "scraped":182,"attempts":"dom=182,nextData=182,loose=182","active":182}
    ```
    This is the audit trail that answers "when did it last actually work". Check
-   `strategy`, `scraped`, and `warnings`.
+   `strategy`, `scraped`, and `warnings`. A prices record also carries
+   `equitiesActive`, `equitiesStored` and, when any went unpriced, `equitiesMissing`.
 
 ### "Every parsing strategy came back empty"
 
@@ -79,6 +80,30 @@ gh secret set COINGECKO_API_KEY -R RdelatowerPR/ResearchHoldings
 
 The run record carries `"coingecko":"keyless","keyDemoted":"..."` for any run this
 happened on.
+
+### "No equity prices stored: 0 of N active equities priced"
+
+Alpha Vantage sent no quote for any equity that is held. The crypto prices from the
+same run are stored and committed as usual; the job fails so the `collector-failure`
+issue opens. This used to pass as a healthy run: on 2026-09-21 no equity priced and
+the record read `ok:true` with no warnings.
+
+Alpha Vantage answers HTTP 200 with a message in place of the quote, so the reason
+is in its reply. `logs/prices.log` has one `No price for <symbol>: ...` warning per
+equity, and the run record's `error` quotes the first one.
+
+- A message about a rate limit or requests per day: the key's allowance is spent.
+  Each run makes one request per held equity (13 in October 2026), so on a free key
+  (25 a day) a second run on the same day can use it up on its own.
+- A message about the API key: replace it with
+  `gh secret set ALPHA_VANTAGE_API_KEY -R RdelatowerPR/ResearchHoldings`.
+- `HTTP <status>` or a network error: Alpha Vantage was unreachable.
+
+Once the cause is gone, re-run with `gh workflow run "Update Database" --ref main`.
+That also stores a second crypto price per asset for the day.
+
+Losing only some equities does not fail the run, but each one is a warning: the run
+record lists them in `equitiesMissing` and counts them in `warningCount`.
 
 ## Restoring data
 
@@ -188,8 +213,8 @@ HOLDINGS_DB=/tmp/scratch.db npm run scrape
 
 Both are read from the environment only. The Alpha Vantage key was previously
 hardcoded in `fetchPrices.js` and is still in git history — worth rotating.
-Without `ALPHA_VANTAGE_API_KEY` equities are skipped with a warning rather than
-silently priced at nothing.
+Without `ALPHA_VANTAGE_API_KEY` every held equity is a warning and, since none
+priced, the price run fails; the crypto prices are still stored.
 
 ## Recovering missed history
 

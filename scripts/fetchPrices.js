@@ -3,17 +3,18 @@
 // Run: node scripts/fetchPrices.js
 // Env: COINGECKO_API_KEY    Pro key; falls back to the keyless endpoint without one,
 //                           and demotes itself automatically if the key is rejected
-//      ALPHA_VANTAGE_API_KEY  needed for equities; they are skipped without it
+//      ALPHA_VANTAGE_API_KEY  needed for equities; without it none is priced
 //      HOLDINGS_DB          override the database path
 //
 // Price failures are per-asset and non-fatal by design - a missing quote should not
-// cost us the run. See docs/RUNBOOK.md.
+// cost us the run. But each equity left unpriced is a warning, and a run that prices
+// no equity at all while equities are held fails. See docs/RUNBOOK.md.
 
-const axios = require("axios");
 const Database = require("better-sqlite3");
 const { loadEnv } = require("./lib/loadEnv");
 const { createLogger, appendRunRecord } = require("./lib/logger");
 const { CoinGeckoClient } = require("./lib/coingecko");
+const { fetchEquityPrices, equityOutage } = require("./lib/alphaVantage");
 
 loadEnv();
 
@@ -27,7 +28,6 @@ const db = new Database(DB_FILE);
 
 // API Configurations
 const ALPHA_VANTAGE_API_KEY = process.env.ALPHA_VANTAGE_API_KEY; // set as a repo secret, passed in by the workflow
-const ALPHA_VANTAGE_URL = "https://www.alphavantage.co/query";
 
 // Handles the Pro/keyless host split, and demotes itself if the key stops working
 const coingecko = new CoinGeckoClient({ apiKey: process.env.COINGECKO_API_KEY, logger });
@@ -310,62 +310,11 @@ async function fetchCryptoPricesFallback() {
   }
 }
 
-// Function to fetch equity prices from Alpha Vantage
-async function fetchStockPrices() {
+// Function to fetch equity prices from Alpha Vantage. It replies 200 even when it
+// sends no quote, so each equity left unpriced is a warning quoting the reply.
+function fetchStockPrices() {
   logger.info("Fetching stock prices...");
-  
-  if (!ALPHA_VANTAGE_API_KEY) {
-    logger.error("ALPHA_VANTAGE_API_KEY is not set - skipping equity prices.");
-    return;
-  }
-  
-  const stocks = db.prepare("SELECT DISTINCT asset FROM holdings WHERE asset_type = 'equity' AND status = 'active'").all();
-  
-  if (stocks.length === 0) {
-    logger.info("No equity assets found");
-    return;
-  }
-  
-  const insertPrice = db.prepare(
-    "INSERT INTO prices (asset, price, date, source) VALUES (?, ?, ?, ?)"
-  );
-  
-  for (const { asset } of stocks) {
-    try {
-      logger.info(`Fetching price for ${asset}...`);
-      const response = await axios.get(ALPHA_VANTAGE_URL, {
-        params: {
-          function: "GLOBAL_QUOTE",
-          symbol: asset,
-          apikey: ALPHA_VANTAGE_API_KEY,
-        },
-      });
-      
-      const price = response.data["Global Quote"]?.["05. price"] || null;
-      if (price !== null) {
-        const now = new Date().toISOString();
-        insertPrice.run(asset, parseFloat(price), now, 'alphavantage');
-        logger.info(`Stored stock price for ${asset}: $${price}`);
-      } else {
-        logger.info(`Price not found for ${asset}`);
-        if (response.data.Note) {
-          logger.info("API Note:", response.data.Note);
-        }
-      }
-      
-      // Alpha Vantage free tier limit: 5 requests per minute
-      logger.info("Waiting for Alpha Vantage rate limit...");
-      await sleep(15000);
-    } catch (error) {
-      logger.error(`Error fetching price for ${asset}:`, error.message);
-      if (error.response) {
-        logger.error("Status:", error.response.status);
-        logger.error("Data:", error.response.data);
-      }
-      // Wait longer on error
-      await sleep(30000);
-    }
-  }
+  return fetchEquityPrices({ db, logger, apiKey: ALPHA_VANTAGE_API_KEY });
 }
 
 // Function to run everything
@@ -395,7 +344,7 @@ async function main() {
     }
     
     // Fetch stock prices
-    await fetchStockPrices();
+    const equities = await fetchStockPrices();
     
     // Print some statistics
     const stats = {
@@ -413,7 +362,20 @@ async function main() {
       ok: true,
       stored: stats.totalPrices - pricesBefore,
       pricedAssets: stats.uniqueAssets,
+      equitiesActive: equities.active,
+      equitiesStored: equities.stored,
+      equitiesMissing: equities.missing.length ? equities.missing.map(m => m.asset) : undefined,
     });
+
+    // Losing a whole source fails the run even though the crypto prices stored fine.
+    // The job goes red, so the workflow opens the collector-failure issue, and the
+    // crypto prices already written are still committed with it.
+    const outage = equityOutage(equities);
+    if (outage) {
+      logger.error(outage);
+      Object.assign(record, { ok: false, error: outage });
+      process.exitCode = 1;
+    }
 
     // A demotion means prices were collected, slowly, on a dead key - the run looks
     // fine and the key still needs replacing. Say so in a way that survives the logs.
