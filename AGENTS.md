@@ -29,4 +29,6 @@ Read this file before changing collection, data, deployment, or the local Window
   conflicts with any binary change and nobody can review one. Add a file to
   `data/price-corrections/` (built by `scripts/buildPriceCorrections.js`) and let the daily run
   apply it; see `docs/RUNBOOK.md#correcting-stored-prices`.
+- The price job fails when it stores no equity price while equities are held; the crypto prices it
+  stored are still committed. Each equity left unpriced is a warning quoting Alpha Vantage's reply.
 - Never commit `.env`, logs, debug pages, local backups, `.next`, or `node_modules`.

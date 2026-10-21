@@ -58,7 +58,7 @@ same tests before writing data, retains diagnostics as an artifact, and reports 
 
 Both are optional for a local run and read from the environment or a gitignored
 `.env`. Without them, crypto prices fall back to CoinGecko's keyless endpoint and
-equities are skipped.
+no equity is priced: the run still stores the crypto prices, then exits 1 as a failure.
 
 ```
 COINGECKO_API_KEY=CG-...        # Pro key: pro-api.coingecko.com
@@ -104,6 +104,7 @@ scripts/
     parseDisclosures.js   three independent readers for the page  (docs/PARSING.md)
     fetchPage.js          retries, URL fallback, response validation
     coingecko.js          API client with the expired-key failsafe
+    alphaVantage.js       equity quotes; each unpriced equity is a warning
     backup.js             pre-write backups, snapshot write/restore
     history.js            point-in-time observations (holdings_history)
     priceCorrections.js   read, check and apply price corrections
