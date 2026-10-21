@@ -35,19 +35,12 @@ type Holding = {
   price_date?: string;
 };
 
-type PriceHistory = {
+// One entry per priced asset in an active holding (built by src/lib/priceSummary.js)
+type AssetPrices = {
   asset: string;
-  prices: {
-    date: string;
-    price: number;
-  }[];
-};
-
-type MonthlyChange = {
-  asset: string;
-  current_price: number;
-  month_ago_price: number;
-  monthly_change: number;
+  latest: number;
+  monthAgo: number | null;
+  sinceAdded: Record<string, number>;
 };
 
 type TeamPerformance = {
@@ -67,14 +60,16 @@ type AnalyticsProps = {
   holdings: Holding[];
 };
 
+const PRICE_HISTORY_URL = '/api/holdings/price-history';
+
 const HoldingsAnalytics: React.FC<AnalyticsProps> = ({ holdings }) => {
   const [selectedTeam, setSelectedTeam] = useState<string>('All');
   const [assetMetrics, setAssetMetrics] = useState<AssetMetric[]>([]);
   const [teamMetrics, setTeamMetrics] = useState<TeamMetric[]>([]);
   const [topAssets, setTopAssets] = useState<AssetMetric[]>([]);
   const [teamPerformance, setTeamPerformance] = useState<TeamPerformance[]>([]);
-  const [priceHistories, setPriceHistories] = useState<PriceHistory[]>([]);
-  const [monthlyChanges, setMonthlyChanges] = useState<MonthlyChange[]>([]);
+  const [assetPrices, setAssetPrices] = useState<Map<string, AssetPrices>>(new Map());
+  const [priceError, setPriceError] = useState<string | null>(null);
   const [loadingPrices, setLoadingPrices] = useState<boolean>(true);
   
   // Fetch price history data
@@ -82,22 +77,21 @@ const HoldingsAnalytics: React.FC<AnalyticsProps> = ({ holdings }) => {
     const fetchPriceHistory = async () => {
       try {
         setLoadingPrices(true);
-        const response = await fetch('/api/price-history');
+        const response = await fetch(PRICE_HISTORY_URL);
         if (!response.ok) {
-          throw new Error('Failed to fetch price history');
+          throw new Error(`${PRICE_HISTORY_URL} returned HTTP ${response.status}${response.statusText ? ` ${response.statusText}` : ''}`);
         }
         
         const data = await response.json();
-        
-        if (data.priceHistories) {
-          setPriceHistories(data.priceHistories);
+        if (!Array.isArray(data.assets)) {
+          throw new Error(`${PRICE_HISTORY_URL} returned no price list`);
         }
         
-        if (data.monthlyChanges) {
-          setMonthlyChanges(data.monthlyChanges);
-        }
+        setAssetPrices(new Map(data.assets.map((prices: AssetPrices) => [prices.asset, prices])));
       } catch (error) {
+        // Shown in place of the price columns, so a failure is not mistaken for missing data
         console.error('Error fetching price history:', error);
+        setPriceError(error instanceof Error ? error.message : String(error));
       } finally {
         setLoadingPrices(false);
       }
@@ -122,20 +116,10 @@ const HoldingsAnalytics: React.FC<AnalyticsProps> = ({ holdings }) => {
     );
   };
   
-  // Get price history for an asset
-  const getPriceHistory = useCallback((asset: string) => {
-    return priceHistories.find(ph => ph.asset === asset)?.prices || [];
-  }, [priceHistories]);
-  
-  // Get monthly change for an asset
-  const getMonthlyChange = useCallback((asset: string) => {
-    return monthlyChanges.find(mc => mc.asset === asset)?.monthly_change || null;
-  }, [monthlyChanges]);
-  
   // Calculate price change percentages
   const calculatePriceChanges = useCallback((asset: string, firstAdded: string) => {
-    const history = getPriceHistory(asset);
-    if (history.length < 2) {
+    const prices = assetPrices.get(asset);
+    if (!prices) {
       // Return null values if we don't have real price history
       return { 
         monthlyChange: null, 
@@ -146,72 +130,33 @@ const HoldingsAnalytics: React.FC<AnalyticsProps> = ({ holdings }) => {
       };
     }
     
-    // Sort by date (newest first)
-    const sortedHistory = [...history].sort((a, b) => 
-      new Date(b.date).getTime() - new Date(a.date).getTime()
-    );
-    
     // Current price
-    const currentPrice = sortedHistory[0].price;
+    const currentPrice = prices.latest;
     
-    // Monthly change - use pre-calculated if available
-    const monthlyChange = getMonthlyChange(asset);
+    // Price 30 days before the current one; null (N/A) with less price history than that
+    const lastMonthPrice = prices.monthAgo;
     
-    // Last month's price (use from history if monthlyChange is not available)
-    let lastMonthPrice = null;
-    if (monthlyChange === null && sortedHistory.length >= 2) {
-      const lastMonthDate = new Date();
-      lastMonthDate.setDate(lastMonthDate.getDate() - 30);
-      
-      for (const record of sortedHistory) {
-        if (new Date(record.date) <= lastMonthDate) {
-          lastMonthPrice = record.price;
-          break;
-        }
-      }
-      
-      // If no price found near 30 days ago, use the second newest price
-      if (lastMonthPrice === null && sortedHistory.length >= 2) {
-        lastMonthPrice = sortedHistory[1].price;
-      }
-    } else if (monthlyChange !== null) {
-      const monthlyChangeObj = monthlyChanges.find(mc => mc.asset === asset);
-      lastMonthPrice = monthlyChangeObj?.month_ago_price || null;
-    }
-    
-    // Price when first added
-    const addedDate = new Date(firstAdded);
-    let initialPrice = null;
-    for (let i = sortedHistory.length - 1; i >= 0; i--) {
-      const recordDate = new Date(sortedHistory[i].date);
-      if (recordDate >= addedDate) {
-        initialPrice = sortedHistory[i].price;
-        break;
-      }
-    }
-    
-    // If we couldn't find a price after first_added, use the oldest price
-    if (initialPrice === null && sortedHistory.length > 0) {
-      initialPrice = sortedHistory[sortedHistory.length - 1].price;
-    }
+    // Price when first added: the first price on or after first_added, or the oldest
+    // price when there is none
+    const initialPrice = prices.sinceAdded[firstAdded] ?? null;
     
     // Calculate price changes
-    const calculatedMonthlyChange = lastMonthPrice && currentPrice 
+    const monthlyChange = lastMonthPrice && currentPrice
       ? ((currentPrice - lastMonthPrice) / lastMonthPrice) * 100 
-      : monthlyChange;
+      : null;
       
     const sinceAddedChange = initialPrice && currentPrice 
       ? ((currentPrice - initialPrice) / initialPrice) * 100 
       : null;
     
     return { 
-      monthlyChange: calculatedMonthlyChange, 
+      monthlyChange,
       sinceAddedChange,
       currentPrice, 
       lastMonthPrice, 
       initialPrice
     };
-  }, [getPriceHistory, getMonthlyChange, monthlyChanges]);
+  }, [assetPrices]);
   
   useEffect(() => {
     const calculateMetrics = () => {
@@ -231,11 +176,11 @@ const HoldingsAnalytics: React.FC<AnalyticsProps> = ({ holdings }) => {
       
       // Calculate metrics for each asset
       const assetMetricsData = Object.entries(assetGroups).map(([asset, assetHoldings]) => {
-        // Get the earliest first_added date for this asset
-        const earliestAdded = assetHoldings.reduce((earliest, holding) => {
-          const holdingDate = new Date(holding.first_added);
-          return holdingDate < earliest ? holdingDate : earliest;
-        }, new Date(assetHoldings[0].first_added));
+        // Get the holding with the earliest first_added date for this asset
+        const earliestHolding = assetHoldings.reduce((earliest, holding) => {
+          return new Date(holding.first_added) < new Date(earliest.first_added) ? holding : earliest;
+        });
+        const earliestAdded = new Date(earliestHolding.first_added);
         
         // Count holders
         const holderCount = assetHoldings.length;
@@ -246,7 +191,7 @@ const HoldingsAnalytics: React.FC<AnalyticsProps> = ({ holdings }) => {
         }, 0) / holderCount;
         
         // Get price changes (real only, no mocks)
-        const priceChanges = calculatePriceChanges(asset, earliestAdded.toISOString());
+        const priceChanges = calculatePriceChanges(asset, earliestHolding.first_added);
         
         return {
           asset,
@@ -368,7 +313,7 @@ const HoldingsAnalytics: React.FC<AnalyticsProps> = ({ holdings }) => {
           let monthlyReturn = null;
           let totalReturn = null;
           
-          // Filter out assets with no price data
+          // Filter out assets with no monthly change (less than 30 days of prices)
           const assetsWithPriceData = assetWeights.filter(a => a.monthlyChange !== null);
           
           if (assetsWithPriceData.length > 0) {
@@ -380,17 +325,18 @@ const HoldingsAnalytics: React.FC<AnalyticsProps> = ({ holdings }) => {
               const normalizedWeight = totalWeight > 0 ? asset.weight / totalWeight : 0;
               return sum + (asset.monthlyChange || 0) * normalizedWeight;
             }, 0);
+          }
             
-            // Only calculate total return for assets with total change data
-            const assetsWithTotalData = assetsWithPriceData.filter(a => a.totalChange !== null);
-            if (assetsWithTotalData.length > 0) {
-              const totalDataWeight = assetsWithTotalData.reduce((sum, a) => sum + a.weight, 0);
+          // Total return covers every asset with total change data, including those too
+          // new for a monthly change
+          const assetsWithTotalData = assetWeights.filter(a => a.totalChange !== null);
+          if (assetsWithTotalData.length > 0) {
+            const totalDataWeight = assetsWithTotalData.reduce((sum, a) => sum + a.weight, 0);
               
-              totalReturn = assetsWithTotalData.reduce((sum, asset) => {
-                const normalizedWeight = totalDataWeight > 0 ? asset.weight / totalDataWeight : 0;
-                return sum + (asset.totalChange || 0) * normalizedWeight;
-              }, 0);
-            }
+            totalReturn = assetsWithTotalData.reduce((sum, asset) => {
+              const normalizedWeight = totalDataWeight > 0 ? asset.weight / totalDataWeight : 0;
+              return sum + (asset.totalChange || 0) * normalizedWeight;
+            }, 0);
           }
           
           return {
@@ -409,10 +355,10 @@ const HoldingsAnalytics: React.FC<AnalyticsProps> = ({ holdings }) => {
     if (!loadingPrices) {
       calculateMetrics();
     }
-  }, [holdings, selectedTeam, priceHistories, monthlyChanges, teams, loadingPrices, calculatePriceChanges]);
+  }, [holdings, selectedTeam, assetPrices, teams, loadingPrices, calculatePriceChanges]);
   
   // Check if we have any price data
-  const hasPriceData = priceHistories.length > 0;
+  const hasPriceData = assetPrices.size > 0;
   
   return (
     <div className={styles.analytics}>
@@ -435,7 +381,13 @@ const HoldingsAnalytics: React.FC<AnalyticsProps> = ({ holdings }) => {
             </select>
           </div>
           
-          {!hasPriceData && (
+          {priceError && (
+            <div className={styles.priceError} role="alert">
+              <p><strong>Price data failed to load:</strong> {priceError}. Price-related metrics are hidden.</p>
+            </div>
+          )}
+          
+          {!priceError && !hasPriceData && (
             <div className={styles.noPriceData}>
               <p><strong>No price data available.</strong> Run your price fetching script to see price-related metrics.</p>
             </div>
@@ -667,7 +619,8 @@ const HoldingsAnalytics: React.FC<AnalyticsProps> = ({ holdings }) => {
           <div className={styles.disclaimer}>
             <p>
               <strong>Note:</strong> Price data is based on actual prices fetched from APIs.
-              {!hasPriceData && " No price data is currently available. Run the fetchPrices.js script to collect price information."}
+              {hasPriceData && " Monthly Change compares the latest price with the price 30 days earlier, and is N/A for assets with less than 30 days of price history."}
+              {!hasPriceData && !priceError && " No price data is currently available. Run the fetchPrices.js script to collect price information."}
             </p>
           </div>
         </>
