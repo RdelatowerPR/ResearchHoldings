@@ -82,7 +82,7 @@ const HoldingsAnalytics: React.FC<AnalyticsProps> = ({ holdings }) => {
     const fetchPriceHistory = async () => {
       try {
         setLoadingPrices(true);
-        const response = await fetch('/api/price-history');
+        const response = await fetch('/api/holdings/price-history');
         if (!response.ok) {
           throw new Error('Failed to fetch price history');
         }
