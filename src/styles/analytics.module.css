@@ -108,6 +108,14 @@
   border-radius: 4px;
 }
 
+.priceError {
+  background-color: #ffebee;
+  border-left: 4px solid #f44336;
+  padding: 15px;
+  margin-bottom: 20px;
+  border-radius: 4px;
+}
+
 .loading {
   text-align: center;
   padding: 20px;
@@ -171,6 +179,12 @@
   .noPriceData {
     background-color: #3e2723;
     border-left-color: #ff9800;
+    color: #eee;
+  }
+  
+  .priceError {
+    background-color: #4a1f1f;
+    border-left-color: #e57373;
     color: #eee;
   }
   
