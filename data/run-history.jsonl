@@ -207,3 +207,6 @@
 {"at":"2026-11-12T05:35:09.098Z","job":"scrape","ok":true,"url":"https://blockworks.com/financial-disclosures","strategy":"dom","scraped":215,"sourceNote":"November 2026 disclosures, updated November 2","attempts":"dom=215,nextData=215,loose=215","newEntries":0,"updatedEntries":215,"deactivated":0,"active":215,"members":55,"warningCount":0}
 {"at":"2026-11-12T05:37:26.612Z","job":"prices","ok":true,"stored":145,"pricedAssets":159,"equitiesActive":9,"equitiesStored":9,"coingecko":"pro","warningCount":0}
 {"at":"2026-11-12T05:37:26.663Z","job":"price-corrections","ok":true,"files":2,"applied":0,"alreadyApplied":995}
+{"at":"2026-11-13T04:52:29.980Z","job":"scrape","ok":true,"url":"https://blockworks.com/financial-disclosures","strategy":"dom","scraped":215,"sourceNote":"November 2026 disclosures, updated November 2","attempts":"dom=215,nextData=215,loose=215","newEntries":0,"updatedEntries":215,"deactivated":0,"active":215,"members":55,"warningCount":0}
+{"at":"2026-11-13T04:54:47.124Z","job":"prices","ok":true,"stored":145,"pricedAssets":159,"equitiesActive":9,"equitiesStored":9,"coingecko":"pro","warningCount":0}
+{"at":"2026-11-13T04:54:47.189Z","job":"price-corrections","ok":true,"files":2,"applied":0,"alreadyApplied":995}
